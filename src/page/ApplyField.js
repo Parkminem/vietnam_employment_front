@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderWrap from "../component/HeaderWrap";
+import HeaderWrap from "../components/HeaderWrap";
 
 const Apply = () => {
   return (

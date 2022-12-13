@@ -1,11 +1,11 @@
 import React from "react";
-import HeaderWrap from "../component/HeaderWrap";
+import HeaderWrap from "../components/HeaderWrap";
 // import SubWrap from "../component/SubWrap";
-import TopTitWrap from "../component/TopTitWrap";
-import InputGroup from "../component/InputGroup";
-import InputGroupTitle from "../component/InputGroupTitle";
-import BottomBtn from "../component/BottomBtn";
-import Modal from "../component/Modal";
+import TopTitWrap from "../components/TopTitWrap";
+import InputGroup from "../components/InputGroup";
+import InputGroupTitle from "../components/InputGroupTitle";
+import BottomBtn from "../components/BottomBtn";
+import Modal from "../components/Modal";
 
 const Apply = () => {
   return (
