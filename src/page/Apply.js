@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderWrap from "../components/HeaderWrap";
-// import SubWrap from "../component/SubWrap";
+// import SubWrap from "../components/SubWrap";
 import TopTitWrap from "../components/TopTitWrap";
 import InputGroup from "../components/InputGroup";
 import InputGroupTitle from "../components/InputGroupTitle";

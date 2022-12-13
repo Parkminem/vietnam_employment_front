@@ -1,4 +1,5 @@
 import React from "react";
+import BottomBtn from "./BottomBtn";
 import InputGroup from "./InputGroup";
 import InputGroupTitle from "./InputGroupTitle";
 
