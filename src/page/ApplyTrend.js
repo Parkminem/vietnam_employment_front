@@ -83,7 +83,7 @@ const Apply = () => {
                   </p>
                 </div>
               </div>
-              <div class="btn_wrap">
+              <div className="btn_wrap">
                 <BottomBtn route="/" style="btn_color_bg" content="메인가기" />
               </div>
             </form>

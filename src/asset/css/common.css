@@ -570,7 +570,8 @@ select:-webkit-autofill:focus {
 input[type="text"],
 input[type="password"],
 input[type="number"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"] {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 3px;

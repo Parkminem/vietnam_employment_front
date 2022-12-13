@@ -78,62 +78,62 @@ const Apply = () => {
             content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수
               있도록 함께 해주세요."
           />
-          <div class="sub_cont_area">
-            <div class="work_process_wrap">
+          <div className="sub_cont_area">
+            <div className="work_process_wrap">
               <h4>아이디어콘서트 작업 공정</h4>
-              <div class="process_box">
+              <div className="process_box">
                 <ul>
                   <li>
-                    <div class="process_img">
+                    <div className="process_img">
                       <img
                         src="images/img/process01.png"
                         alt="작업공정 첫번째 사진"
                       />
                     </div>
-                    <div class="icon_run_img">
+                    <div className="icon_run_img">
                       <img src="images/img/acon_face.png" alt="아콘이 사진" />
                     </div>
                     <span>1. 그림 콘티 (제공)</span>
                   </li>
                   <li>
-                    <div class="process_img">
+                    <div className="process_img">
                       <img
                         src="images/img/process02.png"
                         alt="작업공정 두번째 사진"
                       />
                     </div>
-                    <div class="icon_run_img">
+                    <div className="icon_run_img">
                       <img src="images/img/acon_left.png" alt="아콘이 사진" />
                     </div>
                     <span>2. 데생 콘티</span>
                   </li>
                   <li>
-                    <div class="process_img">
+                    <div className="process_img">
                       <img
                         src="images/img/process03.png"
                         alt="작업공정 세번째 사진"
                       />
                     </div>
-                    <div class="icon_run_img">
+                    <div className="icon_run_img">
                       <img src="images/img/acon_walk.png" alt="아콘이 사진" />
                     </div>
                     <span>3. 선화</span>
                   </li>
                   <li>
-                    <div class="process_img">
+                    <div className="process_img">
                       <img
                         src="images/img/process04.png"
                         alt="작업공정 네번째 사진"
                       />
                     </div>
-                    <div class="icon_run_img">
+                    <div className="icon_run_img">
                       <img src="images/img/acon_final.png" alt="아콘이 사진" />
                     </div>
                     <span>4. 채색 및 보정</span>
                   </li>
                 </ul>
               </div>
-              <div class="info_txt_box">
+              <div className="info_txt_box">
                 <p>
                   작업은{" "}
                   <span>
@@ -143,14 +143,14 @@ const Apply = () => {
                 </p>
               </div>
             </div>
-            <div class="recruitment_position_wrap">
+            <div className="recruitment_position_wrap">
               <h3>모집중인 포지션</h3>
               <p>데생콘티와 선화 채색및 보정이 가능한 자는 지원해 주세요.</p>
             </div>
-            <div class="position_info_wrap">
-              <div class="category_tab_wrap">
+            <div className="position_info_wrap">
+              <div className="category_tab_wrap">
                 <ul>
-                  <li class="active" id={0} onClick={onClickPostion}>
+                  <li className="active" id={0} onClick={onClickPostion}>
                     데생 콘티
                   </li>
                   <li id={1} onClick={onClickPostion}>

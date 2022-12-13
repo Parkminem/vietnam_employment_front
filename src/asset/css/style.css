@@ -537,7 +537,8 @@
 }
 /* ì²´í¬ë°•ìŠ¤ ë””ìžì¸*/
 input[type="checkbox"] {
-  display: none;
+  width: 1px;
+  opacity: 0;
 }
 input + label {
   position: relative;

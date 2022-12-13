@@ -1,13 +1,28 @@
 import React from "react";
 import HeaderWrap from "../components/HeaderWrap";
-// import SubWrap from "../components/SubWrap";
 import TopTitWrap from "../components/TopTitWrap";
 import InputGroup from "../components/InputGroup";
 import InputGroupTitle from "../components/InputGroupTitle";
 import BottomBtn from "../components/BottomBtn";
 import Modal from "../components/Modal";
+import axios from "axios";
+import { useRecoilState } from "recoil";
+import { ModalStyleState, applyFormState } from "../store/atom";
 
 const Apply = () => {
+  const [applyForm, setApplyForm] = useRecoilState(applyFormState);
+
+  const checkValid = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://192.168.1.61:8000/apply/", applyForm, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => console.log(res));
+  };
+
   return (
     <>
       <HeaderWrap />
@@ -19,8 +34,8 @@ const Apply = () => {
               있도록 함께 해주세요."
           />
           <div className="sub_cont_area">
-            <form>
-              <div className="input_set_wrap">
+            <form onSubmit={checkValid}>
+              {/* <div className="input_set_wrap">
                 <InputGroupTitle
                   step={1}
                   content="지원 현황 조회를 위해 아이디와 비밀번호를
@@ -29,10 +44,10 @@ const Apply = () => {
                 <InputGroup category="id" title="아이디" />
                 <InputGroup category="password" title="비밀번호" />
                 <InputGroup category="password2" title="비밀번호 확인" />
-              </div>
+              </div> */}
               <div className="input_set_wrap">
                 <InputGroupTitle
-                  step={2}
+                  step={1}
                   content="지원서 작성하기 (* 표시는 필수 사항
                     입니다.)"
                 />
@@ -42,7 +57,7 @@ const Apply = () => {
                   require={true}
                 />
                 <InputGroup category="name" title="이름" require={true} />
-                <InputGroup category="nickname" title="별명" />
+                <InputGroup category="nickname" title="별명" require={true} />
                 <InputGroup
                   category="mail"
                   title="이메일 주소"
@@ -63,7 +78,7 @@ const Apply = () => {
                 <InputGroup
                   category="file"
                   title="파일 업로드"
-                  require={true}
+                  // require={true}
                 />
               </div>
               <div className="txt_box_wrap">
@@ -82,7 +97,12 @@ const Apply = () => {
                 </div>
               </div>
               <div className="agree_box_wrap">
-                <input type="checkbox" id="agree_check" />
+                <input
+                  type="checkbox"
+                  name="agree_check"
+                  id="agree_check"
+                  required
+                />
                 <label htmlFor="agree_check">
                   <span>위 개인 정보수집 · 이용에 동의합니다.</span>
                 </label>
