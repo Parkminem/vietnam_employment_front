@@ -345,6 +345,7 @@
 }
 .position_info_wrap .category_tab_wrap ul li {
   width: 225px;
+  padding: 18px 0;
   height: 60px;
   border: 1px solid #f5a520;
   border-radius: 40px;
@@ -354,11 +355,10 @@
   font-weight: 600;
   margin-right: 20px;
 }
-.position_info_wrap .category_tab_wrap ul li a {
+/* .position_info_wrap .category_tab_wrap ul li a {
   width: 100%;
   display: block;
-  padding: 18px 0;
-}
+} */
 .position_info_wrap .category_tab_wrap ul li:last-child {
   margin-right: 0;
 }
