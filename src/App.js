@@ -10,6 +10,7 @@ import { RecoilRoot } from "recoil";
 import Apply from "./page/Apply";
 import ApplyField from "./page/ApplyField";
 import ApplyTrend from "./page/ApplyTrend";
+import ApplyComplete from "./page/ApplyComplete";
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = () => {
               <Route path="/apply" element={<Apply />} />
               <Route path="/applyfield" element={<ApplyField />} />
               <Route path="/applytrend" element={<ApplyTrend />} />
+              <Route path="/applycomplete" element={<ApplyComplete />} />
               <Route path="*" element={<Main />} />
             </Routes>
           </div>
