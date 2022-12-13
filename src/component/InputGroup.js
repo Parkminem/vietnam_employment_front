@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PositionList from "./PositionList";
 
 const InputGroup = ({ category, require, title }) => {
   const [result, setResult] = useState();
@@ -8,7 +9,7 @@ const InputGroup = ({ category, require, title }) => {
         setResult(
           <input
             type="text"
-            id="add_id"
+            id={`add_${category}`}
             defaultValue=""
             placeholder="본인 확인을 위해 아이디를 기입해 주세요."
           />
@@ -18,7 +19,7 @@ const InputGroup = ({ category, require, title }) => {
         setResult(
           <input
             type="password"
-            id="add_password"
+            id={`add_${category}`}
             defaultValue=""
             placeholder="비밀번호를 설정해 주세요."
           />
@@ -28,7 +29,7 @@ const InputGroup = ({ category, require, title }) => {
         setResult(
           <input
             type="password"
-            id="add_password2"
+            id={`add_${category}`}
             defaultValue=""
             placeholder="비밀번호를 다시 한번 더 기입해 주세요."
           />
@@ -37,30 +38,10 @@ const InputGroup = ({ category, require, title }) => {
       case "position":
         setResult(
           <ul className="input_group_ul">
-            <li>
-              <input type="checkbox" id="contactChoice1" />
-              <label htmlFor="contactChoice1">
-                <span>LINE ART</span>
-              </label>
-            </li>
-            <li>
-              <input type="checkbox" id="contactChoice2" />
-              <label htmlFor="contactChoice2">
-                <span>COLOR ART</span>
-              </label>
-            </li>
-            <li>
-              <input type="checkbox" id="contactChoice3" />
-              <label htmlFor="contactChoice3">
-                <span>SKAETCH UP</span>
-              </label>
-            </li>
-            <li>
-              <input type="checkbox" id="contactChoice4" />
-              <label htmlFor="contactChoice4">
-                <span>BACKGROUND ART</span>
-              </label>
-            </li>
+            <PositionList count={1} content="LINE ART" />
+            <PositionList count={2} content="COLOR ART" />
+            <PositionList count={3} content="SKAETCH UP" />
+            <PositionList count={4} content="BACKGROUND ART" />
           </ul>
         );
         break;
@@ -68,7 +49,7 @@ const InputGroup = ({ category, require, title }) => {
         setResult(
           <input
             type="text"
-            id="add_name"
+            id={`add_${category}`}
             defaultValue=""
             placeholder="이름을 기입해 주세요."
           />
@@ -78,11 +59,72 @@ const InputGroup = ({ category, require, title }) => {
         setResult(
           <input
             type="text"
-            id="add_nickname"
+            id={`add_${category}`}
             defaultValue=""
             placeholder="별명을 기입해 주세요."
           />
         );
+        break;
+      case "mail":
+        setResult(
+          <input
+            type="text"
+            id={`add_${category}`}
+            defaultValue=""
+            placeholder="예) ideacon@ideaconcert.com"
+          />
+        );
+        break;
+      case "number":
+        setResult(
+          <input
+            type="number"
+            id={`add_${category}`}
+            defaultValue=""
+            placeholder="+84 01-000-0000"
+          />
+        );
+        break;
+      case "country":
+        setResult(
+          <input
+            type="text"
+            id={`add_${category}`}
+            defaultValue=""
+            placeholder="SOUTH KOREA"
+          />
+        );
+        break;
+      case "genre":
+        setResult(
+          <ul className="input_group_ul">
+            <PositionList count={5} content="DRAMA" />
+            <PositionList count={6} content="FANTASY" />
+            <PositionList count={7} content="ACTION" />
+            <PositionList count={8} content="ROMANCE" />
+            <PositionList count={9} content="ADULT" />
+          </ul>
+        );
+        break;
+      case "intro":
+        setResult(
+          <div className="intro_txtarea">
+            <textarea></textarea>
+          </div>
+        );
+        break;
+      case "portfolio_url":
+        setResult(
+          <input
+            type="text"
+            id={`add_${category}`}
+            defaultValue=""
+            placeholder="http:// "
+          />
+        );
+        break;
+      case "file":
+        setResult(<input type="file" id={`add_${category}`} defaultValue="" />);
         break;
       default:
         break;
