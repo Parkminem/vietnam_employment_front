@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderWrap from "../component/HeaderWrap";
-import TopTitWrap from "../component/TopTitWrap";
-import BottomBtn from "../component/BottomBtn";
+import HeaderWrap from "../components/HeaderWrap";
+import TopTitWrap from "../components/TopTitWrap";
+import BottomBtn from "../components/BottomBtn";
 
 const ApplyComplete = () => {
   return (

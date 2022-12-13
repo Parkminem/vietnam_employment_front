@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderWrap from "../component/HeaderWrap";
-import MainContWrap from "../component/MainContWrap";
-import MainBtmImgWrap from "../component/MainBtmImgWrap";
+import HeaderWrap from "../components/HeaderWrap";
+import MainContWrap from "../components/MainContWrap";
+import MainBtmImgWrap from "../components/MainBtmImgWrap";
 
 const Main = () => {
   return (
