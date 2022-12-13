@@ -12,6 +12,7 @@ import ApplyField from "./page/ApplyField";
 import ApplyTrend from "./page/ApplyTrend";
 import ApplyComplete from "./page/ApplyComplete";
 import ApplyCompleteLogin from "./page/ApplyCompleteLogin";
+import Qna from "./page/Qna";
 
 const App = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/applyfield" element={<ApplyField />} />
               <Route path="/applytrend" element={<ApplyTrend />} />
               <Route path="/applycomplete" element={<ApplyComplete />} />
+              <Route path="/qna" element={<Qna />} />
               <Route
                 path="/applycompletelogin"
                 element={<ApplyCompleteLogin />}
