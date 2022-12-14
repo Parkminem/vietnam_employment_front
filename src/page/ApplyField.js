@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRecoilState } from "recoil";
 import ApplyFieldPosition from "../components/ApplyFieldPosition";
 import HeaderWrap from "../components/HeaderWrap";
 import TopTitWrap from "../components/TopTitWrap";
+import CategoryList from "../components/CategoryList";
+import ProcessList from "../components/ProcessList";
+import { CategoryIndexState } from "../store/atom";
 
 const positionsArray = [
   {
@@ -41,7 +45,7 @@ const positionsArray = [
     ],
   },
   {
-    num: 3,
+    num: 4,
     title: "배경 아트",
     imgs: [
       "images/img/drawing05_bg_before.png",
@@ -59,14 +63,7 @@ const positionsArray = [
 ];
 
 const Apply = () => {
-  const [positionId, setPositionId] = useState(0);
-  const onClickPostion = (e) => {
-    setPositionId(e.target.id);
-    [...e.target.parentNode.children].map((li) => {
-      li.className = "";
-    });
-    e.target.className = "active";
-  };
+  const [positionId, setPositionId] = useRecoilState(CategoryIndexState);
 
   return (
     <>
@@ -78,62 +75,42 @@ const Apply = () => {
             content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수
               있도록 함께 해주세요."
           />
-          <div class="sub_cont_area">
-            <div class="work_process_wrap">
+          <div className="sub_cont_area">
+            <div className="work_process_wrap">
               <h4>아이디어콘서트 작업 공정</h4>
-              <div class="process_box">
+              <div className="process_box">
                 <ul>
-                  <li>
-                    <div class="process_img">
-                      <img
-                        src="images/img/process01.png"
-                        alt="작업공정 첫번째 사진"
-                      />
-                    </div>
-                    <div class="icon_run_img">
-                      <img src="images/img/acon_face.png" alt="아콘이 사진" />
-                    </div>
-                    <span>1. 그림 콘티 (제공)</span>
-                  </li>
-                  <li>
-                    <div class="process_img">
-                      <img
-                        src="images/img/process02.png"
-                        alt="작업공정 두번째 사진"
-                      />
-                    </div>
-                    <div class="icon_run_img">
-                      <img src="images/img/acon_left.png" alt="아콘이 사진" />
-                    </div>
-                    <span>2. 데생 콘티</span>
-                  </li>
-                  <li>
-                    <div class="process_img">
-                      <img
-                        src="images/img/process03.png"
-                        alt="작업공정 세번째 사진"
-                      />
-                    </div>
-                    <div class="icon_run_img">
-                      <img src="images/img/acon_walk.png" alt="아콘이 사진" />
-                    </div>
-                    <span>3. 선화</span>
-                  </li>
-                  <li>
-                    <div class="process_img">
-                      <img
-                        src="images/img/process04.png"
-                        alt="작업공정 네번째 사진"
-                      />
-                    </div>
-                    <div class="icon_run_img">
-                      <img src="images/img/acon_final.png" alt="아콘이 사진" />
-                    </div>
-                    <span>4. 채색 및 보정</span>
-                  </li>
+                  <ProcessList
+                    index={1}
+                    processImg="images/img/process01.png"
+                    processImgAlt="작업공정 첫번째 사진"
+                    iConImg="images/img/acon_face.png"
+                    content="그림 콘티 (제공)"
+                  />
+                  <ProcessList
+                    index={2}
+                    processImg="images/img/process02.png"
+                    processImgAlt="작업공정 두번째 사진"
+                    iConImg="images/img/acon_left.png"
+                    content="데생 콘티"
+                  />
+                  <ProcessList
+                    index={3}
+                    processImg="images/img/process03.png"
+                    processImgAlt="작업공정 세번째 사진"
+                    iConImg="images/img/acon_walk.png"
+                    content="선화"
+                  />
+                  <ProcessList
+                    index={4}
+                    processImg="images/img/process04.png"
+                    processImgAlt="작업공정 네번째 사진"
+                    iConImg="images/img/acon_final.png"
+                    content="채색 및 보정"
+                  />
                 </ul>
               </div>
-              <div class="info_txt_box">
+              <div className="info_txt_box">
                 <p>
                   작업은{" "}
                   <span>
@@ -143,25 +120,29 @@ const Apply = () => {
                 </p>
               </div>
             </div>
-            <div class="recruitment_position_wrap">
+            <div className="recruitment_position_wrap">
               <h3>모집중인 포지션</h3>
               <p>데생콘티와 선화 채색및 보정이 가능한 자는 지원해 주세요.</p>
             </div>
-            <div class="position_info_wrap">
-              <div class="category_tab_wrap">
+            <div className="position_info_wrap">
+              <div className="category_tab_wrap">
                 <ul>
-                  <li class="active" id={0} onClick={onClickPostion}>
-                    데생 콘티
-                  </li>
-                  <li id={1} onClick={onClickPostion}>
-                    선화
-                  </li>
-                  <li id={2} onClick={onClickPostion}>
-                    채색 및 보정
-                  </li>
-                  <li id={3} onClick={onClickPostion}>
-                    배경 아트
-                  </li>
+                  {positionsArray.map((v, i) =>
+                    i === 0 ? (
+                      <CategoryList
+                        key={v.title + i}
+                        index={i}
+                        className="active"
+                        content={v.title}
+                      />
+                    ) : (
+                      <CategoryList
+                        key={v.title + i}
+                        index={i}
+                        content={v.title}
+                      />
+                    )
+                  )}
                 </ul>
               </div>
               <ApplyFieldPosition data={positionsArray[positionId]} />

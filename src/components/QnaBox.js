@@ -8,9 +8,9 @@ const QnaBox = ({ question, answer }) => {
     setQnaBoxDisplay((v) => !v);
   }, [qnaBoxDisplay]);
   return (
-    <div class={`qna_box_wrap ${qnaBoxDisplay ? `show` : `hide`}`}>
-      <div class="question_wrap" onClick={displayToggle}>
-        <div class="question_txt_area">
+    <div className={`qna_box_wrap ${qnaBoxDisplay ? `show` : `hide`}`}>
+      <div className="question_wrap" onClick={displayToggle}>
+        <div className="question_txt_area">
           <span>Q.</span>
           <p>{question}</p>
         </div>
@@ -18,7 +18,7 @@ const QnaBox = ({ question, answer }) => {
           <ExpandMoreIcon />
         </button>
       </div>
-      <div class="answer_wrap">
+      <div className="answer_wrap">
         <span>A.</span>
         <p>{answer}</p>
       </div>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-const InputGroupTitle = ({ step, content }) => {
+const InputGroupTitle = memo(({ step, content }) => {
   return (
     <>
       <p>
@@ -8,6 +8,6 @@ const InputGroupTitle = ({ step, content }) => {
       </p>
     </>
   );
-};
+});
 
 export default InputGroupTitle;

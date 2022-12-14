@@ -1,8 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import produce from "immer";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import PositionList from "./PositionList";
+import { ApplyFormState } from "../store/atom";
 
 const InputGroup = ({ category, require, title, color }) => {
   const [result, setResult] = useState();
+  const [applyForm, setApplyForm] = useRecoilState(ApplyFormState);
+
+  const inputChange = useCallback(
+    (e) => {
+      let where;
+      switch (category) {
+        case "name":
+          where = "full_name";
+          break;
+        // case "nickname":
+        //   where = "pen_name";
+        //   break;
+        case "mail":
+          where = "email";
+          break;
+        case "number":
+          where = "phone_number";
+          break;
+        default:
+          where = null;
+          break;
+      }
+      where &&
+        setApplyForm(
+          produce(applyForm, (draft) => {
+            draft[where] = e.target.value;
+          })
+        );
+    },
+    [applyForm]
+  );
+
   useEffect(() => {
     if (color !== "input_categry_black") {
       switch (category) {
@@ -10,6 +45,7 @@ const InputGroup = ({ category, require, title, color }) => {
           setResult(
             <input
               type="text"
+              required={require}
               id={`add_${category}`}
               defaultValue=""
               placeholder="본인 확인을 위해 아이디를 기입해 주세요."
@@ -20,6 +56,7 @@ const InputGroup = ({ category, require, title, color }) => {
           setResult(
             <input
               type="password"
+              required={require}
               id={`add_${category}`}
               defaultValue=""
               placeholder="비밀번호를 설정해 주세요."
@@ -30,6 +67,7 @@ const InputGroup = ({ category, require, title, color }) => {
           setResult(
             <input
               type="password"
+              required={require}
               id={`add_${category}`}
               defaultValue=""
               placeholder="비밀번호를 다시 한번 더 기입해 주세요."
@@ -39,10 +77,14 @@ const InputGroup = ({ category, require, title, color }) => {
         case "position":
           setResult(
             <ul className="input_group_ul">
-              <PositionList count={1} content="LINE ART" />
-              <PositionList count={2} content="COLOR ART" />
-              <PositionList count={3} content="SKAETCH UP" />
-              <PositionList count={4} content="BACKGROUND ART" />
+              <PositionList name="position" count={1} content="LINE ART" />
+              <PositionList name="position" count={2} content="COLOR ART" />
+              <PositionList name="position" count={3} content="SKAETCH UP" />
+              <PositionList
+                name="position"
+                count={4}
+                content="BACKGROUND ART"
+              />
             </ul>
           );
           break;
@@ -50,39 +92,48 @@ const InputGroup = ({ category, require, title, color }) => {
           setResult(
             <input
               type="text"
+              required={require}
               id={`add_${category}`}
-              defaultValue=""
+              defaultValue={applyForm.full_name}
               placeholder="이름을 기입해 주세요."
+              onChange={inputChange}
             />
           );
           break;
-        case "nickname":
-          setResult(
-            <input
-              type="text"
-              id={`add_${category}`}
-              defaultValue=""
-              placeholder="별명을 기입해 주세요."
-            />
-          );
-          break;
+        // case "nickname":
+        //   setResult(
+        //     <input
+        //       type="text"
+        //       required={require}
+        //       id={`add_${category}`}
+        //       defaultValue={applyForm.pen_name}
+        //       placeholder="별명을 기입해 주세요."
+        //       onChange={inputChange}
+        //     />
+        //   );
+        //   break;
         case "mail":
           setResult(
             <input
-              type="text"
+              type="email"
+              required={require}
               id={`add_${category}`}
-              defaultValue=""
+              defaultValue={applyForm.email}
               placeholder="예) ideacon@ideaconcert.com"
+              onChange={inputChange}
             />
           );
           break;
         case "number":
           setResult(
             <input
-              type="number"
+              type="tel"
+              pattern="[0-9]+"
+              required={require}
               id={`add_${category}`}
-              defaultValue=""
-              placeholder="+84 01-000-0000"
+              defaultValue={applyForm.phone_number}
+              placeholder={`"-"없이 입력해 주세요`}
+              onChange={inputChange}
             />
           );
           break;
@@ -90,6 +141,7 @@ const InputGroup = ({ category, require, title, color }) => {
           setResult(
             <input
               type="text"
+              required={require}
               id={`add_${category}`}
               defaultValue=""
               placeholder="SOUTH KOREA"
@@ -99,11 +151,11 @@ const InputGroup = ({ category, require, title, color }) => {
         case "genre":
           setResult(
             <ul className="input_group_ul">
-              <PositionList count={5} content="DRAMA" />
-              <PositionList count={6} content="FANTASY" />
-              <PositionList count={7} content="ACTION" />
-              <PositionList count={8} content="ROMANCE" />
-              <PositionList count={9} content="ADULT" />
+              <PositionList name="genre" count={5} content="DRAMA" />
+              <PositionList name="genre" count={6} content="FANTASY" />
+              <PositionList name="genre" count={7} content="ACTION" />
+              <PositionList name="genre" count={8} content="ROMANCE" />
+              <PositionList name="genre" count={9} content="ADULT" />
             </ul>
           );
           break;
@@ -118,6 +170,7 @@ const InputGroup = ({ category, require, title, color }) => {
           setResult(
             <input
               type="text"
+              required={require}
               id={`add_${category}`}
               defaultValue=""
               placeholder="http:// "
@@ -126,20 +179,63 @@ const InputGroup = ({ category, require, title, color }) => {
           break;
         case "file":
           setResult(
-            <input type="file" id={`add_${category}`} defaultValue="" />
+            <input
+              type="file"
+              required={require}
+              id={`add_${category}`}
+              defaultValue=""
+            />
           );
           break;
         default:
           break;
       }
     } else {
-      setResult(<div class="input_cont_box_wrap">내용 보여짐</div>);
+      switch (category) {
+        case "position":
+          setResult(
+            <div className="input_cont_box_wrap">
+              {applyForm.positions.map((v, i) =>
+                i === applyForm.positions.length - 1 ? `${v} ` : `${v}, `
+              )}
+            </div>
+          );
+          break;
+        case "name":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.full_name}</div>
+          );
+          break;
+        case "nickname":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.pen_name}</div>
+          );
+          break;
+        case "mail":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.email}</div>
+          );
+          break;
+        case "number":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.phone_number}</div>
+          );
+          break;
+        case "genre":
+          setResult(
+            <div className="input_cont_box_wrap">
+              {applyForm.genres.map((v, i) =>
+                i === applyForm.genres.length - 1 ? `${v} ` : `${v}, `
+              )}
+            </div>
+          );
+          break;
+        default:
+          setResult(<div className="input_cont_box_wrap">내용 보여짐</div>);
+          break;
+      }
     }
-
-    return () => {
-      setResult(null);
-    };
-  }, []);
+  }, [applyForm]);
 
   return (
     <>
