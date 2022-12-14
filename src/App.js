@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RecoilRoot } from "recoil";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./asset/css/common.css";
 import "./asset/css/style_kr.css";
 import "./asset/css/style.css";
 import Main from "./page/Main";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { RecoilRoot } from "recoil";
 import Apply from "./page/Apply";
 import ApplyField from "./page/ApplyField";
 import ApplyTrend from "./page/ApplyTrend";
@@ -30,10 +30,7 @@ const App = () => {
               <Route path="/applytrend" element={<ApplyTrend />} />
               <Route path="/applycomplete" element={<ApplyComplete />} />
               <Route path="/qna" element={<Qna />} />
-              <Route
-                path="/applycompletelogin"
-                element={<ApplyCompleteLogin />}
-              />
+              <Route path="/applytrendlogin" element={<ApplyCompleteLogin />} />
               <Route path="*" element={<Main />} />
             </Routes>
           </div>

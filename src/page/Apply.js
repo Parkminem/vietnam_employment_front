@@ -1,27 +1,40 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
+import axios from "axios";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
 import HeaderWrap from "../components/HeaderWrap";
 import TopTitWrap from "../components/TopTitWrap";
 import InputGroup from "../components/InputGroup";
 import InputGroupTitle from "../components/InputGroupTitle";
 import BottomBtn from "../components/BottomBtn";
 import Modal from "../components/Modal";
-import axios from "axios";
-import { useRecoilState } from "recoil";
-import { ModalStyleState, applyFormState } from "../store/atom";
+import {
+  ApplyFormState,
+  GenrePickCountState,
+  PostionPickCountState,
+} from "../store/atom";
 
 const Apply = () => {
-  const [applyForm, setApplyForm] = useRecoilState(applyFormState);
+  const [applyForm, setApplyForm] = useRecoilState(ApplyFormState);
+  const resetApplyForm = useResetRecoilState(ApplyFormState);
+  const resetGenrePickCountState = useResetRecoilState(GenrePickCountState);
+  const resetPostionPickCountState = useResetRecoilState(PostionPickCountState);
+  const navigate = useNavigate();
 
-  const checkValid = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://192.168.1.61:8000/apply/", applyForm, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => console.log(res));
-  };
+  useEffect(() => {
+    resetApplyForm();
+    resetGenrePickCountState();
+    resetPostionPickCountState();
+  }, []);
+
+  const checkValid = useCallback(
+    (e) => {
+      e.preventDefault();
+      const url = "http://127.0.0.1:8080/";
+      axios.post(url, applyForm).then((res) => navigate("/applycomplete"));
+    },
+    [applyForm]
+  );
 
   return (
     <>
@@ -57,7 +70,7 @@ const Apply = () => {
                   require={true}
                 />
                 <InputGroup category="name" title="이름" require={true} />
-                <InputGroup category="nickname" title="별명" require={true} />
+                {/* <InputGroup category="nickname" title="별명" require={true} /> */}
                 <InputGroup
                   category="mail"
                   title="이메일 주소"

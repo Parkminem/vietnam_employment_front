@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { ModalStyleState } from "../store/atom";
 
-const PageNav = ({ bgColor, route, name }) => {
+const PageNav = memo(({ bgColor, route, name }) => {
   const [modalStyle, setModalStyle] = useRecoilState(ModalStyleState);
-  const setHide = () => {
+  const setHide = useCallback(() => {
     setModalStyle("none");
-  };
+  }, []);
   return (
     <>
       <li className={bgColor}>
@@ -17,6 +17,6 @@ const PageNav = ({ bgColor, route, name }) => {
       </li>
     </>
   );
-};
+});
 
 export default PageNav;

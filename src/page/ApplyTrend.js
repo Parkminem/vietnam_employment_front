@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import HeaderWrap from "../components/HeaderWrap";
 import TopTitWrap from "../components/TopTitWrap";
 import InputGroup from "../components/InputGroup";
 import BottomBtn from "../components/BottomBtn";
+import { ApplyFormState } from "../store/atom";
 
 const Apply = () => {
+  const [applyForm, setApplyForm] = useRecoilState(ApplyFormState);
+  const navigate = useNavigate();
+  const { full_name, email } = applyForm;
+  useEffect(() => {
+    (!full_name || !email) && navigate("/applytrendlogin");
+  }, []);
   return (
     <>
       <HeaderWrap />
@@ -29,11 +38,11 @@ const Apply = () => {
                   require={true}
                   color="input_categry_black"
                 />
-                <InputGroup
+                {/* <InputGroup
                   category="nickname"
                   title="별명"
                   color="input_categry_black"
-                />
+                /> */}
                 <InputGroup
                   category="mail"
                   title="이메일 주소"

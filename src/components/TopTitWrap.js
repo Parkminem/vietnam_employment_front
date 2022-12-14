@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 const SubTxtP = styled.p`
   white-space: pre-line;
 `;
 
-const TopTitWrap = ({ title, content }) => {
+const TopTitWrap = memo(({ title, content }) => {
   return (
     <>
       <div className="top_tit_wrap">
@@ -14,6 +14,6 @@ const TopTitWrap = ({ title, content }) => {
       </div>
     </>
   );
-};
+});
 
 export default TopTitWrap;

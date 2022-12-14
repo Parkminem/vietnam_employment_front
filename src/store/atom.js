@@ -15,14 +15,19 @@ export const GenrePickCountState = atom({
   default: 0,
 });
 
-export const applyFormState = atom({
+export const ApplyFormState = atom({
   key: "applyFormState",
   default: {
-    fullname: "",
-    pen_name: "",
+    full_name: "",
+    // pen_name: "",
     phone_number: "",
     email: "",
     positions: [],
     genres: [],
   },
+});
+
+export const CategoryIndexState = atom({
+  key: "CategoryIndexState",
+  default: 0,
 });

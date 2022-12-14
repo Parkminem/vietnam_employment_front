@@ -1,12 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import produce from "immer";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import PositionList from "./PositionList";
-import { useRecoilState } from "recoil";
-import { applyFormState } from "../store/atom";
+import { ApplyFormState } from "../store/atom";
 
 const InputGroup = ({ category, require, title, color }) => {
   const [result, setResult] = useState();
-  const [applyForm, setApplyForm] = useRecoilState(applyFormState);
+  const [applyForm, setApplyForm] = useRecoilState(ApplyFormState);
+
+  const inputChange = useCallback(
+    (e) => {
+      let where;
+      switch (category) {
+        case "name":
+          where = "full_name";
+          break;
+        // case "nickname":
+        //   where = "pen_name";
+        //   break;
+        case "mail":
+          where = "email";
+          break;
+        case "number":
+          where = "phone_number";
+          break;
+        default:
+          where = null;
+          break;
+      }
+      where &&
+        setApplyForm(
+          produce(applyForm, (draft) => {
+            draft[where] = e.target.value;
+          })
+        );
+    },
+    [applyForm]
+  );
 
   useEffect(() => {
     if (color !== "input_categry_black") {
@@ -47,26 +77,10 @@ const InputGroup = ({ category, require, title, color }) => {
         case "position":
           setResult(
             <ul className="input_group_ul">
+              <PositionList name="position" count={1} content="LINE ART" />
+              <PositionList name="position" count={2} content="COLOR ART" />
+              <PositionList name="position" count={3} content="SKAETCH UP" />
               <PositionList
-                require={require}
-                name="position"
-                count={1}
-                content="LINE ART"
-              />
-              <PositionList
-                require={require}
-                name="position"
-                count={2}
-                content="COLOR ART"
-              />
-              <PositionList
-                require={require}
-                name="position"
-                count={3}
-                content="SKAETCH UP"
-              />
-              <PositionList
-                require={require}
                 name="position"
                 count={4}
                 content="BACKGROUND ART"
@@ -80,36 +94,24 @@ const InputGroup = ({ category, require, title, color }) => {
               type="text"
               required={require}
               id={`add_${category}`}
-              defaultValue={applyForm.fullname}
+              defaultValue={applyForm.full_name}
               placeholder="이름을 기입해 주세요."
-              onChange={(e) =>
-                setApplyForm(
-                  produce(applyForm, (draft) => {
-                    draft.fullname = e.target.value;
-                  })
-                )
-              }
+              onChange={inputChange}
             />
           );
           break;
-        case "nickname":
-          setResult(
-            <input
-              type="text"
-              required={require}
-              id={`add_${category}`}
-              defaultValue={applyForm.pen_name}
-              placeholder="별명을 기입해 주세요."
-              onChange={(e) =>
-                setApplyForm(
-                  produce(applyForm, (draft) => {
-                    draft.pen_name = e.target.value;
-                  })
-                )
-              }
-            />
-          );
-          break;
+        // case "nickname":
+        //   setResult(
+        //     <input
+        //       type="text"
+        //       required={require}
+        //       id={`add_${category}`}
+        //       defaultValue={applyForm.pen_name}
+        //       placeholder="별명을 기입해 주세요."
+        //       onChange={inputChange}
+        //     />
+        //   );
+        //   break;
         case "mail":
           setResult(
             <input
@@ -118,13 +120,7 @@ const InputGroup = ({ category, require, title, color }) => {
               id={`add_${category}`}
               defaultValue={applyForm.email}
               placeholder="예) ideacon@ideaconcert.com"
-              onChange={(e) =>
-                setApplyForm(
-                  produce(applyForm, (draft) => {
-                    draft.email = e.target.value;
-                  })
-                )
-              }
+              onChange={inputChange}
             />
           );
           break;
@@ -137,13 +133,7 @@ const InputGroup = ({ category, require, title, color }) => {
               id={`add_${category}`}
               defaultValue={applyForm.phone_number}
               placeholder={`"-"없이 입력해 주세요`}
-              onChange={(e) =>
-                setApplyForm(
-                  produce(applyForm, (draft) => {
-                    draft.phone_number = e.target.value;
-                  })
-                )
-              }
+              onChange={inputChange}
             />
           );
           break;
@@ -161,36 +151,11 @@ const InputGroup = ({ category, require, title, color }) => {
         case "genre":
           setResult(
             <ul className="input_group_ul">
-              <PositionList
-                name="genre"
-                require={require}
-                count={5}
-                content="DRAMA"
-              />
-              <PositionList
-                name="genre"
-                require={require}
-                count={6}
-                content="FANTASY"
-              />
-              <PositionList
-                name="genre"
-                require={require}
-                count={7}
-                content="ACTION"
-              />
-              <PositionList
-                name="genre"
-                require={require}
-                count={8}
-                content="ROMANCE"
-              />
-              <PositionList
-                name="genre"
-                require={require}
-                count={9}
-                content="ADULT"
-              />
+              <PositionList name="genre" count={5} content="DRAMA" />
+              <PositionList name="genre" count={6} content="FANTASY" />
+              <PositionList name="genre" count={7} content="ACTION" />
+              <PositionList name="genre" count={8} content="ROMANCE" />
+              <PositionList name="genre" count={9} content="ADULT" />
             </ul>
           );
           break;
@@ -230,13 +195,15 @@ const InputGroup = ({ category, require, title, color }) => {
         case "position":
           setResult(
             <div className="input_cont_box_wrap">
-              {applyForm.positions.length}
+              {applyForm.positions.map((v, i) =>
+                i === applyForm.positions.length - 1 ? `${v} ` : `${v}, `
+              )}
             </div>
           );
           break;
         case "name":
           setResult(
-            <div className="input_cont_box_wrap">{applyForm.fullname}</div>
+            <div className="input_cont_box_wrap">{applyForm.full_name}</div>
           );
           break;
         case "nickname":
@@ -256,7 +223,11 @@ const InputGroup = ({ category, require, title, color }) => {
           break;
         case "genre":
           setResult(
-            <div className="input_cont_box_wrap">{applyForm.genres.length}</div>
+            <div className="input_cont_box_wrap">
+              {applyForm.genres.map((v, i) =>
+                i === applyForm.genres.length - 1 ? `${v} ` : `${v}, `
+              )}
+            </div>
           );
           break;
         default:
@@ -264,11 +235,7 @@ const InputGroup = ({ category, require, title, color }) => {
           break;
       }
     }
-
-    return () => {
-      setResult(null);
-    };
-  }, []);
+  }, [applyForm]);
 
   return (
     <>

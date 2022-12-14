@@ -1,18 +1,17 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import PageNav from "./PageNav";
-import Apply from "../page/Apply";
 
-const HeaderWrap = () => {
+const HeaderWrap = memo(() => {
   return (
     <>
       <div className="header_wrap">
         <div className="header_con_area">
           <ul className="logo_wrap">
             <li>
-              <a href="PL-01-01_메인.html">
+              <Link to="/">
                 <img src="images/layout/space_logo.png" alt="스페이스 로고" />
-              </a>
+              </Link>
             </li>
             <li className="ideacon_logo">
               <a href="http://ideaconcert.com/" target="_blank">
@@ -47,6 +46,6 @@ const HeaderWrap = () => {
       </div>
     </>
   );
-};
+});
 
 export default HeaderWrap;

@@ -1,20 +1,22 @@
-import React, { useCallback } from "react";
+import React, { useCallback, memo } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { ModalStyleState, applyFormState } from "../store/atom";
+import { ModalStyleState } from "../store/atom";
 
-const BottomBtn = ({ route, style, content }) => {
+const BottomBtn = memo(({ route, style, content }) => {
   const [modalStyle, setModalStyle] = useRecoilState(ModalStyleState);
-  const [applyForm, setApplyForm] = useRecoilState(applyFormState);
 
-  const isCancel = (e) => {
-    if (e.target.text === `취소`) {
-      modalStyle === "none" && setModalStyle("flex");
-      modalStyle === "flex" && setModalStyle("none");
-    } else {
-      setModalStyle("none");
-    }
-  };
+  const isCancel = useCallback(
+    (e) => {
+      if (e.target.text === `취소`) {
+        modalStyle === "none" && setModalStyle("flex");
+        modalStyle === "flex" && setModalStyle("none");
+      } else {
+        setModalStyle("none");
+      }
+    },
+    [modalStyle]
+  );
 
   if (content === "확인") {
     return (
@@ -32,6 +34,6 @@ const BottomBtn = ({ route, style, content }) => {
         </Link>
       </>
     );
-};
+});
 
 export default BottomBtn;

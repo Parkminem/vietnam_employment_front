@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
-import BottomBtn from "./BottomBtn";
+import React from "react";
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
+import BottomBtn from "./BottomBtn";
 import { ModalStyleState } from "../store/atom";
 
 const ModalWrap = styled.div`
-  display: ${(props) => props.display};
+  display: ${({ display }) => display};
 `;
 
 const Modal = () => {
@@ -21,12 +21,8 @@ const Modal = () => {
             그래도 취소하시겠습니까?
           </p>
           <div className="btn_wrap">
-            <BottomBtn style="btn_line" content="취소" />
-            <BottomBtn
-              route="/applycomplete"
-              style="btn_color_bg"
-              content="제출 하기"
-            />
+            <BottomBtn style="btn_line" route="/" content="취소" />
+            <BottomBtn style="btn_color_bg" content="계속 하기" />
           </div>
         </div>
       </div>
