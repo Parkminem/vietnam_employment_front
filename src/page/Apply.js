@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import axios from "axios";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +19,7 @@ const Apply = () => {
   const resetApplyForm = useResetRecoilState(ApplyFormState);
   const resetGenrePickCountState = useResetRecoilState(GenrePickCountState);
   const resetPostionPickCountState = useResetRecoilState(PostionPickCountState);
+  const [fileData, setFileData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,10 +31,18 @@ const Apply = () => {
   const checkValid = useCallback(
     (e) => {
       e.preventDefault();
-      const url = "http://127.0.0.1:8080/";
-      axios.post(url, applyForm).then((res) => navigate("/applycomplete"));
+      const formData = new FormData();
+      for (let i in applyForm) {
+        formData.append(i, applyForm[i]);
+      }
+      formData.append("files", fileData);
+      for (let i of formData.entries()) {
+        console.log(i);
+      }
+      // const url = "192.168.1.61:8000/apply";
+      // axios.post(url, formData).then((res) => navigate("/applycomplete"));
     },
-    [applyForm]
+    [applyForm, fileData]
   );
 
   return (
@@ -48,16 +57,6 @@ const Apply = () => {
           />
           <div className="sub_cont_area">
             <form onSubmit={checkValid}>
-              {/* <div className="input_set_wrap">
-                <InputGroupTitle
-                  step={1}
-                  content="지원 현황 조회를 위해 아이디와 비밀번호를
-                  설정해 주세요."
-                />
-                <InputGroup category="id" title="아이디" />
-                <InputGroup category="password" title="비밀번호" />
-                <InputGroup category="password2" title="비밀번호 확인" />
-              </div> */}
               <div className="input_set_wrap">
                 <InputGroupTitle
                   step={1}
@@ -70,7 +69,7 @@ const Apply = () => {
                   require={true}
                 />
                 <InputGroup category="name" title="이름" require={true} />
-                {/* <InputGroup category="nickname" title="별명" require={true} /> */}
+                <InputGroup category="nickname" title="필명" require={true} />
                 <InputGroup
                   category="mail"
                   title="이메일 주소"
@@ -91,6 +90,7 @@ const Apply = () => {
                 <InputGroup
                   category="file"
                   title="파일 업로드"
+                  setFileData={setFileData}
                   // require={true}
                 />
               </div>
@@ -127,18 +127,6 @@ const Apply = () => {
                   style="btn_color_bg"
                   content="확인"
                 />
-                {/* <a
-                  href="PL-03-02_지원취소하기.html"
-                  className="btn_basic btn_line"
-                >
-                  취소
-                </a>
-                <a
-                  href="PL-03-03_지원하기완료.html"
-                  className="btn_basic btn_color_bg"
-                >
-                  확인
-                </a> */}
               </div>
             </form>
           </div>

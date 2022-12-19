@@ -1,5 +1,5 @@
-import React from "react";
-import { useRecoilState } from "recoil";
+import React, { useEffect } from "react";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import ApplyFieldPosition from "../components/ApplyFieldPosition";
 import HeaderWrap from "../components/HeaderWrap";
 import TopTitWrap from "../components/TopTitWrap";
@@ -64,7 +64,10 @@ const positionsArray = [
 
 const Apply = () => {
   const [positionId, setPositionId] = useRecoilState(CategoryIndexState);
-
+  const resetPositionId = useResetRecoilState(CategoryIndexState);
+  useEffect(() => {
+    return resetPositionId;
+  }, []);
   return (
     <>
       <HeaderWrap />

@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import produce from "immer";
 import {
   PostionPickCountState,
