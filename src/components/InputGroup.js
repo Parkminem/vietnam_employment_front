@@ -1,17 +1,22 @@
 import React, { useState, useEffect, useCallback } from "react";
 import produce from "immer";
 import { useRecoilState } from "recoil";
-import PositionList from "./PositionList";
 import { ApplyFormState } from "../store/atom";
+import PositionList from "./PositionList";
 
-const InputGroup = ({ category, require, title, color, setFileData }) => {
+const InputGroup = ({ category, require, title, color }) => {
   const [result, setResult] = useState();
   const [applyForm, setApplyForm] = useRecoilState(ApplyFormState);
 
   const inputChange = useCallback(
     (e) => {
       let where = null;
-      e.target.files?.[0] && setFileData(e.target.files[0]);
+      e.target.files?.[0] &&
+        setApplyForm(
+          produce(applyForm, (draft) => {
+            draft.files = e.target.files[0];
+          })
+        );
       switch (category) {
         case "name":
           where = "full_name";
@@ -55,7 +60,7 @@ const InputGroup = ({ category, require, title, color, setFileData }) => {
             <ul className="input_group_ul">
               <PositionList name="position" count={1} content="LINE ART" />
               <PositionList name="position" count={2} content="COLOR ART" />
-              <PositionList name="position" count={3} content="SKAETCH UP" />
+              <PositionList name="position" count={3} content="SKETCH UP" />
               <PositionList
                 name="position"
                 count={4}
@@ -177,9 +182,20 @@ const InputGroup = ({ category, require, title, color, setFileData }) => {
         case "position":
           setResult(
             <div className="input_cont_box_wrap">
-              {applyForm.positions.map((v, i) =>
+              {/* {applyForm.positions.map((v, i) =>
                 i === applyForm.positions.length - 1 ? `${v} ` : `${v}, `
-              )}
+              )} */}
+              {applyForm.positions}
+            </div>
+          );
+          break;
+        case "genre":
+          setResult(
+            <div className="input_cont_box_wrap">
+              {/* {applyForm.genres.map((v, i) =>
+                i === applyForm.genres.length - 1 ? `${v} ` : `${v}, `
+              )} */}
+              {applyForm.genres}
             </div>
           );
           break;
@@ -203,15 +219,29 @@ const InputGroup = ({ category, require, title, color, setFileData }) => {
             <div className="input_cont_box_wrap">{applyForm.phone_number}</div>
           );
           break;
-        case "genre":
+        case "country":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.region}</div>
+          );
+          break;
+        case "intro":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.about}</div>
+          );
+          break;
+        case "portfolio_url":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.portfolio}</div>
+          );
+          break;
+        case "file":
           setResult(
             <div className="input_cont_box_wrap">
-              {applyForm.genres.map((v, i) =>
-                i === applyForm.genres.length - 1 ? `${v} ` : `${v}, `
-              )}
+              {applyForm.files.name ?? applyForm.files.split("/")[1]}
             </div>
           );
           break;
+
         default:
           setResult(<div className="input_cont_box_wrap">내용 보여짐</div>);
           break;

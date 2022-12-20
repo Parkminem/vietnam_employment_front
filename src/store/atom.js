@@ -32,5 +32,6 @@ export const ApplyFormState = atom({
     genres: [],
     about: "",
     portfolio: "",
+    files: null,
   },
 });

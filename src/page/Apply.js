@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useEffect, useCallback } from "react";
 import axios from "axios";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,6 @@ const Apply = () => {
   const resetApplyForm = useResetRecoilState(ApplyFormState);
   const resetGenrePickCountState = useResetRecoilState(GenrePickCountState);
   const resetPostionPickCountState = useResetRecoilState(PostionPickCountState);
-  const [fileData, setFileData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,14 +34,25 @@ const Apply = () => {
       for (let i in applyForm) {
         formData.append(i, applyForm[i]);
       }
-      formData.append("files", fileData);
-      for (let i of formData.entries()) {
-        console.log(i);
-      }
-      // const url = "192.168.1.61:8000/apply";
-      // axios.post(url, formData).then((res) => navigate("/applycomplete"));
+      // for (let i of formData.entries()) {
+      //   console.log(i);
+      // }
+      const url = "http://192.168.1.17:8000/apply/";
+      axios
+        .post(url, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((res) => {
+          // console.log(res);
+          res.status === 201 && navigate("/applycomplete");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
-    [applyForm, fileData]
+    [applyForm]
   );
 
   return (
@@ -90,7 +100,6 @@ const Apply = () => {
                 <InputGroup
                   category="file"
                   title="파일 업로드"
-                  setFileData={setFileData}
                   // require={true}
                 />
               </div>
