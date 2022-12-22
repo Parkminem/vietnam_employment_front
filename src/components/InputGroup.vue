@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
   category: String,
-  req: Boolean,
+  required: Boolean,
   title: String,
   color: String,
 });
@@ -9,9 +9,9 @@ defineProps({
 
 <template>
   <div class="input_group">
-    <div :class="[`input_categry ${color && color}`]">
-      <label :for="[`add_${category}`]">
-        {{ req && `*` }}
+    <div :class="`input_categry ${color && color}`">
+      <label :for="`add_${category}`">
+        {{ required && `*` }}
         {{ title }}
       </label>
     </div>

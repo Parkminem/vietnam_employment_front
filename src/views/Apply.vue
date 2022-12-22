@@ -5,19 +5,16 @@ import InputGroupTitle from "../components/InputGroupTitle.vue";
 import InputGroup from "../components/InputGroup.vue";
 import BottomBtn from "../components/BottomBtn.vue";
 </script>
-
 <template>
   <HeaderWrap />
   <div class="sub_wrap">
     <div class="sub_cont_wrap">
       <TopTitWrap
         title="지원 하기"
-        content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수
-              있도록 함께 해주세요."
+        content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
       />
       <div class="sub_cont_area">
         <form>
-          <!-- submit이벤트 추가 에정 -->
           <div class="input_set_wrap">
             <InputGroupTitle
               :step="1"
@@ -26,17 +23,17 @@ import BottomBtn from "../components/BottomBtn.vue";
             <InputGroup
               category="position"
               title="포지션(중복가능)"
-              :req="true"
+              :require="true"
             />
-            <InputGroup category="name" title="이름" :req="true" />
-            <InputGroup category="nickname" title="필명" :req="true" />
-            <InputGroup category="mail" title="이메일 주소" :req="true" />
-            <InputGroup category="number" title="연락처" :req="true" />
+            <InputGroup category="name" title="이름" :require="true" />
+            <InputGroup category="nickname" title="필명" :require="true" />
+            <InputGroup category="mail" title="이메일 주소" :require="true" />
+            <InputGroup category="number" title="연락처" :require="true" />
             <InputGroup category="country" title="거주 국가" />
             <InputGroup
               category="genre"
               title="선호 장르(중복가능)"
-              :req="true"
+              :require="true"
             />
             <InputGroup category="intro" title="자기 소개" />
             <InputGroup category="portfolio_url" title="포트폴리오 사이트" />
@@ -51,7 +48,7 @@ import BottomBtn from "../components/BottomBtn.vue";
                 </li>
                 <li>
                   포트폴리오는 jpg 또는 png 파일, pdf파일로 한 폴더에 압축하여
-                  첨부해 주세요. 최대 용량은 100mb이내입니다.{" "}
+                  첨부해 주세요. 최대 용량은 100mb이내입니다.
                 </li>
               </ul>
             </div>
@@ -63,15 +60,15 @@ import BottomBtn from "../components/BottomBtn.vue";
               id="agree_check"
               required
             />
-            <label htmlFor="agree_check">
+            <label for="agree_check">
               <span>위 개인 정보수집 · 이용에 동의합니다.</span>
             </label>
           </div>
           <div class="btn_wrap">
-            <BottomBtn style="btn_line" content="취소" />
+            <BottomBtn route="/" color="btn_line" content="취소" />
             <BottomBtn
               route="/applycomplete"
-              style="btn_color_bg"
+              color="btn_color_bg"
               content="확인"
             />
           </div>
