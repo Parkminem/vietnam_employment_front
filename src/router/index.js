@@ -7,7 +7,7 @@ import Apply from "../views/Apply.vue";
 import Main from "../views/Main.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
@@ -30,12 +30,12 @@ const router = createRouter({
       component: ApplyTrendLogin,
     },
     {
-      path: "/:pathMatch(.*)*",
-      component: Main,
+      path: "/apply",
+      component: () => import("../views/Apply.vue"),
     },
     {
-      path: "/apply",
-      component: Apply,
+      path: "/:pathMatch(.*)*",
+      component: Main,
     },
   ],
   scrollBehavior() {
