@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import produce from "immer";
-import { useRecoilState, useResetRecoilState } from "recoil";
-import PositionList from "./PositionList";
+import { useRecoilState } from "recoil";
 import { ApplyFormState } from "../store/atom";
+import PositionList from "./PositionList";
 
 const InputGroup = ({ category, require, title, color }) => {
   const [result, setResult] = useState();
@@ -10,22 +10,36 @@ const InputGroup = ({ category, require, title, color }) => {
 
   const inputChange = useCallback(
     (e) => {
-      let where;
+      let where = null;
+      e.target.files?.[0] &&
+        setApplyForm(
+          produce(applyForm, (draft) => {
+            draft.files = e.target.files[0];
+          })
+        );
       switch (category) {
         case "name":
           where = "full_name";
           break;
-        // case "nickname":
-        //   where = "pen_name";
-        //   break;
+        case "nickname":
+          where = "pen_name";
+          break;
         case "mail":
           where = "email";
           break;
         case "number":
           where = "phone_number";
           break;
+        case "country":
+          where = "region";
+          break;
+        case "intro":
+          where = "about";
+          break;
+        case "portfolio_url":
+          where = "portfolio";
+          break;
         default:
-          where = null;
           break;
       }
       where &&
@@ -41,45 +55,12 @@ const InputGroup = ({ category, require, title, color }) => {
   useEffect(() => {
     if (color !== "input_categry_black") {
       switch (category) {
-        case "id":
-          setResult(
-            <input
-              type="text"
-              required={require}
-              id={`add_${category}`}
-              defaultValue=""
-              placeholder="본인 확인을 위해 아이디를 기입해 주세요."
-            />
-          );
-          break;
-        case "password":
-          setResult(
-            <input
-              type="password"
-              required={require}
-              id={`add_${category}`}
-              defaultValue=""
-              placeholder="비밀번호를 설정해 주세요."
-            />
-          );
-          break;
-        case "password2":
-          setResult(
-            <input
-              type="password"
-              required={require}
-              id={`add_${category}`}
-              defaultValue=""
-              placeholder="비밀번호를 다시 한번 더 기입해 주세요."
-            />
-          );
-          break;
         case "position":
           setResult(
             <ul className="input_group_ul">
               <PositionList name="position" count={1} content="LINE ART" />
               <PositionList name="position" count={2} content="COLOR ART" />
-              <PositionList name="position" count={3} content="SKAETCH UP" />
+              <PositionList name="position" count={3} content="SKETCH UP" />
               <PositionList
                 name="position"
                 count={4}
@@ -100,18 +81,18 @@ const InputGroup = ({ category, require, title, color }) => {
             />
           );
           break;
-        // case "nickname":
-        //   setResult(
-        //     <input
-        //       type="text"
-        //       required={require}
-        //       id={`add_${category}`}
-        //       defaultValue={applyForm.pen_name}
-        //       placeholder="별명을 기입해 주세요."
-        //       onChange={inputChange}
-        //     />
-        //   );
-        //   break;
+        case "nickname":
+          setResult(
+            <input
+              type="text"
+              required={require}
+              id={`add_${category}`}
+              defaultValue={applyForm.pen_name}
+              placeholder="필명을 기입해 주세요."
+              onChange={inputChange}
+            />
+          );
+          break;
         case "mail":
           setResult(
             <input
@@ -132,7 +113,7 @@ const InputGroup = ({ category, require, title, color }) => {
               required={require}
               id={`add_${category}`}
               defaultValue={applyForm.phone_number}
-              placeholder={`"-"없이 입력해 주세요`}
+              placeholder={`" - "없이 입력해 주세요`}
               onChange={inputChange}
             />
           );
@@ -143,8 +124,9 @@ const InputGroup = ({ category, require, title, color }) => {
               type="text"
               required={require}
               id={`add_${category}`}
-              defaultValue=""
+              defaultValue={applyForm.region}
               placeholder="SOUTH KOREA"
+              onChange={inputChange}
             />
           );
           break;
@@ -162,7 +144,10 @@ const InputGroup = ({ category, require, title, color }) => {
         case "intro":
           setResult(
             <div className="intro_txtarea">
-              <textarea></textarea>
+              <textarea
+                defaultValue={applyForm.about}
+                onChange={inputChange}
+              ></textarea>
             </div>
           );
           break;
@@ -172,8 +157,9 @@ const InputGroup = ({ category, require, title, color }) => {
               type="text"
               required={require}
               id={`add_${category}`}
-              defaultValue=""
+              defaultValue={applyForm.portfolio}
               placeholder="http:// "
+              onChange={inputChange}
             />
           );
           break;
@@ -184,6 +170,7 @@ const InputGroup = ({ category, require, title, color }) => {
               required={require}
               id={`add_${category}`}
               defaultValue=""
+              onChange={inputChange}
             />
           );
           break;
@@ -195,9 +182,20 @@ const InputGroup = ({ category, require, title, color }) => {
         case "position":
           setResult(
             <div className="input_cont_box_wrap">
-              {applyForm.positions.map((v, i) =>
+              {/* {applyForm.positions.map((v, i) =>
                 i === applyForm.positions.length - 1 ? `${v} ` : `${v}, `
-              )}
+              )} */}
+              {applyForm.positions}
+            </div>
+          );
+          break;
+        case "genre":
+          setResult(
+            <div className="input_cont_box_wrap">
+              {/* {applyForm.genres.map((v, i) =>
+                i === applyForm.genres.length - 1 ? `${v} ` : `${v}, `
+              )} */}
+              {applyForm.genres}
             </div>
           );
           break;
@@ -221,15 +219,29 @@ const InputGroup = ({ category, require, title, color }) => {
             <div className="input_cont_box_wrap">{applyForm.phone_number}</div>
           );
           break;
-        case "genre":
+        case "country":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.region}</div>
+          );
+          break;
+        case "intro":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.about}</div>
+          );
+          break;
+        case "portfolio_url":
+          setResult(
+            <div className="input_cont_box_wrap">{applyForm.portfolio}</div>
+          );
+          break;
+        case "file":
           setResult(
             <div className="input_cont_box_wrap">
-              {applyForm.genres.map((v, i) =>
-                i === applyForm.genres.length - 1 ? `${v} ` : `${v}, `
-              )}
+              {applyForm.files.name ?? applyForm.files.split("/")[1]}
             </div>
           );
           break;
+
         default:
           setResult(<div className="input_cont_box_wrap">내용 보여짐</div>);
           break;

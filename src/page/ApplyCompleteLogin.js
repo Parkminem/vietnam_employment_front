@@ -1,20 +1,49 @@
 import React, { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import produce from "immer";
 import BottomBtn from "../components/BottomBtn";
 import HeaderWrap from "../components/HeaderWrap";
 import TopTitWrap from "../components/TopTitWrap";
+import { useRecoilState } from "recoil";
+import { ApplyFormState } from "../store/atom";
 
 const ApplyCompleteLogin = () => {
+  const [applyForm, setApplyForm] = useRecoilState(ApplyFormState);
   const [email, setEmail] = useState();
   const [name, setName] = useState();
+  const navigate = useNavigate();
 
   const userAuthenticate = useCallback(
     (e) => {
       e.preventDefault();
-      const url = "http://127.0.0.1:8080/login";
+      const url = "http://192.168.1.17:8000/find/";
       axios
-        .post(url, { email: email, name, name })
-        .then((res) => console.log(res));
+        .post(
+          url,
+          {
+            email: email,
+            full_name: name,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((res) => {
+          setApplyForm(
+            produce(applyForm, (draft) => {
+              for (let i in res.data) {
+                const where = i;
+                // console.log(where, typeof draft[where]);
+                draft[where] = res.data[i];
+              }
+            })
+          );
+          navigate("/applytrend");
+        })
+        .catch((err) => console.log(err));
     },
     [email, name]
   );
