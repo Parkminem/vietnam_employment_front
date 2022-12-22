@@ -3,7 +3,7 @@ defineProps({
   processImgSrc: String,
   processImgAlt: String,
   iconImgSrc: String,
-  iconImgAlt: String,
+  index: Number,
   content: String,
 });
 </script>
@@ -13,8 +13,8 @@ defineProps({
       <img :src="[processImgSrc]" :alt="[processImgAlt]" />
     </div>
     <div class="icon_run_img">
-      <img :src="[iconImgSrc]" :alt="[iconImgAlt]" />
+      <img :src="[iconImgSrc]" alt="아콘이 사진" />
     </div>
-    <span>{{ content }}</span>
+    <span>{{ index }}. {{ content }}</span>
   </li>
 </template>
