@@ -6,8 +6,7 @@ const props = defineProps({
 });
 </script>
 <template>
-  <li ref="" :class="[props.color]">
+  <li ref="" :class="props.color">
     <router-link :to="route">{{ props.content }}</router-link>
   </li>
 </template>
-<style scoped></style>

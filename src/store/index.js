@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
-export const changeCategoryIndex = "changeCategoryIndex";
 
+export const changeCategoryIndex = "changeCategoryIndex";
 const store = createStore({
   state() {
     return {

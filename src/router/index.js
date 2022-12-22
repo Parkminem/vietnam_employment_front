@@ -3,6 +3,7 @@ import Main from "../components/Main.vue";
 import ApplyField from "../views/ApplyField.vue";
 import QnA from "../views/QnA.vue";
 import ApplyComplete from "../views/ApplyComplete.vue";
+import ApplyTrendLogin from "../views/ApplyTrendLogin.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,6 +23,10 @@ const router = createRouter({
     {
       path: "/applycomplete",
       component: ApplyComplete,
+    },
+    {
+      path: "/applytrendlogin",
+      component: ApplyTrendLogin,
     },
     {
       path: "/:pathMatch(.*)*",

@@ -3,7 +3,7 @@ import { useStore } from "vuex";
 import { changeCategoryIndex } from "../store";
 const store = useStore();
 const props = defineProps({
-  active: Object,
+  active: Boolean,
   content: String,
   index: Number,
 });
@@ -12,7 +12,7 @@ const changeCategory = () => {
 };
 </script>
 <template>
-  <li @click="changeCategory" :class="[props.active[0] && 'active']">
+  <li @click="changeCategory" :class="props.active && 'active'">
     <a>{{ props.content }}</a>
   </li>
 </template>

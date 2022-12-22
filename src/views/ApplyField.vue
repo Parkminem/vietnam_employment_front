@@ -24,31 +24,31 @@ onBeforeUnmount(() => store.commit(changeCategoryIndex, 1));
           <div class="process_box">
             <ul>
               <ProcessList
+                :index="1"
                 process-img-src="images/img/process01.png"
                 process-img-alt="작업공정 첫번째 사진"
                 icon-img-src="images/img/acon_face.png"
-                :index="1"
                 content="그림 콘티 (제공)"
               />
               <ProcessList
+                :index="2"
                 process-img-src="images/img/process02.png"
                 process-img-alt="작업공정 두번째 사진"
                 icon-img-src="images/img/acon_left.png"
-                :index="2"
                 content="데생 콘티"
               />
               <ProcessList
+                :index="3"
                 process-img-src="images/img/process03.png"
                 process-img-alt="작업공정 세번째 사진"
                 icon-img-src="images/img/acon_walk.png"
-                :index="3"
                 content="선화"
               />
               <ProcessList
+                :index="4"
                 process-img-src="images/img/process04.png"
                 process-img-alt="작업공정 네번째 사진"
                 icon-img-src="images/img/acon_final.png"
-                :index="4"
                 content="채색 및 보정"
               />
             </ul>
@@ -66,9 +66,8 @@ onBeforeUnmount(() => store.commit(changeCategoryIndex, 1));
           <h3>모집중인 포지션</h3>
           <p>데생콘티와 선화 채색및 보정이 가능한 자는 지원해 주세요.</p>
         </div>
-        <ApplyFieldPosition :index="1" />
+        <ApplyFieldPosition />
       </div>
     </div>
   </div>
 </template>
-<style scoped></style>

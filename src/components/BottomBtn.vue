@@ -6,7 +6,7 @@ defineProps({
 });
 </script>
 <template>
-  <router-link :to="route" :class="[`btn_basic ${color}`]">{{
+  <router-link :to="route" :class="`btn_basic ${color}`">{{
     content
   }}</router-link>
 </template>

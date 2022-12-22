@@ -10,4 +10,3 @@ defineProps({
     <p class="sub_txt" v-html="content"></p>
   </div>
 </template>
-<style></style>
