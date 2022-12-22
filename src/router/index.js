@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import ApplyField from "../views/ApplyField.vue";
 import Main from "../views/Main.vue";
 
 const router = createRouter({
@@ -7,6 +8,10 @@ const router = createRouter({
     {
       path: "/",
       component: Main,
+    },
+    {
+      path: "/applyfield",
+      component: ApplyField,
     },
   ],
 });

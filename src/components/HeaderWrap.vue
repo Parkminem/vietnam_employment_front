@@ -1,24 +1,26 @@
+<script setup>
+import QuickMenuList from "./QuickMenuList.vue";
+</script>
 <template>
   <div class="header_wrap">
     <div class="header_con_area">
       <ul class="logo_wrap">
         <li>
-          <RouterLink to="/">
-            <img src="/images/layout/space_logo.png" alt="스페이스 로고" />
-          </RouterLink>
+          <router-link to="/">
+            <img src="images/layout/space_logo.png" alt="스페이스 로고" />
+          </router-link>
         </li>
         <li class="ideacon_logo">
-          <a href="http://ideaconcert.com/" target="_blank">
-            <img
-              src="/images/layout/ideacon_logo.png"
+          <a href="http://ideaconcert.com/" target="_blank"
+            ><img
+              src="images/layout/ideacon_logo.png"
               alt="아이디어콘서트 로고"
-            />
-          </a>
+          /></a>
         </li>
       </ul>
       <div class="txt_wrap">
         <div class="txt_img">
-          <img src="/images/img/idea-space.png" alt="스페이스 문구" />
+          <img src="images/img/idea-space.png" alt="스페이스 문구" />
         </div>
         <h2 class="font_current"><span>HELLO,</span>WEBTOONIST</h2>
         <p>
@@ -30,21 +32,10 @@
   </div>
   <div data-aos="flip-left" data-aos-duration="700" class="menu_wrap">
     <ul class="right_menu">
-      <PageNav bgColor="bg_yellow" route="/applyfield" name="지원 분야" />
-      <PageNav bgColor="bg_blue" route="/apply" name="지원 하기" />
-      <PageNav bgColor="bg_blue" route="/applytrend" name="지원 현황" />
-      <PageNav bgColor="bg_darkgrey" route="/qna" name="QnA" />
+      <QuickMenuList color="bg_yellow" content="지원 분야" />
+      <QuickMenuList color="bg_blue" content="지원 하기" />
+      <QuickMenuList color="bg_blue" content="지원 현황" />
+      <QuickMenuList color="bg_darkgrey" content="QnA" />
     </ul>
   </div>
 </template>
-
-<script>
-import { RouterLink } from "vue-router";
-import PageNav from "./PageNav.vue";
-
-export default {
-  components: {
-    PageNav,
-  },
-};
-</script>
