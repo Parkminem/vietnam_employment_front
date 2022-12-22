@@ -3,13 +3,12 @@ import { useStore } from "vuex";
 import { changeCategoryIndex } from "../store";
 const store = useStore();
 const props = defineProps({
-  active: Boolean,
+  active: Object,
   content: String,
   index: Number,
 });
 const changeCategory = () => {
   store.commit(changeCategoryIndex, props.index);
-  // store.state.categoryIndex = props.index;
 };
 </script>
 <template>

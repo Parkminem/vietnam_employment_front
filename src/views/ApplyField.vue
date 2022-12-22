@@ -1,8 +1,13 @@
 <script setup>
+import { onBeforeUnmount } from "vue";
+import { useStore } from "vuex";
+import { changeCategoryIndex } from "../store";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import ProcessList from "../components/ProcessList.vue";
 import ApplyFieldPosition from "../components/ApplyFieldPosition.vue";
+const store = useStore();
+onBeforeUnmount(() => store.commit(changeCategoryIndex, 1));
 </script>
 <template>
   <HeaderWrap />

@@ -13,14 +13,14 @@ const changeDisplay = () => {
 </script>
 <template>
   <div ref="boxRef" class="qna_box_wrap hide">
-    <div class="question_wrap">
+    <div class="question_wrap" @click="changeDisplay">
       <div class="question_txt_area">
         <span>Q.</span>
         <p>
           {{ question }}
         </p>
       </div>
-      <button type="button" @click="changeDisplay">
+      <button type="button">
         <span class="material-icons">expand_more</span>
       </button>
     </div>
