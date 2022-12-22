@@ -76,13 +76,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import HeaderWrap from "../components/HeaderWrap.vue";
 import MainContWrap from "../components/MainContWrap.vue";
-export default {
-  components: {
-    HeaderWrap,
-    MainContWrap,
-  },
-};
+import MainBtmImgWrap from "../components/MainBtmImgWrap.vue";
 </script>

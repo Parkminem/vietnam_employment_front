@@ -1,5 +1,5 @@
 <script setup>
-import QuickMenuList from "./QuickMenuList.vue";
+import PageNav from "./PageNav.vue";
 </script>
 <template>
   <div class="header_wrap">
@@ -32,10 +32,10 @@ import QuickMenuList from "./QuickMenuList.vue";
   </div>
   <div data-aos="flip-left" data-aos-duration="700" class="menu_wrap">
     <ul class="right_menu">
-      <QuickMenuList color="bg_yellow" content="지원 분야" />
-      <QuickMenuList color="bg_blue" content="지원 하기" />
-      <QuickMenuList color="bg_blue" content="지원 현황" />
-      <QuickMenuList color="bg_darkgrey" content="QnA" />
+      <PageNav color="bg_yellow" content="지원 분야" />
+      <PageNav color="bg_blue" content="지원 하기" />
+      <PageNav color="bg_blue" content="지원 현황" />
+      <PageNav color="bg_darkgrey" content="QnA" />
     </ul>
   </div>
 </template>
