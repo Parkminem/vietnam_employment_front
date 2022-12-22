@@ -7,7 +7,6 @@ import "./assets/css/common.css";
 import "./assets/css/style_kr.css";
 import "./assets/css/style.css";
 onMounted(() => {
-  console.log("마운트");
   AOS.init();
 });
 </script>
@@ -17,5 +16,3 @@ onMounted(() => {
     <RouterView />
   </div>
 </template>
-
-<style scoped></style>
