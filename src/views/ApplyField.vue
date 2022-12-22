@@ -1,8 +1,8 @@
 <script setup>
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
-import ProcessImgList from "../components/ProcessImgList.vue";
-import PositionInfoWrap from "../components/PositionInfoWrap.vue";
+import ProcessList from "../components/ProcessList.vue";
+import ApplyFieldPosition from "../components/ApplyFieldPosition.vue";
 </script>
 <template>
   <HeaderWrap />
@@ -18,33 +18,33 @@ import PositionInfoWrap from "../components/PositionInfoWrap.vue";
           <h4>아이디어콘서트 작업 공정</h4>
           <div class="process_box">
             <ul>
-              <ProcessImgList
+              <ProcessList
                 process-img-src="images/img/process01.png"
                 process-img-alt="작업공정 첫번째 사진"
                 icon-img-src="images/img/acon_face.png"
-                icon-img-alt="아콘이 사진"
-                content="1. 그림 콘티 (제공)"
+                :index="1"
+                content="그림 콘티 (제공)"
               />
-              <ProcessImgList
+              <ProcessList
                 process-img-src="images/img/process02.png"
                 process-img-alt="작업공정 두번째 사진"
                 icon-img-src="images/img/acon_left.png"
-                icon-img-alt="아콘이 사진"
-                content="1. 데생 콘티"
+                :index="2"
+                content="데생 콘티"
               />
-              <ProcessImgList
+              <ProcessList
                 process-img-src="images/img/process03.png"
                 process-img-alt="작업공정 세번째 사진"
                 icon-img-src="images/img/acon_walk.png"
-                icon-img-alt="아콘이 사진"
-                content="3. 선화"
+                :index="3"
+                content="선화"
               />
-              <ProcessImgList
+              <ProcessList
                 process-img-src="images/img/process04.png"
                 process-img-alt="작업공정 네번째 사진"
                 icon-img-src="images/img/acon_final.png"
-                icon-img-alt="아콘이 사진"
-                content="4. 채색 및 보정"
+                :index="4"
+                content="채색 및 보정"
               />
             </ul>
           </div>
@@ -61,7 +61,7 @@ import PositionInfoWrap from "../components/PositionInfoWrap.vue";
           <h3>모집중인 포지션</h3>
           <p>데생콘티와 선화 채색및 보정이 가능한 자는 지원해 주세요.</p>
         </div>
-        <PositionInfoWrap :index="1" />
+        <ApplyFieldPosition :index="1" />
       </div>
     </div>
   </div>
