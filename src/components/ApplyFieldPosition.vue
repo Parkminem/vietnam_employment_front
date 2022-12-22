@@ -1,8 +1,8 @@
 <script setup>
 import CategoryList from "./CategoryList.vue";
-defineProps({
-  index: Number,
-});
+import { useStore } from "vuex";
+const store = useStore();
+
 const data = [
   {
     index: 1,
@@ -39,40 +39,41 @@ const data = [
 ];
 </script>
 <template>
-  <a :name="index"></a>
+  <a :name="store.state.categoryIndex"></a>
   <div class="position_info_wrap">
     <div class="category_tab_wrap">
       <ul>
         <CategoryList
           v-for="i in data"
-          :active="[i.index == index ? true : false]"
+          :index="i.index"
+          :active="[i.index == store.state.categoryIndex ? true : false]"
           :content="i.title"
         />
       </ul>
     </div>
     <div class="position_detail_wrap">
       <div class="detail_number_wrap">
-        <div class="detail_number">{{ index }}</div>
+        <div class="detail_number">{{ store.state.categoryIndex }}</div>
       </div>
-      <h3>{{ data[index - 1].title }}</h3>
+      <h3>{{ data[store.state.categoryIndex - 1].title }}</h3>
       <div class="before_after_img_wrap">
         <ul>
           <li>
             <div class="before_after_img">
               <img
-                :src="[data[index - 1].leftImg]"
-                :alt="[data[index - 1].leftContent]"
+                :src="[data[store.state.categoryIndex - 1].leftImg]"
+                :alt="[data[store.state.categoryIndex - 1].leftContent]"
               />
             </div>
             <div class="before_after_txt">
-              {{ data[index - 1].leftContent }}
+              {{ data[store.state.categoryIndex - 1].leftContent }}
             </div>
           </li>
           <li>
             <div class="before_after_img active">
               <img
-                :src="[data[index - 1].rightImg]"
-                :alt="[data[index - 1].rightContent]"
+                :src="[data[store.state.categoryIndex - 1].rightImg]"
+                :alt="[data[store.state.categoryIndex - 1].rightContent]"
               />
             </div>
             <div class="before_after_txt active">데생 콘티</div>
