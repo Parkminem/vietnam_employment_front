@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+
 defineProps({
   question: String,
   answer: String,
@@ -21,7 +22,7 @@ const changeDisplay = () => {
         </p>
       </div>
       <button type="button">
-        <span class="material-icons">expand_more</span>
+        <i class="bi bi-chevron-down icon"></i>
       </button>
     </div>
     <div class="answer_wrap">
@@ -32,3 +33,8 @@ const changeDisplay = () => {
     </div>
   </div>
 </template>
+<style scoped>
+.icon {
+  font-size: 15px;
+}
+</style>
