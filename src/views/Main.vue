@@ -62,6 +62,7 @@
         img="images/img/img_allstar.png"
         imgAlt="아이디어콘서트 만화"
         marginTop="a"
+        class="img_allstar"
       />
       <div class="main_btm_logo">
         <a href="http://ideaconcert.com/" target="_blank">
@@ -81,3 +82,8 @@ import HeaderWrap from "../components/HeaderWrap.vue";
 import MainContWrap from "../components/MainContWrap.vue";
 import MainBtmImgWrap from "../components/MainBtmImgWrap.vue";
 </script>
+<style scoped>
+.img_allstar {
+  margin-bottom: -4px;
+}
+</style>

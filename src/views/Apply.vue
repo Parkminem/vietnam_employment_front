@@ -4,6 +4,11 @@ import TopTitWrap from "../components/TopTitWrap.vue";
 import InputGroupTitle from "../components/InputGroupTitle.vue";
 import InputGroup from "../components/InputGroup.vue";
 import BottomBtn from "../components/BottomBtn.vue";
+import store from "../store";
+
+const onSubmit = () => {
+  console.log(store.state.applyForm);
+};
 </script>
 <template>
   <HeaderWrap />
@@ -14,7 +19,7 @@ import BottomBtn from "../components/BottomBtn.vue";
         content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
       />
       <div class="sub_cont_area">
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="input_set_wrap">
             <InputGroupTitle
               :step="1"

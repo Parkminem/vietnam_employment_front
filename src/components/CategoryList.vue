@@ -1,14 +1,12 @@
 <script setup>
-import { useStore } from "vuex";
-import { changeCategoryIndex } from "../store";
-const store = useStore();
+import store, { CHANGECATEGORYINDEX } from "../store";
 const props = defineProps({
   active: Boolean,
   content: String,
   index: Number,
 });
 const changeCategory = () => {
-  store.commit(changeCategoryIndex, props.index);
+  store.commit(CHANGECATEGORYINDEX, props.index);
 };
 </script>
 <template>

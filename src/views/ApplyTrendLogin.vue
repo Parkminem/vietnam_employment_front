@@ -1,10 +1,16 @@
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
+import { baseUrl } from "../api";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import BottomBtn from "../components/BottomBtn.vue";
+
 const email = ref();
 const name = ref();
+const router = useRouter();
+
 const inputChange = (e) => {
   switch (e.target.type) {
     case "email":
@@ -14,6 +20,15 @@ const inputChange = (e) => {
       name.value = e.target.value;
       break;
   }
+};
+const userAuthenticate = () => {
+  axios
+    .post(`${baseUrl}/find`, { email: email.value, full_name: name.value })
+    .then((res) => {
+      console.log(res);
+      router.push("/");
+    })
+    .catch((err) => console.log(err));
 };
 </script>
 <template>
@@ -27,7 +42,7 @@ const inputChange = (e) => {
       <div className="img_deco_wrap">
         <img src="images/img/icon_line_rocket.png" alt="로켓" />
       </div>
-      <form onSubmit="{userAuthenticate}">
+      <form @submit.prevent="userAuthenticate">
         <div className="login_wrap">
           <input
             type="email"

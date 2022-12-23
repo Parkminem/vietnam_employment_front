@@ -1,5 +1,7 @@
 <script setup>
 import PostionList from "./PostionList.vue";
+import { reactive } from "vue";
+import store from "../store";
 
 defineProps({
   category: String,
@@ -22,6 +24,7 @@ defineProps({
       type="text"
       id="add_name"
       placeholder="이름을 기입해 주세요"
+      v-model="store.state.applyForm.full_name"
       required
     />
     <input
@@ -29,6 +32,7 @@ defineProps({
       type="text"
       required
       id="add_nickname"
+      v-model="store.state.applyForm.pen_name"
       placeholder="필명을 기입해 주세요."
     />
     <input
@@ -36,6 +40,7 @@ defineProps({
       type="email"
       required
       id="add_mail"
+      v-model="store.state.applyForm.email"
       placeholder="예) ideacon@ideaconcert.com"
     />
     <input
@@ -44,6 +49,7 @@ defineProps({
       pattern="[0-9]+"
       required
       id="add_number"
+      v-model="store.state.applyForm.phone_number"
       placeholder="' - '없이 입력해 주세요"
     />
     <input
@@ -51,16 +57,18 @@ defineProps({
       type="text"
       required
       id="add_country"
+      v-model="store.state.applyForm.region"
       placeholder="SOUTH KOREA"
     />
     <div v-else-if="category === 'intro'" className="intro_txtarea">
-      <textarea></textarea>
+      <textarea v-model="store.state.applyForm.about"></textarea>
     </div>
     <input
       v-else-if="category === 'portfolio_url'"
       type="text"
       required
       id="add_portfolio_url"
+      v-model="store.state.applyForm.portfolio"
       placeholder="http:// "
     />
     <input v-else-if="category === 'file'" type="file" required id="add_file" />

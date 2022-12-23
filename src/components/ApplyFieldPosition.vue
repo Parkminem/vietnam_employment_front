@@ -1,7 +1,6 @@
 <script setup>
-import { useStore } from "vuex";
+import store from "../store";
 import CategoryList from "./CategoryList.vue";
-const store = useStore();
 
 const data = [
   {
