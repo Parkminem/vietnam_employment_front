@@ -1,7 +1,5 @@
 <script setup>
-import { useStore } from "vuex";
-import { changeCategoryIndex } from "../store";
-const store = useStore();
+import store, { changeCategoryIndex } from "../store";
 const props = defineProps({
   active: Boolean,
   content: String,

@@ -23,17 +23,17 @@ import BottomBtn from "../components/BottomBtn.vue";
             <InputGroup
               category="position"
               title="포지션(중복가능)"
-              :require="true"
+              :required="true"
             />
-            <InputGroup category="name" title="이름" :require="true" />
-            <InputGroup category="nickname" title="필명" :require="true" />
-            <InputGroup category="mail" title="이메일 주소" :require="true" />
-            <InputGroup category="number" title="연락처" :require="true" />
+            <InputGroup category="name" title="이름" :required="true" />
+            <InputGroup category="nickname" title="필명" :required="true" />
+            <InputGroup category="mail" title="이메일 주소" :required="true" />
+            <InputGroup category="number" title="연락처" :required="true" />
             <InputGroup category="country" title="거주 국가" />
             <InputGroup
               category="genre"
               title="선호 장르(중복가능)"
-              :require="true"
+              :required="true"
             />
             <InputGroup category="intro" title="자기 소개" />
             <InputGroup category="portfolio_url" title="포트폴리오 사이트" />
