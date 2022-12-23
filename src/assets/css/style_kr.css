@@ -1,21 +1,30 @@
 @charset "utf-8";
 
 /*** tag_definition ***/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Open+Sans&display=swap');
-body, th, td, input, select, textarea, button,* 
-{font-family:'Noto Sans KR', "맑은 고딕", "Malgun Gothic", sans-serif, "돋움", "Dotum", "굴림", "Gulim";}
-
-@font-face {
-font-family:'ROKAFSlabSerifBold';
-src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSlabSerifBold.woff') format('woff');
-font-weight:normal;
-font-style:normal;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Open+Sans&display=swap");
+body,
+th,
+td,
+input,
+select,
+textarea,
+button,
+* {
+  font-family: "Noto Sans KR", "맑은 고딕", "Malgun Gothic", sans-serif, "돋움",
+    "Dotum", "굴림", "Gulim";
 }
 
-@import url('https://fonts.cdnfonts.com/css/current');
 @font-face {
-    font-family: 'Current', sans-serif!important;
-    src:url('../font/FontsFree-Net-Current-Regular.ttf') format('ttf');
-    font-weight:normal;
-    font-style:normal;
+  font-family: "ROKAFSlabSerifBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSlabSerifBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.cdnfonts.com/css/current");
+.font_current {
+  font-family: "Current", sans-serif !important;
+  src: local("Current"),
+    url(https://fonts.cdnfonts.com/s/19421/Current-Regular.woff) format("woff");
 }
