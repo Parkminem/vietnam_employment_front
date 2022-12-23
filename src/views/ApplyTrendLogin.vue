@@ -1,11 +1,16 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
+import { baseUrl } from "../api";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import BottomBtn from "../components/BottomBtn.vue";
+
 const email = ref();
 const name = ref();
+const router = useRouter();
+
 const inputChange = (e) => {
   switch (e.target.type) {
     case "email":
@@ -16,13 +21,13 @@ const inputChange = (e) => {
       break;
   }
 };
-
 const userAuthenticate = () => {
-  // console.log(email.value, name.value);
-  const url = "http://192.168.1.17:8000/find/";
   axios
-    .post(url, { email: email.value, full_name: name.value })
-    .then((res) => console.log(res))
+    .post(`${baseUrl}/find`, { email: email.value, full_name: name.value })
+    .then((res) => {
+      console.log(res);
+      router.push("/");
+    })
     .catch((err) => console.log(err));
 };
 </script>

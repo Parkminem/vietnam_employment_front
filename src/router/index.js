@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from "../store";
 import ApplyField from "../views/ApplyField.vue";
 import QnA from "../views/QnA.vue";
 import ApplyComplete from "../views/ApplyComplete.vue";
@@ -6,6 +7,7 @@ import ApplyTrendLogin from "../views/ApplyTrendLogin.vue";
 import Apply from "../views/Apply.vue";
 import Main from "../views/Main.vue";
 
+const { full_name, email } = store.state.applyForm;
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -26,12 +28,12 @@ const router = createRouter({
       component: ApplyComplete,
     },
     {
-      path: "/applytrendlogin",
-      component: ApplyTrendLogin,
+      path: "/apply",
+      component: Apply,
     },
     {
-      path: "/apply",
-      component: () => import("../views/Apply.vue"),
+      path: "/applytrend",
+      component: !full_name || !email ? ApplyTrendLogin : ApplyTrend,
     },
     {
       path: "/:pathMatch(.*)*",
