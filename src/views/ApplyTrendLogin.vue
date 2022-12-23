@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import BottomBtn from "../components/BottomBtn.vue";
@@ -15,6 +16,15 @@ const inputChange = (e) => {
       break;
   }
 };
+
+const userAuthenticate = () => {
+  // console.log(email.value, name.value);
+  const url = "http://192.168.1.17:8000/find/";
+  axios
+    .post(url, { email: email.value, full_name: name.value })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+};
 </script>
 <template>
   <HeaderWrap />
@@ -27,7 +37,7 @@ const inputChange = (e) => {
       <div className="img_deco_wrap">
         <img src="images/img/icon_line_rocket.png" alt="로켓" />
       </div>
-      <form onSubmit="{userAuthenticate}">
+      <form @submit.prevent="userAuthenticate">
         <div className="login_wrap">
           <input
             type="email"
