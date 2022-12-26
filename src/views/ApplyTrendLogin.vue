@@ -2,28 +2,27 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import store, { CHANGEAPPLYFORM } from "../store";
 import { baseUrl } from "../api";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import BottomBtn from "../components/BottomBtn.vue";
-import store from "../store";
 
-// const { full_name, email } = store.state.applyForm;
-
-// const email = ref("");
-// const name = ref("");
+const email = ref("");
+const name = ref("");
 const router = useRouter();
-console.log(store.state.applyForm);
 
 const userAuthenticate = () => {
   axios
-    .post(`${baseUrl}/find/`, {
-      email: store.state.applyForm.email,
-      full_name: store.state.applyForm.full_name,
-    })
+    .post(`${baseUrl}/find/`, { email: email.value, full_name: name.value })
     .then((res) => {
-      console.log(res);
-      // router.push("/applytrend");
+      for (let i in res.data) {
+        const arr = [i, res.data[i]];
+        if (i !== "id") {
+          store.commit(CHANGEAPPLYFORM, arr);
+        }
+      }
+      router.push("/applytrend");
     })
     .catch((err) => console.log(err));
 };
@@ -44,7 +43,7 @@ const userAuthenticate = () => {
           <input
             type="email"
             placeholder="이메일 주소를 기입해 주세요."
-            v-model="store.state.applyForm.email"
+            v-model="email"
             className="id_area"
             required
           />
@@ -52,7 +51,7 @@ const userAuthenticate = () => {
             type="text"
             placeholder="이름을 기입해 주세요."
             className="password_area"
-            v-model="store.state.applyForm.full_name"
+            v-model="name"
             required
           />
           <div className="btn_wrap">

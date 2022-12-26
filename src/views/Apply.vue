@@ -10,6 +10,8 @@ import { baseUrl } from "../api";
 import axios from "axios";
 import { useRouter } from "vue-router";
 
+const router = useRouter();
+
 const onClickCancel = () => {
   store.commit(ISMODAL);
 };
@@ -37,7 +39,7 @@ const onSubmit = () => {
     })
     .then((res) => {
       console.log(res);
-      res.status === 201 && useRouter.push("/applycomplete");
+      res.status === 201 && router.push("/applycomplete");
     })
     .catch((err) => {
       console.log(err);
