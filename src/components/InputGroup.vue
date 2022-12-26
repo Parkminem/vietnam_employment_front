@@ -128,7 +128,11 @@ const applyForm = store.state.applyForm;
       {{ applyForm.portfolio }}
     </div>
     <div v-else-if="category === 'file'" class="input_cont_box_wrap">
-      {{ applyForm.files?.name ?? applyForm.files?.split("/")[1] }}
+      {{
+        Array.isArray(applyForm.files)
+          ? applyForm.files[0].slice(6)
+          : applyForm.files?.name
+      }}
     </div>
     <div v-else-if="category === 'genre'" class="input_cont_box_wrap">
       {{ applyForm.genres.join(", ") }}
