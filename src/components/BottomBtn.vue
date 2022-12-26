@@ -10,9 +10,9 @@ defineProps({
   <button v-if="content === '확인'" type="submit" :class="`btn_basic ${color}`">
     {{ content }}
   </button>
-  <router-link v-else-if="isRoute" :to="route" :class="`btn_basic ${color}`">{{
-    content
-  }}</router-link>
+  <router-link v-else-if="isRoute" :to="route" :class="`btn_basic ${color}`">
+    {{ content }}
+  </router-link>
   <button v-else type="button" :class="`btn_basic ${color}`">
     {{ content }}
   </button>

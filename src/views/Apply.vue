@@ -104,6 +104,7 @@ const onSubmit = () => {
               route="/applycomplete"
               color="btn_color_bg"
               content="확인"
+              isRoute
             />
           </div>
         </form>
