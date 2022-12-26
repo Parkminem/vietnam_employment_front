@@ -9,14 +9,15 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 onBeforeMount(() => {
-  // store.commit(RESETAPPLY);
   console.log(1);
   if (!store.state.applyForm.full_name) {
     router.push("/applytrendlogin");
     // router.push("/applytrendlogin");
   }
 });
-onUnmounted(() => {});
+onUnmounted(() => {
+  store.commit(RESETAPPLY);
+});
 </script>
 
 <template>
