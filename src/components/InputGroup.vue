@@ -9,6 +9,10 @@ defineProps({
   title: String,
   color: String,
 });
+
+const changeFile = (e) => {
+  store.state.applyForm.files = e.target.files[0];
+};
 </script>
 
 <template>
@@ -71,7 +75,13 @@ defineProps({
       v-model="store.state.applyForm.portfolio"
       placeholder="http:// "
     />
-    <input v-else-if="category === 'file'" type="file" required id="add_file" />
+    <input
+      v-else-if="category === 'file'"
+      @change="changeFile"
+      type="file"
+      required
+      id="add_file"
+    />
     <ul v-else-if="category === 'position'" className="input_group_ul">
       <postion-list :count="1" content="LiNE ART" />
       <postion-list :count="2" content="COLOR ART" />
