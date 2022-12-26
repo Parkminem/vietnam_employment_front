@@ -23,19 +23,24 @@ import PageNav from "./PageNav.vue";
           <img src="images/img/idea-space.png" alt="스페이스 문구" />
         </div>
         <h2 class="font_current"><span>HELLO,</span>WEBTOONIST</h2>
-        <p>
-          웹툰과 콘텐츠를 사랑하는 동료들이 함께합니다. <br />
-          K-웹툰, 성공의 중심에서 함께 미래를 그려나갑니다.
-        </p>
+        <p v-html="$t('header.content')"></p>
       </div>
     </div>
   </div>
   <div data-aos="flip-left" data-aos-duration="700" class="menu_wrap">
     <ul class="right_menu">
-      <PageNav color="bg_yellow" route="/applyfield" content="지원 분야" />
-      <PageNav color="bg_blue" route="/apply" content="지원 하기" />
-      <PageNav color="bg_blue" route="/applytrendlogin" content="지원 현황" />
-      <PageNav color="bg_darkgrey" route="/qna" content="QnA" />
+      <PageNav
+        color="bg_yellow"
+        route="/applyfield"
+        :content="$t('header.nav.1')"
+      />
+      <PageNav color="bg_blue" route="/apply" :content="$t('header.nav.2')" />
+      <PageNav
+        color="bg_blue"
+        route="/applytrendlogin"
+        :content="$t('header.nav.3')"
+      />
+      <PageNav color="bg_darkgrey" route="/qna" :content="$t('header.nav.4')" />
     </ul>
   </div>
 </template>

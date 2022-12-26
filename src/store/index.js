@@ -50,8 +50,12 @@ const store = createStore({
         files: null,
       };
     },
-    [ISMODAL](state) {
-      state.modalShow = state.modalShow === "none" ? "flex" : "none";
+    [ISMODAL](state, data) {
+      if (data) {
+        state.modalShow = "none";
+      } else {
+        state.modalShow = state.modalShow === "none" ? "flex" : "none";
+      }
     },
     [ATTACHFILE](state, file) {
       state.applyForm.files = file;

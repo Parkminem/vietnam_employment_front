@@ -1,0 +1,83 @@
+{
+  "header": {
+    "content": "Các đồng nghiệp yêu thích webtoons và nội dung đang ở bên bạn.<br/>K-Webtoon, cùng nhau vẽ nên tương lai ở trung tâm của thành công.",
+    "nav": {
+      "1": "Lĩnh vực tuyển dụng",
+      "2": "Ứng tuyển",
+      "3": "Trạng thái ứng tuyển",
+      "4": "QnA"
+    }
+  },
+  "main": {
+    "mainContWrap": {
+      "1": {
+        "title": "BEYOND WEBTOON",
+        "subTitle": "Chúng tôi làm việc với những người yêu thích webtoons.",
+        "content": "Dựa trên một câu chuyện vững chắc, những người viết truyện, tác giả webtoon và nhà sản xuất đang làm việc cùng nhau, lắng nghe ý kiến ​​​​của nhau và tạo ra các tác phẩm webtoon ở mỗi quốc gia trên toàn thế giới"
+      },
+      "2": {
+        "title": "BEYOND BORDERS",
+        "subTitle": "Chúng tôi làm việc cùng nhau xuyên biên giới quốc gia.",
+        "content": "Chúng tôi đang tìm kiếm những đồng nghiệp có thể cùng nhau vẽ webtoon mà không giới hạn khu vực sinh sống và chúng tôi biết rằng có rất nhiều nghệ sĩ webtoon tài năng có tiềm năng."
+      },
+      "3": {
+        "title": "BEYOND FUTURE",
+        "subTitle": "Chúng tôi biết giá trị của nội dung, điều này sẽ càng trở nên quan trọng hơn trong tương lai.",
+        "content": "Số lượng độc giả đọc webtoon đang không ngừng tăng lên, và chúng tôi sẽ cố gắng hết sức để dẫn dắt dự án sản xuất webtoon để có thể tạo ra những tác phẩm tuyệt vời khiến độc giả cảm thấy vừa buồn cười vừa cảm động"
+      }
+    },
+    "mainText": {
+      "title": "WE ARE IDEACONCERT",
+      "content": "Chúng tôi là một công ty phát minh ra các tác phẩm webtoon và công nghệ sẽ dẫn đầu tương lai với khẩu hiệu “Always Joyful Imagination”.",
+      "subContent": "IDEACONCERT hàm chứa ý nghĩa là những ý tưởng và suy nghĩ khác nhau của mọi người kết hợp với nhau để trở thành một sân khấu hòa nhạc thú vị.</br>Akon và Noran là những nhân vật tượng trưng cho Ý TƯỞNG. Họ là một chú chuột bạch và một chú gà con màu vàng. Họ thích ăn vặt và vẽ."
+    }
+  },
+  "applyField": {
+    "topTitWrap": {
+      "title": "Lo lắng chỉ trì hoãn cơ hội!",
+      "content": "Idea Concert hiện đang tuyển dụng các tác giả webtoon! Hãy tham gia cùng chúng tôi để chúng tôi có thể tạo ra một webtoon hay."
+    },
+    "workProcessWrap": {
+      "title": "Quá trình làm nên Idea Concert",
+      "process": {
+        "1": "Vẽ bảng phân cảnh (được cung cấp))",
+        "2": "Sketch Adaptation",
+        "3": "Vẽ đường nét",
+        "4": "Tô màu và chỉnh sửa"
+      }
+    },
+    "infoTxtBox": {
+      "content": "Công việc bao gồm vẽ <span>storyboard - vẽ storyboard - vẽ line - tô màu và chỉnh sửa - làm nền.</span>"
+    },
+    "recruitmentPositionWrap": {
+      "title": "Các vị trí đang tuyển dụng",
+      "content": "Vui lòng đăng ký nếu bạn có thể thực hiện chỉnh sửa và tô màu nghệ thuật phác thảo liên tục Sketch Adaptation"
+    },
+    "applyFieldPosition": {
+      "1": {
+        "title": "Sketch Adaptation",
+        "leftContent": "Vẽ bảng phân cảnh (được cung cấp)",
+        "rightContent": "Sketch Adaptation",
+        "content": "Đây là một công việc vẽ bảng phân cảnh bằng cách vẽ bảng phân cảnh.<br/>Chúng tôi đang tìm kiếm một nghệ sĩ có thể vẽ liên tục theo Idea Concert cung cấp."
+      },
+      "2": {
+        "title": "Vẽ đường nét",
+        "leftContent": "Sketch Adaptation",
+        "rightContent": "Vẽ đường nét",
+        "content": "Đây là công việc biến bảng phân cảnh bản vẽ thành nghệ thuật vẽ đường nét.<br/>Đây là phần vẽ tạo nên sức hấp dẫn của nhân vật bằng cách thể hiện điểm mạnh và điểm yếu bằng những đường bút chi tiết."
+      },
+      "3": {
+        "title": "Tô màu và chỉnh sửa",
+        "leftContent": "Vẽ đường nét",
+        "rightContent": "Tô màu và chỉnh sửa",
+        "content": "Đây là tác phẩm tô màu trên nghệ thuật đường nét.<br/>Đây là phần tô vẽ sống động cho webtoon bằng cách áp dụng màu sắc cho nghệ thuật vẽ đường."
+      },
+      "4": {
+        "title": "Nghệ thuật nền (Backgroud Art)",
+        "leftContent": "Nền chưa xử lý",
+        "rightContent": "Công việc vẽ nền và chỉnh sửa",
+        "content": "Đây là tác phẩm làm nền cho webtoon.<br/>Đây là phần tô màu và định hướng nền cơ bản chưa được thể hiện tốt cho phù hợp với không khí tác phẩm."
+      }
+    }
+  }
+}

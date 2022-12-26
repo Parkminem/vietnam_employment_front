@@ -9,6 +9,7 @@ import store, { ISMODAL } from "../store";
 import { baseUrl } from "../api";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { onBeforeMount } from "vue";
 
 const router = useRouter();
 
@@ -17,14 +18,6 @@ const onClickCancel = () => {
 };
 
 const onSubmit = () => {
-  if (store.state.applyForm.positions.length === 0) {
-    alert("포지션을 선택해주세요.");
-    return;
-  }
-  if (store.state.applyForm.genres.length === 0) {
-    alert("선호 장르를 선택해주세요");
-    return;
-  }
   const url = `${baseUrl}/apply/`;
   const formData = new FormData();
   for (let i in store.state.applyForm) {
@@ -46,6 +39,10 @@ const onSubmit = () => {
     });
   console.log(store.state.applyForm);
 };
+
+onBeforeMount(() => {
+  store.commit(ISMODAL, true);
+});
 </script>
 <template>
   <HeaderWrap />
@@ -71,7 +68,7 @@ const onSubmit = () => {
             <InputGroup category="genre" title="선호 장르(중복가능)" need />
             <InputGroup category="intro" title="자기 소개" />
             <InputGroup category="portfolio_url" title="포트폴리오 사이트" />
-            <InputGroup category="file" title="파일 업로드" />
+            <InputGroup category="file" title="파일 업로드" need />
           </div>
           <div class="txt_box_wrap">
             <div class="txt_box">

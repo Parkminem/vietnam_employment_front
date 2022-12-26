@@ -28,12 +28,12 @@ const changeFile = (e) => {
       id="add_name"
       placeholder="이름을 기입해 주세요"
       v-model="store.state.applyForm.full_name"
-      required
+      :required="need"
     />
     <input
       v-else-if="category === 'nickname'"
       type="text"
-      required
+      :required="need"
       id="add_nickname"
       v-model="store.state.applyForm.pen_name"
       placeholder="필명을 기입해 주세요."
@@ -41,7 +41,7 @@ const changeFile = (e) => {
     <input
       v-else-if="category === 'mail'"
       type="email"
-      required
+      :required="need"
       id="add_mail"
       v-model="store.state.applyForm.email"
       placeholder="예) ideacon@ideaconcert.com"
@@ -50,7 +50,7 @@ const changeFile = (e) => {
       v-else-if="category === 'number'"
       type="tel"
       pattern="[0-9]+"
-      required
+      :required="need"
       id="add_number"
       v-model="store.state.applyForm.phone_number"
       placeholder="' - '없이 입력해 주세요"
@@ -58,7 +58,7 @@ const changeFile = (e) => {
     <input
       v-else-if="category === 'country'"
       type="text"
-      required
+      :required="need"
       id="add_country"
       v-model="store.state.applyForm.region"
       placeholder="SOUTH KOREA"
@@ -69,7 +69,7 @@ const changeFile = (e) => {
     <input
       v-else-if="category === 'portfolio_url'"
       type="text"
-      required
+      :required="need"
       id="add_portfolio_url"
       v-model="store.state.applyForm.portfolio"
       placeholder="http:// "
@@ -78,17 +78,25 @@ const changeFile = (e) => {
       v-else-if="category === 'file'"
       @change="changeFile"
       type="file"
-      required
+      :required="need"
       id="add_file"
     />
     <ul v-else-if="category === 'position'" className="input_group_ul">
-      <postion-list :count="1" content="LiNE ART" />
+      <postion-list
+        :count="1"
+        content="LINE ART"
+        :need="!store.state.applyForm.positions.length"
+      />
       <postion-list :count="2" content="COLOR ART" />
       <postion-list :count="3" content="SKETCH UP" />
       <postion-list :count="4" content="BACKGROUND ART" />
     </ul>
     <ul v-else-if="category === 'genre'" className="input_group_ul">
-      <postion-list :count="5" content="DRAMA" />
+      <postion-list
+        :count="5"
+        content="DRAMA"
+        :need="!store.state.applyForm.genres.length"
+      />
       <postion-list :count="6" content="FANTASY" />
       <postion-list :count="7" content="ACTION" />
       <postion-list :count="8" content="ROMANCE" />
