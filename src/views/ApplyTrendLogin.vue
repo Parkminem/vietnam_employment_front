@@ -6,27 +6,24 @@ import { baseUrl } from "../api";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import BottomBtn from "../components/BottomBtn.vue";
+import store from "../store";
 
-const email = ref();
-const name = ref();
+// const { full_name, email } = store.state.applyForm;
+
+// const email = ref("");
+// const name = ref("");
 const router = useRouter();
+console.log(store.state.applyForm);
 
-const inputChange = (e) => {
-  switch (e.target.type) {
-    case "email":
-      email.value = e.target.value;
-      break;
-    case "text":
-      name.value = e.target.value;
-      break;
-  }
-};
 const userAuthenticate = () => {
   axios
-    .post(`${baseUrl}/find`, { email: email.value, full_name: name.value })
+    .post(`${baseUrl}/find/`, {
+      email: store.state.applyForm.email,
+      full_name: store.state.applyForm.full_name,
+    })
     .then((res) => {
       console.log(res);
-      router.push("/");
+      // router.push("/applytrend");
     })
     .catch((err) => console.log(err));
 };
@@ -47,7 +44,7 @@ const userAuthenticate = () => {
           <input
             type="email"
             placeholder="이메일 주소를 기입해 주세요."
-            @input="inputChange"
+            v-model="store.state.applyForm.email"
             className="id_area"
             required
           />
@@ -55,15 +52,11 @@ const userAuthenticate = () => {
             type="text"
             placeholder="이름을 기입해 주세요."
             className="password_area"
-            @input="inputChange"
+            v-model="store.state.applyForm.full_name"
             required
           />
           <div className="btn_wrap">
-            <BottomBtn
-              route="/applycomplete"
-              color="btn_color_bg"
-              content="확인"
-            />
+            <BottomBtn color="btn_color_bg" content="확인" isRoute />
           </div>
         </div>
       </form>

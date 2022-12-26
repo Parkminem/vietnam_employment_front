@@ -1,12 +1,12 @@
 <script setup>
-import store, { changeCategoryIndex } from "../store";
+import store, { CHANGECATEGORYINDEX } from "../store";
 const props = defineProps({
   active: Boolean,
   content: String,
   index: Number,
 });
 const changeCategory = () => {
-  store.commit(changeCategoryIndex, props.index);
+  store.commit(CHANGECATEGORYINDEX, props.index);
 };
 </script>
 <template>
