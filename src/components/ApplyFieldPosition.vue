@@ -93,7 +93,13 @@ const data = [
           </ul>
         </div>
         <div class="position_detail_info">
-          <p v-html="data[store.state.categoryIndex - 1].contents"></p>
+          <p
+            v-html="
+              $t(
+                `applyField.applyFieldPosition.${store.state.categoryIndex}.content`
+              )
+            "
+          ></p>
         </div>
       </div>
     </div>
