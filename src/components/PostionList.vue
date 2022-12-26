@@ -22,8 +22,6 @@ const onChange = (e) => {
         (pos) => pos !== e.target.name
       );
     }
-
-    console.log(store.state.applyForm.positions);
   } else if (
     [
       "contactChoice5",
@@ -40,8 +38,6 @@ const onChange = (e) => {
         (pos) => pos !== e.target.name
       );
     }
-
-    console.log(store.state.applyForm.genres);
   }
 };
 </script>

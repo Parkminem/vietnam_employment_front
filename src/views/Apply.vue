@@ -4,9 +4,44 @@ import TopTitWrap from "../components/TopTitWrap.vue";
 import InputGroupTitle from "../components/InputGroupTitle.vue";
 import InputGroup from "../components/InputGroup.vue";
 import BottomBtn from "../components/BottomBtn.vue";
-import store from "../store";
+import Modal from "../components/Modal.vue";
+import store, { ISMODAL } from "../store";
+import { baseUrl } from "../api";
+import axios from "axios";
+import { useRouter } from "vue-router";
+
+const onClickCancel = () => {
+  store.commit(ISMODAL);
+};
 
 const onSubmit = () => {
+  if (store.state.applyForm.positions.length === 0) {
+    alert("포지션을 선택해주세요.");
+    return;
+  }
+  if (store.state.applyForm.genres.length === 0) {
+    alert("선호 장르를 선택해주세요");
+    return;
+  }
+  const url = `${baseUrl}/apply/`;
+  const formData = new FormData();
+  for (let i in store.state.applyForm) {
+    formData.append(i, store.state.applyForm[i]);
+  }
+
+  axios
+    .post(url, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((res) => {
+      console.log(res);
+      res.status === 201 && useRouter.push("/applycomplete");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   console.log(store.state.applyForm);
 };
 </script>
@@ -62,7 +97,7 @@ const onSubmit = () => {
             </label>
           </div>
           <div class="btn_wrap">
-            <BottomBtn route="/" color="btn_line" content="취소" />
+            <BottomBtn color="btn_line" content="취소" @click="onClickCancel" />
             <BottomBtn
               route="/applycomplete"
               color="btn_color_bg"
@@ -73,5 +108,5 @@ const onSubmit = () => {
       </div>
     </div>
   </div>
-  <!-- <Modal /> -->
+  <Modal />
 </template>

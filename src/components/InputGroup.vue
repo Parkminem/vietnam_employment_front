@@ -1,7 +1,6 @@
 <script setup>
 import PostionList from "./PostionList.vue";
-import { reactive } from "vue";
-import store from "../store";
+import store, { ATTACHFILE } from "../store";
 
 defineProps({
   category: String,
@@ -11,7 +10,7 @@ defineProps({
 });
 
 const changeFile = (e) => {
-  store.state.applyForm.files = e.target.files[0];
+  store.commit(ATTACHFILE, e.target.files[0]);
 };
 </script>
 

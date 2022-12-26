@@ -17,11 +17,12 @@ import BottomBtn from "../components/BottomBtn.vue";
         </div>
       </div>
       <div className="btn_wrap">
-        <BottomBtn route="/" color="btn_line" content="메인가기" />
+        <BottomBtn route="/" color="btn_line" content="메인가기" isRoute />
         <BottomBtn
           route="/applytrend"
           color="btn_color_bg"
           content="나의 지원 현황"
+          isRoute
         />
       </div>
     </div>
