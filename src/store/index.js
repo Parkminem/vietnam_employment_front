@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 
 export const changeCategoryIndex = "changeCategoryIndex";
+export const CHANGEAPPLYFORM = "changeApplyForm";
 
 const store = createStore({
   state() {
@@ -16,13 +17,20 @@ const store = createStore({
         genres: [],
         about: "",
         portfolio: "",
-        files: null,
+        files: undefined,
       },
     };
   },
   mutations: {
     [changeCategoryIndex](state, data) {
       state.categoryIndex = data;
+    },
+    [CHANGEAPPLYFORM](state, data) {
+      if (typeof state.applyForm[data[0]] === typeof []) {
+        state.applyForm[data[0]] = data[1].split(",");
+      } else {
+        state.applyForm[data[0]] = data[1];
+      }
     },
   },
 });

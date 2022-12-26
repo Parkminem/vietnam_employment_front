@@ -34,7 +34,7 @@ import PageNav from "./PageNav.vue";
     <ul class="right_menu">
       <PageNav color="bg_yellow" route="/applyfield" content="지원 분야" />
       <PageNav color="bg_blue" route="/apply" content="지원 하기" />
-      <PageNav color="bg_blue" route="/applytrend" content="지원 현황" />
+      <PageNav color="bg_blue" route="/applytrendlogin" content="지원 현황" />
       <PageNav color="bg_darkgrey" route="/qna" content="QnA" />
     </ul>
   </div>

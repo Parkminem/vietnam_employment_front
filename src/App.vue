@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 import "./assets/css/common.css";
 import "./assets/css/style_kr.css";
 import "./assets/css/style.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 onMounted(() => {
   AOS.init();
 });

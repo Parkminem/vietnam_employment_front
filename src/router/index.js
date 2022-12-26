@@ -6,8 +6,13 @@ import ApplyComplete from "../views/ApplyComplete.vue";
 import ApplyTrendLogin from "../views/ApplyTrendLogin.vue";
 import Apply from "../views/Apply.vue";
 import Main from "../views/Main.vue";
-
-const { full_name, email } = store.state.applyForm;
+function isAuthenticate(to) {
+  if (!full_name) {
+    return { path: to.path, component: ApplyTrendLogin };
+  } else {
+    return { path: "/", component: Main };
+  }
+}
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -24,16 +29,16 @@ const router = createRouter({
       component: QnA,
     },
     {
-      path: "/applycomplete",
-      component: ApplyComplete,
-    },
-    {
       path: "/apply",
       component: Apply,
     },
     {
-      path: "/applytrend",
-      component: !full_name || !email ? ApplyTrendLogin : ApplyTrend,
+      path: "applytrend",
+      component: ApplyTrend,
+    },
+    {
+      path: "/applytrendLogin",
+      component: ApplyTrendLogin,
     },
     {
       path: "/:pathMatch(.*)*",

@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import store, { CHANGEAPPLYFORM } from "../store";
 import { baseUrl } from "../api";
 import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
@@ -15,8 +16,13 @@ const userAuthenticate = () => {
   axios
     .post(`${baseUrl}/find/`, { email: email.value, full_name: name.value })
     .then((res) => {
-      console.log(res);
-      router.push("/");
+      for (let i in res.data) {
+        const arr = [i, res.data[i]];
+        if (i !== "id") {
+          store.commit(CHANGEAPPLYFORM, arr);
+        }
+      }
+      router.push("/applytrend");
     })
     .catch((err) => console.log(err));
 };
