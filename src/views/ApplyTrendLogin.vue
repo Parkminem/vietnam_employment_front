@@ -8,8 +8,8 @@ import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import BottomBtn from "../components/BottomBtn.vue";
 
-const email = ref();
-const name = ref();
+const email = ref("");
+const name = ref("");
 const router = useRouter();
 
 const userAuthenticate = () => {
@@ -55,11 +55,7 @@ const userAuthenticate = () => {
             required
           />
           <div className="btn_wrap">
-            <BottomBtn
-              route="/applycomplete"
-              color="btn_color_bg"
-              content="확인"
-            />
+            <BottomBtn color="btn_color_bg" content="확인" isRoute />
           </div>
         </div>
       </form>

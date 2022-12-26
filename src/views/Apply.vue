@@ -4,6 +4,48 @@ import TopTitWrap from "../components/TopTitWrap.vue";
 import InputGroupTitle from "../components/InputGroupTitle.vue";
 import InputGroup from "../components/InputGroup.vue";
 import BottomBtn from "../components/BottomBtn.vue";
+import Modal from "../components/Modal.vue";
+import store, { ISMODAL } from "../store";
+import { baseUrl } from "../api";
+import axios from "axios";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const onClickCancel = () => {
+  store.commit(ISMODAL);
+};
+
+const onSubmit = () => {
+  if (store.state.applyForm.positions.length === 0) {
+    alert("포지션을 선택해주세요.");
+    return;
+  }
+  if (store.state.applyForm.genres.length === 0) {
+    alert("선호 장르를 선택해주세요");
+    return;
+  }
+  const url = `${baseUrl}/apply/`;
+  const formData = new FormData();
+  for (let i in store.state.applyForm) {
+    formData.append(i, store.state.applyForm[i]);
+  }
+
+  axios
+    .post(url, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((res) => {
+      console.log(res);
+      res.status === 201 && router.push("/applycomplete");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  console.log(store.state.applyForm);
+};
 </script>
 <template>
   <HeaderWrap />
@@ -14,27 +56,19 @@ import BottomBtn from "../components/BottomBtn.vue";
         content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
       />
       <div class="sub_cont_area">
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="input_set_wrap">
             <InputGroupTitle
               :step="1"
               content="지원서 작성하기 (* 표시는 필수 사항 입니다.)"
             />
-            <InputGroup
-              category="position"
-              title="포지션(중복가능)"
-              :required="true"
-            />
-            <InputGroup category="name" title="이름" :required="true" />
-            <InputGroup category="nickname" title="필명" :required="true" />
-            <InputGroup category="mail" title="이메일 주소" :required="true" />
-            <InputGroup category="number" title="연락처" :required="true" />
+            <InputGroup category="position" title="포지션(중복가능)" need />
+            <InputGroup category="name" title="이름" need />
+            <InputGroup category="nickname" title="필명" need />
+            <InputGroup category="mail" title="이메일 주소" need />
+            <InputGroup category="number" title="연락처" need />
             <InputGroup category="country" title="거주 국가" />
-            <InputGroup
-              category="genre"
-              title="선호 장르(중복가능)"
-              :required="true"
-            />
+            <InputGroup category="genre" title="선호 장르(중복가능)" need />
             <InputGroup category="intro" title="자기 소개" />
             <InputGroup category="portfolio_url" title="포트폴리오 사이트" />
             <InputGroup category="file" title="파일 업로드" />
@@ -65,7 +99,7 @@ import BottomBtn from "../components/BottomBtn.vue";
             </label>
           </div>
           <div class="btn_wrap">
-            <BottomBtn route="/" color="btn_line" content="취소" />
+            <BottomBtn color="btn_line" content="취소" @click="onClickCancel" />
             <BottomBtn
               route="/applycomplete"
               color="btn_color_bg"
@@ -76,5 +110,5 @@ import BottomBtn from "../components/BottomBtn.vue";
       </div>
     </div>
   </div>
-  <!-- <Modal /> -->
+  <Modal />
 </template>

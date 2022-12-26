@@ -1,18 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import store from "../store";
 import ApplyField from "../views/ApplyField.vue";
 import QnA from "../views/QnA.vue";
 import ApplyComplete from "../views/ApplyComplete.vue";
 import ApplyTrendLogin from "../views/ApplyTrendLogin.vue";
+import ApplyTrend from "../views/ApplyTrend.vue";
 import Apply from "../views/Apply.vue";
 import Main from "../views/Main.vue";
-function isAuthenticate(to) {
-  if (!full_name) {
-    return { path: to.path, component: ApplyTrendLogin };
-  } else {
-    return { path: "/", component: Main };
-  }
-}
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -33,12 +27,16 @@ const router = createRouter({
       component: Apply,
     },
     {
-      path: "applytrend",
+      path: "/applytrend",
       component: ApplyTrend,
     },
     {
       path: "/applytrendLogin",
       component: ApplyTrendLogin,
+    },
+    {
+      path: "/applycomplete",
+      component: ApplyComplete,
     },
     {
       path: "/:pathMatch(.*)*",
