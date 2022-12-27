@@ -5,11 +5,12 @@ import InputGroupTitle from "../components/InputGroupTitle.vue";
 import InputGroup from "../components/InputGroup.vue";
 import BottomBtn from "../components/BottomBtn.vue";
 import Modal from "../components/Modal.vue";
-import store, { ISMODAL } from "../store";
+import store, { ISMODAL, ONSPINNER, RESETAPPLY } from "../store";
 import { baseUrl } from "../api";
 import axios from "axios";
 import { useRouter } from "vue-router";
-import { onBeforeMount } from "vue";
+import LoadingSpinner from "../components/LoadingSpinner.vue";
+import { onUnmounted } from "@vue/runtime-core";
 
 const router = useRouter();
 
@@ -18,6 +19,7 @@ const onClickCancel = () => {
 };
 
 const onSubmit = () => {
+  store.commit(ONSPINNER);
   const url = `${baseUrl}/apply/`;
   const formData = new FormData();
   for (let i in store.state.applyForm) {
@@ -32,15 +34,19 @@ const onSubmit = () => {
     })
     .then((res) => {
       console.log(res);
+      store.commit(ONSPINNER);
       res.status === 201 && router.push("/applycomplete");
     })
     .catch((err) => {
+      store.commit(ONSPINNER);
+      alert("전송에 실패했습니다");
       console.log(err);
     });
   console.log(store.state.applyForm);
 };
 
-onBeforeMount(() => {
+onUnmounted(() => {
+  store.commit(RESETAPPLY);
   store.commit(ISMODAL, true);
 });
 </script>
@@ -145,5 +151,6 @@ onBeforeMount(() => {
       </div>
     </div>
   </div>
+  <LoadingSpinner v-if="store.state.spinnerShow" color="#F5A520" size="100px" />
   <Modal />
 </template>

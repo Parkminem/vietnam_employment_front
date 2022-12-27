@@ -4,7 +4,7 @@ import vt from "./nations/vt.json";
 import en from "./nations/en.json";
 
 const i18n = createI18n({
-  locale: "en",
+  locale: "vt",
   fallbackLocale: "ko",
   messages: { ko, vt, en },
 });
