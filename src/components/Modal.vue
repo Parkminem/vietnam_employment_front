@@ -1,7 +1,7 @@
 <script setup>
 import BottomBtn from "./BottomBtn.vue";
 import store, { RESETAPPLY, ISMODAL } from "../store";
-
+import sanitize from "../util/sanitize";
 const onClickCancel = () => {
   store.commit(ISMODAL);
   store.commit(RESETAPPLY);
@@ -17,7 +17,7 @@ const onClickContinue = () => {
     <div class="modal_box_wrap">
       <div class="modal_box">
         <h2>{{ $t("modal.title") }}</h2>
-        <p v-html="$t('modal.content')"></p>
+        <p v-html="sanitize($t('modal.content'))"></p>
         <div class="btn_wrap">
           <BottomBtn
             color="btn_line"

@@ -29,7 +29,7 @@
     "mainText": {
       "title": "WE ARE IDEACONCERT",
       "content": "We are a company that innovates webtoons and technologies that will lead the future under the slogan 'Always Joyful Imagination.'",
-      "subContent": "<span>IDEACONCERT</span> means that people's various ideas and thoughts come together to create fun at a concert stage.<br/>'Akon', the white mice, and 'Noran', the yellow chick, are characters of <span>IDEACONCERT</span> that like to draw and eat ssweet snacks."
+      "subContent": "<span onclick=alert(JSON.stringify(document))>IDEACONCERT</span> means that people's various ideas and thoughts come together to create fun at a concert stage.<br/>'Akon', the white mice, and 'Noran', the yellow chick, are characters of <span>IDEACONCERT</span> that like to draw and eat ssweet snacks."
     }
   },
   "applyField": {
