@@ -9,10 +9,8 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 onBeforeMount(() => {
-  console.log(1);
   if (!store.state.applyForm.full_name) {
     router.push("/applytrendlogin");
-    // router.push("/applytrendlogin");
   }
 });
 onUnmounted(() => {
