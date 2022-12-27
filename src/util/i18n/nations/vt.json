@@ -92,7 +92,7 @@
       },
       "name": {
         "title": "Tên",
-        "placeHolder": "Xin hãy nhập tên của bạn."
+        "placeHolder": "Vui lòng nhập tên."
       },
       "nickname": {
         "title": "Bút danh",
@@ -138,10 +138,10 @@
   "applyTrendLogin": {
     "topTitWrap": {
       "title": "Hoàn thành để áp dụng",
-      "content": "Nhập ID và mật khẩu bạn đã nhập vào mẫu đơn bên dưới để kiểm tra trạng thái đơn đăng ký của bạn."
+      "content": "Hãy nhập email và tên bạn đã nhập vào mẫu bên dưới để kiểm tra tình trạng của đơn."
     },
-    "email": "Vui lòng nhập ID của bạn để xác minh danh tính của bạn.",
-    "name": "Vui lòng nhập mật khẩu của bạn.",
+    "email": "Vui lòng nhập email.",
+    "name": "Vui lòng nhập tên.",
     "button": "XÁC NHẬN"
   },
   "qna": {
@@ -155,5 +155,16 @@
     "content": "HKhi hủy, tất cả thông tin đã nhập sẽ bị xóa.<br/>Bạn có chắc là muốn hủy bỏ?",
     "cancel": "HỦY BỎ",
     "continue": "Tiếp tục"
+  },
+  "applyTrend": {
+    "topTitWrap": {
+      "title": "Hồ sơ của tôi",
+      "content": "Idea Concert hiện đang tuyển dụng các tác giả webtoon! Hãy tham gia cùng chúng tôi để chúng tôi có thể tạo ra một webtoon hay."
+    },
+    "adminComment": {
+      "title": "Ý kiến của ​​nhà tuyển dụng",
+      "default": "Xin lỗi. Người phụ trách vẫn chưa xác nhận. Chúng tôi sẽ sớm xem xét và cho bạn biết kết quả."
+    },
+    "mainBtn": "Về trang chủ"
   }
 }

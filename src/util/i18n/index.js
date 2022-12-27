@@ -5,7 +5,7 @@ import en from "./nations/en.json";
 
 const i18n = createI18n({
   locale: "vt",
-  fallbackLocale: "ko",
+  fallbackLocale: "en",
   messages: { ko, vt, en },
 });
 

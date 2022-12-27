@@ -30,75 +30,72 @@ onUnmounted(() => {
         <div class="input_set_wrap">
           <InputGroup
             category="position"
-            title="포지션(중복가능)"
+            :title="$t('apply.inputGroup.position.title')"
             need
             color="input_categry_black"
           />
           <InputGroup
             category="name"
-            title="이름"
+            :title="$t('apply.inputGroup.name.title')"
             need
             color="input_categry_black"
           />
           <InputGroup
             category="nickname"
-            title="별명"
+            :title="$t('apply.inputGroup.nickname.title')"
             color="input_categry_black"
           />
           <InputGroup
             category="mail"
-            title="이메일 주소"
+            :title="$t('apply.inputGroup.mail.title')"
             need
             color="input_categry_black"
           />
           <InputGroup
             category="number"
-            title="연락처"
+            :title="$t('apply.inputGroup.number.title')"
             need
             color="input_categry_black"
           />
           <InputGroup
             category="country"
-            title="거주 국가"
+            :title="$t('apply.inputGroup.country.title')"
             color="input_categry_black"
           />
           <InputGroup
             category="genre"
-            title="선호 장르(중복가능)"
+            :title="$t('apply.inputGroup.genre.title')"
             need
             color="input_categry_black"
           />
           <InputGroup
             category="intro"
-            title="자기 소개"
+            :title="$t('apply.inputGroup.intro.title')"
             color="input_categry_black"
           />
           <InputGroup
             category="portfolio_url"
-            title="포트폴리오 사이트"
+            :title="$t('apply.inputGroup.portfolio.title')"
             color="input_categry_black"
           />
           <InputGroup
             category="file"
-            title="파일 업로드"
+            :title="$t('apply.inputGroup.file.title')"
             need
             color="input_categry_black"
           />
         </div>
         <div class="txt_box_wrap mgt30">
-          <div class="comment">채용 담당자 코멘트</div>
+          <div class="comment">{{ $t("applyTrend.adminComment.title") }}</div>
           <div class="txt_box">
-            <p>
-              죄송합니다. 아직 담당자가 확인을 하지 않았습니다. 빠른 시일 내에
-              검토하여 결과를 말씀드리겠습니다.
-            </p>
+            <p>{{ $t("applyTrend.adminComment.default") }}</p>
           </div>
         </div>
         <div class="btn_wrap">
           <BottomBtn
             route="/"
             color="btn_color_bg"
-            content="메인가기"
+            :content="$t('applyTrend.mainBtn')"
             isRoute
           />
         </div>

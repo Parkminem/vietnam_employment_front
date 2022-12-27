@@ -8,7 +8,7 @@ defineProps({
 </script>
 <template>
   <button
-    v-if="content === '확인' || content === 'XÁC NHẬN'"
+    v-if="content === '확인' || content === 'XÁC NHẬN' || content === 'Agree'"
     type="submit"
     :class="`btn_basic ${color}`"
   >
