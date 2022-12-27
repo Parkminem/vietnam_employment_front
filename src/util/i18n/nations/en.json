@@ -29,131 +29,142 @@
     "mainText": {
       "title": "WE ARE IDEACONCERT",
       "content": "We are a company that innovates webtoons and technologies that will lead the future under the slogan 'Always Joyful Imagination.'",
-      "subContent": "IDEACONCERT means that people's various ideas and thoughts come together to create fun at a concert stage.<br/>'Akon', the white mice, and 'Noran', the yellow chick, are characters of IDEACONCERT that like to draw and eat ssweet snacks."
+      "subContent": "<span>IDEACONCERT</span> means that people's various ideas and thoughts come together to create fun at a concert stage.<br/>'Akon', the white mice, and 'Noran', the yellow chick, are characters of <span>IDEACONCERT</span> that like to draw and eat ssweet snacks."
     }
   },
   "applyField": {
     "topTitWrap": {
-      "title": "고민은 기회를 늦출뿐!",
-      "content": "아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
+      "title": "Worrying only prevent opportunities!",
+      "content": "Idea Concert is now recruiting webtoon writers! Join us so to make a great webtoons together."
     },
     "workProcessWrap": {
-      "title": "아이디어콘서트 작업 공정",
+      "title": "Ideaconcert Work Process",
       "process": {
-        "1": "그림 콘티 (제공)",
-        "2": "데생 콘티",
-        "3": "선화",
-        "4": "채색 및 보정"
+        "1": "Storyboard Adaptation",
+        "2": "Sketching",
+        "3": "Line drawing",
+        "4": "Coloring and Editing"
       }
     },
     "infoTxtBox": {
-      "content": "작업은<span>그림 콘티 - 데생 콘티 - 선화 - 채색 및 보정 - 배경 작업</span>이 이루어 집니다."
+      "content": "The workflow goes as follow: <span>Storyboard adaptation - Sketching - Line Drawing - Coloring and Editing - Background</span>work."
     },
     "recruitmentPositionWrap": {
-      "title": "모집중인 포지션",
-      "content": "데생콘티와 선화 채색 및 보정이 가능한 자는 지원해 주세요."
+      "title": "Job Openings",
+      "content": "We encourage for those wo have the capabilities in doing sketching, and coloring and editing, to apply."
     },
     "applyFieldPosition": {
       "1": {
-        "title": "데생 콘티",
-        "leftContent": "그림 콘티",
-        "rightContent": "데생 콘티",
-        "content": "그림콘티를 데생콘티로 제작하는 작업 입니다.<br/>아이디어콘서트에서 제공한 그림 콘티를 데생 콘티로 작업을 할 수 있는 작가를 찾습니다."
+        "title": "Sketching(Sketch Adaptation)",
+        "leftContent": "Storyboard Adaptation",
+        "rightContent": "Sketching(Sketch Adaptation)",
+        "content": "Storyboard Adaptations are then made into Sketch works.<br/>We are looking for people who can do Sketch works based on Ideaconcert's storyboards."
       },
       "2": {
-        "title": "선화",
-        "leftContent": "데생 콘티",
-        "rightContent": "선화",
-        "content": "데생 콘티를 선화로 제작하는 작업입니다.<br/>캐릭터의 매력을 살려 세밀하게 펜선으로 강약을 표현해 그려내는 파트입니다."
+        "title": "Line drawing",
+        "leftContent": "Sketching(Sketch Adaptation)",
+        "rightContent": "Line drawing",
+        "content": "This is the job task turning Sketches into Line Drawing<br/>This is the job task that embodies each character's charm and expressions through the thickness and thinness of the pen lines."
       },
       "3": {
-        "title": "채색 및 보정",
-        "leftContent": "선화",
-        "rightContent": "채색 및 보정",
-        "content": "선화위에 채색 하는 작업입니다.<br/>라인아트 위에 채색을 입혀 웹툰을 생생하게 입혀내는 파트입니다."
+        "title": "Coloring and Editing",
+        "leftContent": "Line drawing",
+        "rightContent": "Coloring and Editing",
+        "content": "This is the job task of Coloring on Line drawings.<br/>This tasks include applying vivid colors on to the line drawings."
       },
       "4": {
-        "title": "배경 아트",
-        "leftContent": "작업이 안된 배경",
-        "rightContent": "배경 작업 및 보정",
-        "content": "웹툰의 배경을 제작하는 작업입니다.<br/>표현이 제대로 되어 있지 않은 기본 배경을 작품의 분위기에 맞게 채색하고 연출하는 파트입니다."
+        "title": "Background Art",
+        "leftContent": "Unfinished Background Work",
+        "rightContent": "Background Work and Editing",
+        "content": "This is the job task of Webtoon Background Work.<br/>This is the part where colors are matched and basic backgrounds that are not well expressed or does not suit the atmosphere of the story are edited."
       }
     }
   },
   "apply": {
     "topTitWrap": {
-      "title": "지원 하기",
-      "content": "아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
+      "title": "Application Procedures",
+      "content": "Idea Concert is now recruiting webtoon writers! Join us so to make a great webtoons together."
     },
-    "inputGroupTitle": "지원서 작성하기 (* 표시는 필수 사항 입니다.)",
+    "inputGroupTitle": "Fill out the application form (columns with '*' marks are required)",
     "inputGroup": {
       "position": {
-        "title": "포지션(중복가능)"
+        "title": "Position (You may choose more than one)"
       },
       "name": {
-        "title": "이름",
-        "placeHolder": "이름을 기입해 주세요"
+        "title": "Name",
+        "placeHolder": "Please, insert your name."
       },
       "nickname": {
-        "title": "필명",
-        "placeHolder": "필명을 기입해 주세요"
+        "title": "Nickname",
+        "placeHolder": "Please, insert your nickname."
       },
       "mail": {
-        "title": "이메일 주소",
-        "placeHolder": "메일을 입력해 주세요"
+        "title": "Email Address",
+        "placeHolder": "Please, insert your email address."
       },
       "number": {
-        "title": "연락처",
-        "placeHolder": "' - '없이 입력해 주세요"
+        "title": "Contact Number",
+        "placeHolder": "Please, insert your phone number."
       },
       "country": {
-        "title": "거주 국가",
-        "placeHolder": "SOUTH KOREA"
+        "title": "Country of Residence",
+        "placeHolder": "USA"
       },
       "genre": {
-        "title": "선호 장르(중복가능)"
+        "title": "Preferred Genre (You may choose more than one)"
       },
       "intro": {
-        "title": "자기 소개"
+        "title": "Self-Introduction"
       },
       "portfolio": {
-        "title": "포트폴리오 사이트",
+        "title": "Portfolio Site",
         "placeHolder": "http://"
       },
       "file": {
-        "title": "파일 업로드"
+        "title": "Upload File"
       }
     },
     "txtBox": {
-      "title": "유의사항",
+      "title": "Notice",
       "content": {
-        "1": "지원하는 포지션에 맞는 그림 포트폴리오를 꼭 첨부하여 주세요.",
-        "2": "포트폴리오는 jpg 또는 png 파일, pdf파일로 한 폴더에 압축하여 첨부해 주세요. 최대 용량은 100mb이내입니다."
+        "1": "Please attach a portfolio of pictures suitable for the position you are applying for.",
+        "2": "Please compress the portfolio into one folder with jpg, png, and pdf files and attach it. Maximum capacity is within 100mb."
       }
     },
-    "agree": "위 개인 정보수집 · 이용에 동의합니다.",
-    "cancel": "취소",
-    "submit": "확인"
+    "agree": "I agree to the collection and use of personal information as mentioned above.",
+    "cancel": "Cancel",
+    "submit": "Agree"
   },
   "applyTrendLogin": {
     "topTitWrap": {
-      "title": "지원 현황 보기",
-      "content": "지원서에 기입한 이메일과 이름을 아래에 넣어 지원 현황을 확인해 보세요."
+      "title": "View My Application",
+      "content": "You may check the status of your application by inserting your email and name used in your application form."
     },
-    "email": "이메일 주소를 기입해 주세요.",
-    "name": "이름을 기입해 주세요.",
-    "button": "확인"
+    "email": "Please, insert your email address.",
+    "name": "Please, insert your name.",
+    "button": "Agree"
   },
   "qna": {
     "topTitWrap": {
       "title": "QnA",
-      "content": "채용 관련하여 자주 문의하시는 내용들입니다. 지원 시 참고해 주십시오."
+      "content": "These are the frequently asked questions. Please refer to it when applying."
     }
   },
   "modal": {
-    "title": "지원 취소 하기",
-    "content": "취소 시 모든 기입한 정보들은 삭제됩니다.<br/>그래도 취소하시겠습니까?",
-    "cancel": "취소",
-    "continue": "계속 하기"
+    "title": "Cancel Application",
+    "content": "If you decide to cancel, all the information inserted will be deleted.<br/>Do you still wish to cancel?",
+    "cancel": "Cancel",
+    "continue": "Continue"
+  },
+  "applyTrend": {
+    "topTitWrap": {
+      "title": "My Application",
+      "content": "IDEACONCERT is now recruiting webtoon writers! Join us so to make a great webtoons together."
+    },
+    "adminComment": {
+      "title": "Recruiter's Comments",
+      "default": "Sorry, the person in charge hasn't checked your application. We will review and inform you the results as soon as possible."
+    },
+    "mainBtn": "Go to Main"
   }
 }
