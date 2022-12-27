@@ -10,7 +10,7 @@ import { baseUrl } from "../api";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import LoadingSpinner from "../components/LoadingSpinner.vue";
-import { onUnmounted } from "@vue/runtime-core";
+import { onUnmounted } from "vue";
 
 const router = useRouter();
 
