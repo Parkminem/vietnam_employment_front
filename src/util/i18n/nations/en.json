@@ -1,10 +1,10 @@
 {
   "header": {
-    "content": "웹툰과 콘텐츠를 사랑하는 동료들이 함께합니다.<br />K-웹툰, 성공의 중심에서 함께 미래를 그려나갑니다.",
+    "content": "Together with people who love webtoons and contents.<br />K-Webtoon is at the center of success track of the future.",
     "nav": {
-      "1": "지원 분야",
-      "2": "지원 하기",
-      "3": "지원 현황",
+      "1": "Job Opportunities",
+      "2": "Application Procedures",
+      "3": "Application Status",
       "4": "QnA"
     }
   },
@@ -12,24 +12,24 @@
     "mainContWrap": {
       "1": {
         "title": "BEYOND WEBTOON",
-        "subTitle": "우리는 웹툰을 사랑하는 사람들과 함께 일합니다.",
-        "content": "탄탄한 원작 스토리를 기반으로 스토리 작가와 웹툰 작가, 그리고 프로듀서가 함께 일하며 서로의 의견에 귀기울이며 웹툰 작품을 만들어가고 있습니다."
+        "subTitle": "We work with webtoon lovers.",
+        "content": "Our webtoon illustrators, producers, and story writers discuss and work together to create webtoon contents based on its original story."
       },
       "2": {
         "title": "BEYOND BORDERS",
-        "subTitle": "우리는 국가의 경계를 넘어서 함께 작품을 그립니다.",
-        "content": "우리는 지역에 한계를 두지 않고 함께 웹툰을 그릴 수 있는 동료를 찾고 있으며, 각 나라에 재능이 많고 잠재력이 풍부한 웹툰작가들이 많다는 것을 알고 있습니다."
+        "subTitle": "Together, we create contents that transcends boundaries.",
+        "content": "We understand that there are countless talented writers and illustrators from each corner of the world. We are searching for these talented people who can work together with us in making webtoons without putting limits to regional boundaries."
       },
       "3": {
         "title": "BEYOND FUTURE",
-        "subTitle": "우리는 미래에 더욱 중요해질 콘텐츠의 가치를 알고 있습니다.",
-        "content": "웹툰을 보는 독자들은 계속해서 늘어나고 있으며, 독자들을 울고 웃게 할 수 있는 멋진 작품을 만들어갈 수 있도록 웹툰 제작 프로젝트를 최선을 다해 이끌겠습니다."
+        "subTitle": "We know the value of the contents that will become important in the future.",
+        "content": "he number of webtoon readers continue to increase and we will lead the webtoon production projects and create works that can make readers both cry and laugh."
       }
     },
     "mainText": {
       "title": "WE ARE IDEACONCERT",
-      "content": "우리는 “Always Joyful Imagination”이라는 슬로건으로 미래를 이끌어갈 웹툰과 기술을 기발하는 회사입니다.",
-      "subContent": "IDEACONCERT는 사람들의 다양한 아이디어와 생각이 모여 하나의 즐거운 콘서트 무대가 된다는 의미를 담고 있습니다.<br>아콘이와 노란이는 <span>IDEACONCERT</span>를 상징하는 캐릭터로 하얀생쥐와 노란 병아리이며, 달콤한 간식과 그림을 그리는 것을 좋아합니다."
+      "content": "We are a company that innovates webtoons and technologies that will lead the future under the slogan 'Always Joyful Imagination.'",
+      "subContent": "IDEACONCERT means that people's various ideas and thoughts come together to create fun at a concert stage.<br/>'Akon', the white mice, and 'Noran', the yellow chick, are characters of IDEACONCERT that like to draw and eat ssweet snacks."
     }
   },
   "applyField": {

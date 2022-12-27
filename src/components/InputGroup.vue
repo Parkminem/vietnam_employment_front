@@ -12,21 +12,24 @@ defineProps({
 const changeFile = (e) => {
   store.commit(ATTACHFILE, e.target.files[0]);
 };
+
+const applyForm = store.state.applyForm;
 </script>
 
 <template>
-  <div class="input_group">
+  <div class="input_group" v-if="!color">
     <div :class="`input_categry ${color && color}`">
       <label :for="`add_${category}`">
         <span v-if="need">*</span>
         {{ title }}
       </label>
     </div>
+
     <input
       v-if="category === 'name'"
       type="text"
       id="add_name"
-      placeholder="이름을 기입해 주세요"
+      :placeholder="$t('apply.inputGroup.name.placeHolder')"
       v-model="store.state.applyForm.full_name"
       :required="need"
     />
@@ -36,7 +39,7 @@ const changeFile = (e) => {
       :required="need"
       id="add_nickname"
       v-model="store.state.applyForm.pen_name"
-      placeholder="필명을 기입해 주세요."
+      :placeholder="$t('apply.inputGroup.nickname.placeHolder')"
     />
     <input
       v-else-if="category === 'mail'"
@@ -44,7 +47,7 @@ const changeFile = (e) => {
       :required="need"
       id="add_mail"
       v-model="store.state.applyForm.email"
-      placeholder="예) ideacon@ideaconcert.com"
+      :placeholder="$t(`apply.inputGroup.mail.placeHolder`)"
     />
     <input
       v-else-if="category === 'number'"
@@ -53,7 +56,7 @@ const changeFile = (e) => {
       :required="need"
       id="add_number"
       v-model="store.state.applyForm.phone_number"
-      placeholder="' - '없이 입력해 주세요"
+      :placeholder="$t('apply.inputGroup.number.placeHolder')"
     />
     <input
       v-else-if="category === 'country'"
@@ -61,9 +64,9 @@ const changeFile = (e) => {
       :required="need"
       id="add_country"
       v-model="store.state.applyForm.region"
-      placeholder="SOUTH KOREA"
+      :placeholder="$t('apply.inputGroup.country.placeHolder')"
     />
-    <div v-else-if="category === 'intro'" className="intro_txtarea">
+    <div v-else-if="category === 'intro'" class="intro_txtarea">
       <textarea v-model="store.state.applyForm.about"></textarea>
     </div>
     <input
@@ -72,7 +75,7 @@ const changeFile = (e) => {
       :required="need"
       id="add_portfolio_url"
       v-model="store.state.applyForm.portfolio"
-      placeholder="http:// "
+      :placeholder="$t('apply.inputGroup.portfolio.placeHolder')"
     />
     <input
       v-else-if="category === 'file'"
@@ -102,5 +105,44 @@ const changeFile = (e) => {
       <postion-list :count="8" content="ROMANCE" />
       <postion-list :count="9" content="ADULT" />
     </ul>
+  </div>
+  <div v-else class="input_group">
+    <div :class="`input_categry ${color && color}`">
+      <label :for="`add_${category}`">
+        <span v-if="need">*</span>
+        {{ title }}
+      </label>
+    </div>
+
+    <div v-if="category === 'name'" class="input_cont_box_wrap">
+      {{ applyForm.full_name }}
+    </div>
+    <div v-else-if="category === 'nickname'" class="input_cont_box_wrap">
+      {{ applyForm.pen_name }}
+    </div>
+    <div v-else-if="category === 'mail'" class="input_cont_box_wrap">
+      {{ applyForm.email }}
+    </div>
+    <div v-else-if="category === 'number'" class="input_cont_box_wrap">
+      {{ applyForm.phone_number }}
+    </div>
+    <div v-else-if="category === 'country'" class="input_cont_box_wrap">
+      {{ applyForm.region }}
+    </div>
+    <div v-else-if="category === 'intro'" class="input_cont_box_wrap">
+      {{ applyForm.about }}
+    </div>
+    <div v-else-if="category === 'portfolio_url'" class="input_cont_box_wrap">
+      {{ applyForm.portfolio }}
+    </div>
+    <div v-else-if="category === 'file'" class="input_cont_box_wrap">
+      {{ applyForm.files?.name ?? applyForm.files?.split("/")[1] }}
+    </div>
+    <div v-else-if="category === 'genre'" class="input_cont_box_wrap">
+      {{ applyForm.genres.join(", ") }}
+    </div>
+    <div v-else-if="category === 'position'" class="input_cont_box_wrap">
+      {{ applyForm.positions.join(", ") }}
+    </div>
   </div>
 </template>

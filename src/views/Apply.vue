@@ -49,37 +49,70 @@ onBeforeMount(() => {
   <div class="sub_wrap">
     <div class="sub_cont_wrap">
       <TopTitWrap
-        title="지원 하기"
-        content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
+        :title="$t('apply.topTitWrap.title')"
+        :content="$t('apply.topTitWrap.content')"
       />
       <div class="sub_cont_area">
         <form @submit.prevent="onSubmit">
           <div class="input_set_wrap">
-            <InputGroupTitle
-              :step="1"
-              content="지원서 작성하기 (* 표시는 필수 사항 입니다.)"
+            <InputGroupTitle :step="1" :content="$t('apply.inputGroupTitle')" />
+            <InputGroup
+              category="position"
+              :title="$t('apply.inputGroup.position.title')"
+              need
             />
-            <InputGroup category="position" title="포지션(중복가능)" need />
-            <InputGroup category="name" title="이름" need />
-            <InputGroup category="nickname" title="필명" need />
-            <InputGroup category="mail" title="이메일 주소" need />
-            <InputGroup category="number" title="연락처" need />
-            <InputGroup category="country" title="거주 국가" />
-            <InputGroup category="genre" title="선호 장르(중복가능)" need />
-            <InputGroup category="intro" title="자기 소개" />
-            <InputGroup category="portfolio_url" title="포트폴리오 사이트" />
-            <InputGroup category="file" title="파일 업로드" need />
+            <InputGroup
+              category="name"
+              :title="$t('apply.inputGroup.name.title')"
+              need
+            />
+            <InputGroup
+              category="nickname"
+              :title="$t('apply.inputGroup.nickname.title')"
+              need
+            />
+            <InputGroup
+              category="mail"
+              :title="$t('apply.inputGroup.mail.title')"
+              need
+            />
+            <InputGroup
+              category="number"
+              :title="$t('apply.inputGroup.number.title')"
+              need
+            />
+            <InputGroup
+              category="country"
+              :title="$t('apply.inputGroup.country.title')"
+            />
+            <InputGroup
+              category="genre"
+              :title="$t('apply.inputGroup.genre.title')"
+              need
+            />
+            <InputGroup
+              category="intro"
+              :title="$t('apply.inputGroup.intro.title')"
+            />
+            <InputGroup
+              category="portfolio_url"
+              :title="$t('apply.inputGroup.portfolio.title')"
+            />
+            <InputGroup
+              category="file"
+              :title="$t('apply.inputGroup.file.title')"
+              need
+            />
           </div>
           <div class="txt_box_wrap">
             <div class="txt_box">
-              <h5>유의사항</h5>
+              <h5>{{ $t("apply.txtBox.title") }}</h5>
               <ul>
                 <li>
-                  지원하는 포지션에 맞는 그림 포트폴리오를 꼭 첨부하여 주세요.
+                  {{ $t("apply.txtBox.content.1") }}
                 </li>
                 <li>
-                  포트폴리오는 jpg 또는 png 파일, pdf파일로 한 폴더에 압축하여
-                  첨부해 주세요. 최대 용량은 100mb이내입니다.
+                  {{ $t("apply.txtBox.content.2") }}
                 </li>
               </ul>
             </div>
@@ -92,15 +125,20 @@ onBeforeMount(() => {
               required
             />
             <label for="agree_check">
-              <span>위 개인 정보수집 · 이용에 동의합니다.</span>
+              <span>{{ $t("apply.agree") }}</span>
             </label>
           </div>
           <div class="btn_wrap">
-            <BottomBtn color="btn_line" content="취소" @click="onClickCancel" />
+            <BottomBtn
+              color="btn_line"
+              :content="$t('apply.cancel')"
+              @click="onClickCancel"
+            />
             <BottomBtn
               route="/applycomplete"
               color="btn_color_bg"
-              content="확인"
+              :content="$t('apply.submit')"
+              isRoute
             />
           </div>
         </form>

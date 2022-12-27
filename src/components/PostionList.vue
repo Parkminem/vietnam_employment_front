@@ -3,7 +3,7 @@ import store from "../store";
 defineProps({
   count: Number,
   content: String,
-  need: Number,
+  need: Boolean,
 });
 // console.log(store.state.applyForm);
 

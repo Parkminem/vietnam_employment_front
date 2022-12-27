@@ -79,5 +79,81 @@
         "content": "Đây là tác phẩm làm nền cho webtoon.<br/>Đây là phần tô màu và định hướng nền cơ bản chưa được thể hiện tốt cho phù hợp với không khí tác phẩm."
       }
     }
+  },
+  "apply": {
+    "topTitWrap": {
+      "title": "Ứng tuyển",
+      "content": "Idea Concert hiện đang tuyển dụng các tác giả webtoon! Hãy tham gia cùng chúng tôi để chúng tôi có thể tạo ra một webtoon hay."
+    },
+    "inputGroupTitle": "Điền vào mẫu đơn (Phần có dấu * là phần bắt buộc)",
+    "inputGroup": {
+      "position": {
+        "title": " Vị trí (có thể ứng tuyển nhiều vị trí)"
+      },
+      "name": {
+        "title": "Tên",
+        "placeHolder": "Xin hãy nhập tên của bạn."
+      },
+      "nickname": {
+        "title": "Bút danh",
+        "placeHolder": "Vui lòng nhập bút danh của bạn."
+      },
+      "mail": {
+        "title": "Địa chỉ email",
+        "placeHolder": "Vui lòng nhập email."
+      },
+      "number": {
+        "title": "Địa chỉ liên hệ",
+        "placeHolder": "Vui lòng nhập số điện thoại của bạn."
+      },
+      "country": {
+        "title": "QUỐC GIA CƯ TRÚ",
+        "placeHolder": "Hà Nội"
+      },
+      "genre": {
+        "title": "Thể loại ưa thích (có thể trùng lặp)"
+      },
+      "intro": {
+        "title": "GIỚI THIỆU BẢN THÂN"
+      },
+      "portfolio": {
+        "title": "TRANG WEB CHỨA PORTFOLIO",
+        "placeHolder": "http://"
+      },
+      "file": {
+        "title": "TẢI LÊN TẬP TIN"
+      }
+    },
+    "txtBox": {
+      "title": "CHÚ Ý",
+      "content": {
+        "1": "Hãy chắc chắn đính kèm một danh mục hình ảnh phù hợp với vị trí bạn đang ứng tuyển.",
+        "2": "Nén danh mục dưới dạng tệp jpg, png hoặc pdf và đính kèm vào một thư mục. Dung lượng tối đa là trong vòng 100mb."
+      }
+    },
+    "agree": "Tôi đồng ý với việc thu thập và sử dụng thông tin cá nhân ở trên.",
+    "cancel": "HỦY BỎ",
+    "submit": "XÁC NHẬN"
+  },
+  "applyTrendLogin": {
+    "topTitWrap": {
+      "title": "Hoàn thành để áp dụng",
+      "content": "Nhập ID và mật khẩu bạn đã nhập vào mẫu đơn bên dưới để kiểm tra trạng thái đơn đăng ký của bạn."
+    },
+    "email": "Vui lòng nhập ID của bạn để xác minh danh tính của bạn.",
+    "name": "Vui lòng nhập mật khẩu của bạn.",
+    "button": "XÁC NHẬN"
+  },
+  "qna": {
+    "topTitWrap": {
+      "title": "QnA",
+      "content": "Đây là những câu hỏi thường gặp liên quan đến tuyển dụng. Vui lòng tham khảo khi áp dụng."
+    }
+  },
+  "modal": {
+    "title": "Hủy nộp đơn",
+    "content": "HKhi hủy, tất cả thông tin đã nhập sẽ bị xóa.<br/>Bạn có chắc là muốn hủy bỏ?",
+    "cancel": "HỦY BỎ",
+    "continue": "Tiếp tục"
   }
 }

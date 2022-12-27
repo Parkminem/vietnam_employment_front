@@ -31,8 +31,8 @@ const userAuthenticate = () => {
   <HeaderWrap />
   <div class="sub_cont_wrap">
     <TopTitWrap
-      title="지원 현황 보기"
-      content="지원서에 기입한 이메일과 이름을 아래에 넣어 지원 현황을 확인해 보세요."
+      :title="$t('applyTrendLogin.topTitWrap.title')"
+      :content="$t('applyTrendLogin.topTitWrap.content')"
     />
     <div class="sub_cont_area">
       <div className="img_deco_wrap">
@@ -42,20 +42,24 @@ const userAuthenticate = () => {
         <div className="login_wrap">
           <input
             type="email"
-            placeholder="이메일 주소를 기입해 주세요."
+            :placeholder="$t('applyTrendLogin.email')"
             v-model="email"
             className="id_area"
             required
           />
           <input
             type="text"
-            placeholder="이름을 기입해 주세요."
+            :placeholder="$t('applyTrendLogin.name')"
             className="password_area"
             v-model="name"
             required
           />
           <div className="btn_wrap">
-            <BottomBtn color="btn_color_bg" content="확인" isRoute />
+            <BottomBtn
+              color="btn_color_bg"
+              :content="$t('applyTrendLogin.button')"
+              isRoute
+            />
           </div>
         </div>
       </form>

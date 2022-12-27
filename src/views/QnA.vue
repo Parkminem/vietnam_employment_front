@@ -8,8 +8,8 @@ import QnABox from "../components/QnABox.vue";
   <div class="sub_wrap">
     <div class="sub_cont_wrap">
       <TopTitWrap
-        title="QnA"
-        content="채용 관련하여 자주 문의하시는 내용들입니다. 지원 시 참고해 주십시오."
+        :title="$t('qna.topTitWrap.title')"
+        :content="$t('qna.topTitWrap.content')"
       />
       <div class="sub_cont_area">
         <QnABox question="질문입니다1" answer="대답입니다1" />
