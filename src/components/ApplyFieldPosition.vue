@@ -1,7 +1,7 @@
 <script setup>
 import store from "../store";
 import CategoryList from "./CategoryList.vue";
-
+import sanitize from "../util/sanitize";
 const data = [
   {
     index: 1,
@@ -95,8 +95,10 @@ const data = [
         <div class="position_detail_info">
           <p
             v-html="
-              $t(
-                `applyField.applyFieldPosition.${store.state.categoryIndex}.content`
+              sanitize(
+                $t(
+                  `applyField.applyFieldPosition.${store.state.categoryIndex}.content`
+                )
               )
             "
           ></p>

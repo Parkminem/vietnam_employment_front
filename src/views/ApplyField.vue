@@ -6,6 +6,8 @@ import HeaderWrap from "../components/HeaderWrap.vue";
 import TopTitWrap from "../components/TopTitWrap.vue";
 import ProcessList from "../components/ProcessList.vue";
 import ApplyFieldPosition from "../components/ApplyFieldPosition.vue";
+import sanitizeHtml from "sanitize-html";
+
 const store = useStore();
 onBeforeUnmount(() => store.commit(CHANGECATEGORYINDEX, 1));
 </script>
@@ -53,7 +55,7 @@ onBeforeUnmount(() => store.commit(CHANGECATEGORYINDEX, 1));
             </ul>
           </div>
           <div class="info_txt_box">
-            <p v-html="$t('applyField.infoTxtBox.content')"></p>
+            <p v-html="sanitizeHtml($t('applyField.infoTxtBox.content'))"></p>
           </div>
         </div>
         <div class="recruitment_position_wrap">

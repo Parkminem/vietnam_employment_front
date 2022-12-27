@@ -1,3 +1,9 @@
+<script setup>
+import HeaderWrap from "../components/HeaderWrap.vue";
+import MainContWrap from "../components/MainContWrap.vue";
+import MainBtmImgWrap from "../components/MainBtmImgWrap.vue";
+import sanitize from "../util/sanitize";
+</script>
 <template>
   <HeaderWrap />
   <div class="main_cont_set">
@@ -48,7 +54,7 @@
         marginTop="70"
         marginBottom="70"
       />
-      <p v-html="$t('main.mainText.subContent')"></p>
+      <p v-html="sanitize($t('main.mainText.subContent'))"></p>
       <MainBtmImgWrap
         img="images/img/img_allstar.png"
         imgAlt="아이디어콘서트 만화"
@@ -67,12 +73,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import HeaderWrap from "../components/HeaderWrap.vue";
-import MainContWrap from "../components/MainContWrap.vue";
-import MainBtmImgWrap from "../components/MainBtmImgWrap.vue";
-</script>
 <style scoped>
 .img_allstar {
   margin-bottom: -4px;

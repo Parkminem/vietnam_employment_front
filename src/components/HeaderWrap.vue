@@ -1,5 +1,6 @@
 <script setup>
 import PageNav from "./PageNav.vue";
+import sanitize from "../util/sanitize";
 </script>
 <template>
   <div class="header_wrap">
@@ -23,7 +24,7 @@ import PageNav from "./PageNav.vue";
           <img src="images/img/idea-space.png" alt="스페이스 문구" />
         </div>
         <h2 class="font_current"><span>HELLO,</span>WEBTOONIST</h2>
-        <p v-html="$t('header.content')"></p>
+        <p v-html="sanitize($t('header.content'))"></p>
       </div>
     </div>
   </div>
