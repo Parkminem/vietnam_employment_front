@@ -5,11 +5,13 @@ export const CHANGECATEGORYINDEX = "changeCategoryIndex";
 export const RESETAPPLY = "resetApply";
 export const ISMODAL = "isModal";
 export const ATTACHFILE = "attachFile";
+export const ONSPINNER = "onSpinner";
 
 const store = createStore({
   state() {
     return {
       categoryIndex: 1,
+      spinnerShow: false,
       modalShow: "none",
       applyForm: {
         full_name: "",
@@ -55,6 +57,9 @@ const store = createStore({
     },
     [ATTACHFILE](state, file) {
       state.applyForm.files = file;
+    },
+    [ONSPINNER](state) {
+      state.spinnerShow = !state.spinnerShow;
     },
   },
 });
