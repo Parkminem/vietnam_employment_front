@@ -23,8 +23,8 @@ onUnmounted(() => {
   <div class="sub_wrap">
     <div class="sub_cont_wrap">
       <TopTitWrap
-        title="나의 지원서"
-        content="아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
+        :title="$t('applyTrend.topTitWrap.title')"
+        :content="$t('applyTrend.topTitWrap.content')"
       />
       <div class="sub_cont_area">
         <div class="input_set_wrap">
