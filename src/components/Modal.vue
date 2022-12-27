@@ -16,23 +16,19 @@ const onClickContinue = () => {
   <div :style="{ display: store.state.modalShow }" class="modal_wrap">
     <div class="modal_box_wrap">
       <div class="modal_box">
-        <h2>지원 취소 하기</h2>
-        <p>
-          취소 시 모든 기입한 정보들은 삭제됩니다.
-          <br />
-          그래도 취소하시겠습니까?
-        </p>
+        <h2>{{ $t("modal.title") }}</h2>
+        <p v-html="$t('modal.content')"></p>
         <div class="btn_wrap">
           <BottomBtn
             color="btn_line"
             route="/"
-            content="취소"
+            :content="$t('modal.cancel')"
             @click="onClickCancel"
             isRoute
           />
           <BottomBtn
             color="btn_color_bg"
-            content="계속 하기"
+            :content="$t('modal.continue')"
             @click="onClickContinue"
           />
         </div>

@@ -7,7 +7,11 @@ defineProps({
 });
 </script>
 <template>
-  <button v-if="content === '확인'" type="submit" :class="`btn_basic ${color}`">
+  <button
+    v-if="content === '확인' || content === 'XÁC NHẬN'"
+    type="submit"
+    :class="`btn_basic ${color}`"
+  >
     {{ content }}
   </button>
   <router-link v-else-if="isRoute" :to="route" :class="`btn_basic ${color}`">

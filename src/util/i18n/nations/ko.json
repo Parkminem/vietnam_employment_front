@@ -1,0 +1,159 @@
+{
+  "header": {
+    "content": "웹툰과 콘텐츠를 사랑하는 동료들이 함께합니다.<br />K-웹툰, 성공의 중심에서 함께 미래를 그려나갑니다.",
+    "nav": {
+      "1": "지원 분야",
+      "2": "지원 하기",
+      "3": "지원 현황",
+      "4": "QnA"
+    }
+  },
+  "main": {
+    "mainContWrap": {
+      "1": {
+        "title": "BEYOND WEBTOON",
+        "subTitle": "우리는 웹툰을 사랑하는 사람들과 함께 일합니다.",
+        "content": "탄탄한 원작 스토리를 기반으로 스토리 작가와 웹툰 작가, 그리고 프로듀서가 함께 일하며 서로의 의견에 귀기울이며 웹툰 작품을 만들어가고 있습니다."
+      },
+      "2": {
+        "title": "BEYOND BORDERS",
+        "subTitle": "우리는 국가의 경계를 넘어서 함께 작품을 그립니다.",
+        "content": "우리는 지역에 한계를 두지 않고 함께 웹툰을 그릴 수 있는 동료를 찾고 있으며, 각 나라에 재능이 많고 잠재력이 풍부한 웹툰작가들이 많다는 것을 알고 있습니다."
+      },
+      "3": {
+        "title": "BEYOND FUTURE",
+        "subTitle": "우리는 미래에 더욱 중요해질 콘텐츠의 가치를 알고 있습니다.",
+        "content": "웹툰을 보는 독자들은 계속해서 늘어나고 있으며, 독자들을 울고 웃게 할 수 있는 멋진 작품을 만들어갈 수 있도록 웹툰 제작 프로젝트를 최선을 다해 이끌겠습니다."
+      }
+    },
+    "mainText": {
+      "title": "WE ARE IDEACONCERT",
+      "content": "우리는 “Always Joyful Imagination”이라는 슬로건으로 미래를 이끌어갈 웹툰과 기술을 기발하는 회사입니다.",
+      "subContent": "IDEACONCERT는 사람들의 다양한 아이디어와 생각이 모여 하나의 즐거운 콘서트 무대가 된다는 의미를 담고 있습니다.<br>아콘이와 노란이는 <span>IDEACONCERT</span>를 상징하는 캐릭터로 하얀생쥐와 노란 병아리이며, 달콤한 간식과 그림을 그리는 것을 좋아합니다."
+    }
+  },
+  "applyField": {
+    "topTitWrap": {
+      "title": "고민은 기회를 늦출뿐!",
+      "content": "아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
+    },
+    "workProcessWrap": {
+      "title": "아이디어콘서트 작업 공정",
+      "process": {
+        "1": "그림 콘티 (제공)",
+        "2": "데생 콘티",
+        "3": "선화",
+        "4": "채색 및 보정"
+      }
+    },
+    "infoTxtBox": {
+      "content": "작업은<span>그림 콘티 - 데생 콘티 - 선화 - 채색 및 보정 - 배경 작업</span>이 이루어 집니다."
+    },
+    "recruitmentPositionWrap": {
+      "title": "모집중인 포지션",
+      "content": "데생콘티와 선화 채색 및 보정이 가능한 자는 지원해 주세요."
+    },
+    "applyFieldPosition": {
+      "1": {
+        "title": "데생 콘티",
+        "leftContent": "그림 콘티",
+        "rightContent": "데생 콘티",
+        "content": "그림콘티를 데생콘티로 제작하는 작업 입니다.<br/>아이디어콘서트에서 제공한 그림 콘티를 데생 콘티로 작업을 할 수 있는 작가를 찾습니다."
+      },
+      "2": {
+        "title": "선화",
+        "leftContent": "데생 콘티",
+        "rightContent": "선화",
+        "content": "데생 콘티를 선화로 제작하는 작업입니다.<br/>캐릭터의 매력을 살려 세밀하게 펜선으로 강약을 표현해 그려내는 파트입니다."
+      },
+      "3": {
+        "title": "채색 및 보정",
+        "leftContent": "선화",
+        "rightContent": "채색 및 보정",
+        "content": "선화위에 채색 하는 작업입니다.<br/>라인아트 위에 채색을 입혀 웹툰을 생생하게 입혀내는 파트입니다."
+      },
+      "4": {
+        "title": "배경 아트",
+        "leftContent": "작업이 안된 배경",
+        "rightContent": "배경 작업 및 보정",
+        "content": "웹툰의 배경을 제작하는 작업입니다.<br/>표현이 제대로 되어 있지 않은 기본 배경을 작품의 분위기에 맞게 채색하고 연출하는 파트입니다."
+      }
+    }
+  },
+  "apply": {
+    "topTitWrap": {
+      "title": "지원 하기",
+      "content": "아이디어콘서트는 지금 웹툰작가 모집중! 좋은 웹툰을 만들어나갈 수 있도록 함께 해주세요."
+    },
+    "inputGroupTitle": "지원서 작성하기 (* 표시는 필수 사항 입니다.)",
+    "inputGroup": {
+      "position": {
+        "title": "포지션(중복가능)"
+      },
+      "name": {
+        "title": "이름",
+        "placeHolder": "이름을 기입해 주세요"
+      },
+      "nickname": {
+        "title": "필명",
+        "placeHolder": "필명을 기입해 주세요"
+      },
+      "mail": {
+        "title": "이메일 주소",
+        "placeHolder": "메일을 입력해 주세요"
+      },
+      "number": {
+        "title": "연락처",
+        "placeHolder": "' - '없이 입력해 주세요"
+      },
+      "country": {
+        "title": "거주 국가",
+        "placeHolder": "SOUTH KOREA"
+      },
+      "genre": {
+        "title": "선호 장르(중복가능)"
+      },
+      "intro": {
+        "title": "자기 소개"
+      },
+      "portfolio": {
+        "title": "포트폴리오 사이트",
+        "placeHolder": "http://"
+      },
+      "file": {
+        "title": "파일 업로드"
+      }
+    },
+    "txtBox": {
+      "title": "유의사항",
+      "content": {
+        "1": "지원하는 포지션에 맞는 그림 포트폴리오를 꼭 첨부하여 주세요.",
+        "2": "포트폴리오는 jpg 또는 png 파일, pdf파일로 한 폴더에 압축하여 첨부해 주세요. 최대 용량은 100mb이내입니다."
+      }
+    },
+    "agree": "위 개인 정보수집 · 이용에 동의합니다.",
+    "cancel": "취소",
+    "submit": "확인"
+  },
+  "applyTrendLogin": {
+    "topTitWrap": {
+      "title": "지원 현황 보기",
+      "content": "지원서에 기입한 이메일과 이름을 아래에 넣어 지원 현황을 확인해 보세요."
+    },
+    "email": "이메일 주소를 기입해 주세요.",
+    "name": "이름을 기입해 주세요.",
+    "button": "확인"
+  },
+  "qna": {
+    "topTitWrap": {
+      "title": "QnA",
+      "content": "채용 관련하여 자주 문의하시는 내용들입니다. 지원 시 참고해 주십시오."
+    }
+  },
+  "modal": {
+    "title": "지원 취소 하기",
+    "content": "취소 시 모든 기입한 정보들은 삭제됩니다.<br/>그래도 취소하시겠습니까?",
+    "cancel": "취소",
+    "continue": "계속 하기"
+  }
+}

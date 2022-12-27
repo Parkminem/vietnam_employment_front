@@ -3,6 +3,7 @@ import store from "../store";
 defineProps({
   count: Number,
   content: String,
+  need: Boolean,
 });
 // console.log(store.state.applyForm);
 
@@ -48,6 +49,7 @@ const onChange = (e) => {
       type="checkbox"
       :id="`contactChoice${count}`"
       :name="content"
+      :required="need"
       @change="onChange"
     /><label :for="`contactChoice${count}`">
       <span>{{ content }}</span>
