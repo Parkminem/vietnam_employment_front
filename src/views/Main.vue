@@ -3,6 +3,14 @@ import HeaderWrap from "../components/HeaderWrap.vue";
 import MainContWrap from "../components/MainContWrap.vue";
 import MainBtmImgWrap from "../components/MainBtmImgWrap.vue";
 import sanitize from "../util/sanitize";
+import main_img01 from "@/assets/images/img/main_img01_toon.png";
+import main_img02 from "@/assets/images/img/main_img02_toon.png";
+import main_img03 from "@/assets/images/img/main_img03_toon.png"
+import img_roket from "@/assets/images/img/icon_rocket.png"
+import img_noran from "@/assets/images/img/img_acon_noran.png"
+import img_allstart from "@/assets/images/img/img_allstar.png"
+
+
 </script>
 <template>
   <HeaderWrap />
@@ -13,7 +21,7 @@ import sanitize from "../util/sanitize";
       :title="$t('main.mainContWrap.1.title')"
       :subTitle="$t('main.mainContWrap.1.subTitle')"
       :content="$t('main.mainContWrap.1.content')"
-      mainImg="@/assets/images/img/main_img01_toon.png"
+      :mainImg= main_img01
     />
     <MainContWrap
       bgColor="bg_aqua"
@@ -22,7 +30,7 @@ import sanitize from "../util/sanitize";
       :title="$t('main.mainContWrap.2.title')"
       :subTitle="$t('main.mainContWrap.2.subTitle')"
       :content="$t('main.mainContWrap.2.content')"
-      mainImg="@/assets/images/img/main_img02_toon.png"
+      :mainImg= main_img02
     />
     <MainContWrap
       bgColor="bg_green"
@@ -30,13 +38,13 @@ import sanitize from "../util/sanitize";
       :title="$t('main.mainContWrap.3.title')"
       :subTitle="$t('main.mainContWrap.3.subTitle')"
       :content="$t('main.mainContWrap.3.content')"
-      mainImg="@/assets/images/img/main_img03_toon.png"
+      :mainImg= main_img03
     />
   </div>
   <div class="main_btm_cont bg_space_img">
     <div class="cont_btm_wrap">
       <MainBtmImgWrap
-        img="@/assets/images/img/icon_rocket.png"
+        :img= img_roket
         imgAlt="로켓"
         marginTop="20"
       />
@@ -49,14 +57,14 @@ import sanitize from "../util/sanitize";
         </dl>
       </div>
       <MainBtmImgWrap
-        img="@/assets/images/img/img_acon_noran.png"
+        :img= img_noran
         imgAlt="아콘이와 노란이"
         marginTop="70"
         marginBottom="70"
       />
       <p v-html="sanitize($t('main.mainText.subContent'))"></p>
       <MainBtmImgWrap
-        img="@/assets/images/img/img_allstar.png"
+        :img= img_allstart
         imgAlt="아이디어콘서트 만화"
         marginTop="a"
         class="img_allstar"

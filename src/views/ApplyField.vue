@@ -7,6 +7,14 @@ import TopTitWrap from "../components/TopTitWrap.vue";
 import ProcessList from "../components/ProcessList.vue";
 import ApplyFieldPosition from "../components/ApplyFieldPosition.vue";
 import sanitizeHtml from "sanitize-html";
+import img_process01 from "@/assets/images/img/process01.png"
+import img_process02 from "@/assets/images/img/process02.png"
+import img_process03 from "@/assets/images/img/process03.png"
+import img_process04 from "@/assets/images/img/process04.png"
+import img_face01 from "@/assets/images/img/acon_face.png"
+import img_left from "@/assets/images/img/acon_left.png"
+import img_walk from "@/assets/images/img/acon_walk.png"
+import img_final from "@/assets/images/img/acon_final.png"
 
 const store = useStore();
 onBeforeUnmount(() => store.commit(CHANGECATEGORYINDEX, 1));
@@ -26,30 +34,30 @@ onBeforeUnmount(() => store.commit(CHANGECATEGORYINDEX, 1));
             <ul>
               <ProcessList
                 :index="1"
-                process-img-src="@/assets/images/img/process01.png"
+                :process-img-src=img_process01
                 process-img-alt="작업공정 첫번째 사진"
-                icon-img-src="@/assets/images/img/acon_face.png"
+                :icon-img-src=img_face01
                 :content="$t('applyField.workProcessWrap.process.1')"
               />
               <ProcessList
                 :index="2"
-                process-img-src="@/assets/images/img/process02.png"
+                :process-img-src=img_process02
                 process-img-alt="작업공정 두번째 사진"
-                icon-img-src="@/assets/images/img/acon_left.png"
+                :icon-img-src= img_left
                 :content="$t('applyField.workProcessWrap.process.2')"
               />
               <ProcessList
                 :index="3"
-                process-img-src="@/assets/images/img/process03.png"
+                :process-img-src=img_process03
                 process-img-alt="작업공정 세번째 사진"
-                icon-img-src="@/assets/images/img/acon_walk.png"
+                :icon-img-src= img_walk
                 :content="$t('applyField.workProcessWrap.process.3')"
               />
               <ProcessList
                 :index="4"
-                process-img-src="@/assets/images/img/process04.png"
+                :process-img-src=img_process04
                 process-img-alt="작업공정 네번째 사진"
-                icon-img-src="@/assets/images/img/acon_final.png"
+                :icon-img-src= img_final
                 :content="$t('applyField.workProcessWrap.process.4')"
               />
             </ul>
