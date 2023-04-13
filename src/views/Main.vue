@@ -13,7 +13,7 @@ import sanitize from "../util/sanitize";
       :title="$t('main.mainContWrap.1.title')"
       :subTitle="$t('main.mainContWrap.1.subTitle')"
       :content="$t('main.mainContWrap.1.content')"
-      mainImg="images/img/main_img01_toon.png"
+      mainImg="@/assets/images/img/main_img01_toon.png"
     />
     <MainContWrap
       bgColor="bg_aqua"
@@ -22,7 +22,7 @@ import sanitize from "../util/sanitize";
       :title="$t('main.mainContWrap.2.title')"
       :subTitle="$t('main.mainContWrap.2.subTitle')"
       :content="$t('main.mainContWrap.2.content')"
-      mainImg="images/img/main_img02_toon.png"
+      mainImg="@/assets/images/img/main_img02_toon.png"
     />
     <MainContWrap
       bgColor="bg_green"
@@ -30,13 +30,13 @@ import sanitize from "../util/sanitize";
       :title="$t('main.mainContWrap.3.title')"
       :subTitle="$t('main.mainContWrap.3.subTitle')"
       :content="$t('main.mainContWrap.3.content')"
-      mainImg="images/img/main_img03_toon.png"
+      mainImg="@/assets/images/img/main_img03_toon.png"
     />
   </div>
   <div class="main_btm_cont bg_space_img">
     <div class="cont_btm_wrap">
       <MainBtmImgWrap
-        img="images/img/icon_rocket.png"
+        img="@/assets/images/img/icon_rocket.png"
         imgAlt="로켓"
         marginTop="20"
       />
@@ -49,14 +49,14 @@ import sanitize from "../util/sanitize";
         </dl>
       </div>
       <MainBtmImgWrap
-        img="images/img/img_acon_noran.png"
+        img="@/assets/images/img/img_acon_noran.png"
         imgAlt="아콘이와 노란이"
         marginTop="70"
         marginBottom="70"
       />
       <p v-html="sanitize($t('main.mainText.subContent'))"></p>
       <MainBtmImgWrap
-        img="images/img/img_allstar.png"
+        img="@/assets/images/img/img_allstar.png"
         imgAlt="아이디어콘서트 만화"
         marginTop="a"
         class="img_allstar"
@@ -64,7 +64,7 @@ import sanitize from "../util/sanitize";
       <div class="main_btm_logo">
         <a href="http://ideaconcert.com/" target="_blank">
           <img
-            src="images/layout/logo_round.png"
+            src="@/assets/images/layout/logo_round.png"
             class=""
             alt="아이디어콘서트 로고"
           />

@@ -8,20 +8,20 @@ import sanitize from "../util/sanitize";
       <ul class="logo_wrap">
         <li>
           <router-link to="/">
-            <img src="images/layout/space_logo.png" alt="스페이스 로고" />
+            <img src="@/assets/images/layout/space_logo.png" alt="스페이스 로고" />
           </router-link>
         </li>
         <li class="ideacon_logo">
           <a href="http://ideaconcert.com/" target="_blank"
             ><img
-              src="images/layout/ideacon_logo.png"
+              src="@/assets/images/layout/ideacon_logo.png"
               alt="아이디어콘서트 로고"
           /></a>
         </li>
       </ul>
       <div class="txt_wrap">
         <div class="txt_img">
-          <img src="images/img/idea-space.png" alt="스페이스 문구" />
+          <img src="@/assets/images/img/idea-space.png" alt="스페이스 문구" />
         </div>
         <h2 class="font_current"><span>HELLO,</span>WEBTOONIST</h2>
         <p v-html="sanitize($t('header.content'))"></p>

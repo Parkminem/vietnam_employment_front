@@ -13,7 +13,7 @@
   width: 1100px;
   height: 100%;
   margin: 0 auto;
-  background: url(../images/img/main_top_bg.png) 0 0 no-repeat !important;
+  background: url(@/assets/images/img/main_top_bg.png) 0 0 no-repeat !important;
 }
 .logo_wrap {
   display: flex;
@@ -102,7 +102,7 @@
   box-shadow: inset 0 6px 18px -6px rgb(0 151 94);
 }
 .main_btm_cont.bg_space_img {
-  background: url(../images/img/main_btm_bg.jpg) 0 0 no-repeat !important;
+  background: url(@/assets/images/img/main_btm_bg.jpg) 0 0 no-repeat !important;
   height: 1355px;
   background-size: cover !important;
   width: 100%;
@@ -124,13 +124,13 @@
   width: 520px;
 }
 .main_text_area.circleline01 {
-  background: url(../images/img/circleline01.png) 0 97px no-repeat !important;
+  background: url(@/assets/images/img/circleline01.png) 0 97px no-repeat !important;
 }
 .main_text_area.circleline02 {
-  background: url(../images/img/circleline02.png) 353px 97px no-repeat !important;
+  background: url(@/assets/images/img/circleline02.png) 353px 97px no-repeat !important;
 }
 .main_text_area.circleline03 {
-  background: url(../images/img/circleline03.png) 0 97px no-repeat !important;
+  background: url(@/assets/images/img/circleline03.png) 0 97px no-repeat !important;
 }
 .main_text_area dl dt {
   font-size: 45px;
@@ -188,7 +188,7 @@
   width: 1100px;
   display: flex;
   box-sizing: border-box;
-  background: url(../images/img/dashed_line_vertical.png) 50% 56% no-repeat !important;
+  background: url(@/assets/images/img/dashed_line_vertical.png) 50% 56% no-repeat !important;
   flex-direction: column;
   margin: 0 auto;
   height: 100%;
@@ -284,7 +284,7 @@
   font-weight: 700;
 }
 .process_box {
-  background: url(../images/img/dashed_line.png) 0 92% no-repeat !important;
+  background: url(@/assets/images/img/dashed_line.png) 0 92% no-repeat !important;
   margin-bottom: 40px;
 }
 .process_box ul {
@@ -318,7 +318,7 @@
 }
 .recruitment_position_wrap {
   height: 283px;
-  background: url(../images/img/icon_line_rocket.png) 50% 0% no-repeat !important;
+  background: url(@/assets/images/img/icon_line_rocket.png) 50% 0% no-repeat !important;
   box-sizing: border-box;
   padding-top: 213px;
   margin: 0 auto;
@@ -370,12 +370,12 @@
 .position_detail_wrap {
   text-align: center;
   margin-top: 40px;
-  background: url(../images/img/noran_face.png) 50% 195px no-repeat !important;
+  background: url(@/assets/images/img/noran_face.png) 50% 195px no-repeat !important;
 }
 .detail_number_wrap {
   width: 70px;
   height: 138px;
-  background: url(../images/img/dashed_line_vertical.png) 50% 0 no-repeat !important;
+  background: url(@/assets/images/img/dashed_line_vertical.png) 50% 0 no-repeat !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -401,7 +401,7 @@
   color: #2a2a2a;
 }
 .before_after_img_wrap {
-  background: url(../images/img/arrow_line.png) 50% 96.5% no-repeat !important;
+  background: url(@/assets/images/img/arrow_line.png) 50% 96.5% no-repeat !important;
 }
 .before_after_img_wrap ul {
   display: flex;
@@ -547,7 +547,7 @@ input + label {
   cursor: pointer;
 }
 input + label::before {
-  background: url(../images/layout/radio_off.png) no-repeat 0 0;
+  background: url(@/assets/images/layout/radio_off.png) no-repeat 0 0;
   content: "";
   display: inline-block;
   position: absolute;
@@ -560,7 +560,7 @@ input + label::before {
   background-size: cover !important;
 }
 input:checked + label::before {
-  background: url(../images/layout/radio_on.png) no-repeat 0 0;
+  background: url(@/assets/images/layout/radio_on.png) no-repeat 0 0;
 }
 /* ì²´í¬ë°•ìŠ¤ ë””ìžì¸ ë*/
 

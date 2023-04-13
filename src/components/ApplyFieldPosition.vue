@@ -5,23 +5,23 @@ import sanitize from "../util/sanitize";
 const data = [
   {
     index: 1,
-    leftImg: "images/img/drawing01_storyboard.png",
-    rightImg: "images/img/drawing02_dessin.png",
+    leftImg: "@/assets/images/img/drawing01_storyboard.png",
+    rightImg: "@/assets/images/img/drawing02_dessin.png",
   },
   {
     index: 2,
-    leftImg: "images/img/drawing02_dessin.png",
-    rightImg: "images/img/drawing03_line.png",
+    leftImg: "@/assets/images/img/drawing02_dessin.png",
+    rightImg: "@/assets/images/img/drawing03_line.png",
   },
   {
     index: 3,
-    leftImg: "images/img/drawing03_line.png",
-    rightImg: "images/img/drawing04_color.png",
+    leftImg: "@/assets/images/img/drawing03_line.png",
+    rightImg: "@/assets/images/img/drawing04_color.png",
   },
   {
     index: 4,
-    leftImg: "images/img/drawing05_bg_before.png",
-    rightImg: "images/img/drawing06_bg_after.png",
+    leftImg: "@/assets/images/img/drawing05_bg_before.png",
+    rightImg: "@/assets/images/img/drawing06_bg_after.png",
   },
 ];
 </script>

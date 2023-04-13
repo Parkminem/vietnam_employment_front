@@ -26,30 +26,30 @@ onBeforeUnmount(() => store.commit(CHANGECATEGORYINDEX, 1));
             <ul>
               <ProcessList
                 :index="1"
-                process-img-src="images/img/process01.png"
+                process-img-src="@/assets/images/img/process01.png"
                 process-img-alt="작업공정 첫번째 사진"
-                icon-img-src="images/img/acon_face.png"
+                icon-img-src="@/assets/images/img/acon_face.png"
                 :content="$t('applyField.workProcessWrap.process.1')"
               />
               <ProcessList
                 :index="2"
-                process-img-src="images/img/process02.png"
+                process-img-src="@/assets/images/img/process02.png"
                 process-img-alt="작업공정 두번째 사진"
-                icon-img-src="images/img/acon_left.png"
+                icon-img-src="@/assets/images/img/acon_left.png"
                 :content="$t('applyField.workProcessWrap.process.2')"
               />
               <ProcessList
                 :index="3"
-                process-img-src="images/img/process03.png"
+                process-img-src="@/assets/images/img/process03.png"
                 process-img-alt="작업공정 세번째 사진"
-                icon-img-src="images/img/acon_walk.png"
+                icon-img-src="@/assets/images/img/acon_walk.png"
                 :content="$t('applyField.workProcessWrap.process.3')"
               />
               <ProcessList
                 :index="4"
-                process-img-src="images/img/process04.png"
+                process-img-src="@/assets/images/img/process04.png"
                 process-img-alt="작업공정 네번째 사진"
-                icon-img-src="images/img/acon_final.png"
+                icon-img-src="@/assets/images/img/acon_final.png"
                 :content="$t('applyField.workProcessWrap.process.4')"
               />
             </ul>

@@ -13,7 +13,7 @@
           <dd class="color01">{{ subTitle }}</dd>
         </dl>
         <div class="text_img_wrap">
-          <img src="/images/img/icon_pencil.png" alt="스페이스 문구" />
+          <img src="@/assets/images/img/icon_pencil.png" alt="스페이스 문구" />
         </div>
         <p>{{ content }}</p>
       </div>

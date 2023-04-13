@@ -13,7 +13,7 @@ import BottomBtn from "../components/BottomBtn.vue";
       />
       <div class="sub_cont_area">
         <div className="img_deco_wrap">
-          <img src="images/img/noran_face.png" alt="노란이" />
+          <img src="@/assets/images/img/noran_face.png" alt="노란이" />
         </div>
       </div>
       <div className="btn_wrap">

@@ -36,7 +36,7 @@ const userAuthenticate = () => {
     />
     <div class="sub_cont_area">
       <div className="img_deco_wrap">
-        <img src="images/img/icon_line_rocket.png" alt="로켓" />
+        <img src="@/assets/images/img/icon_line_rocket.png" alt="로켓" />
       </div>
       <form @submit.prevent="userAuthenticate">
         <div className="login_wrap">
