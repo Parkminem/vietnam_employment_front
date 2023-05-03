@@ -22,6 +22,7 @@ const userAuthenticate = () => {
           store.commit(CHANGEAPPLYFORM, arr);
         }
       }
+      console.log(res);
       router.push("/applytrend");
     })
     .catch((err) => console.log(err));
