@@ -83,7 +83,8 @@
   "apply": {
     "topTitWrap": {
       "title": "Application Procedures",
-      "content": "Idea Concert is now recruiting webtoon writers! Join us so to make a great webtoons together."
+      "content": "Idea Concert is now recruiting webtoon writers! Join us so to make a great webtoons together.",
+      "notice" : "Before applying, please check the application area."
     },
     "inputGroupTitle": "Fill out the application form (columns with '*' marks are required)",
     "inputGroup": {
@@ -93,6 +94,10 @@
       "name": {
         "title": "Name",
         "placeHolder": "Please, insert your name."
+      },
+      "engName": {
+        "title": "English Name",
+        "placeHolder": "Please fill in your English name"
       },
       "nickname": {
         "title": "Nickname",
@@ -148,7 +153,31 @@
     "topTitWrap": {
       "title": "QnA",
       "content": "These are the frequently asked questions. Please refer to it when applying."
-    }
+    },
+    "question":
+      {
+        "work": "What kind of work will you do at the company?",
+        "applicationDocuments": "What are the documents needed to apply?",
+        "process": "What is the overall recruitment process?",
+        "to": " Is there a TO of the position I'm applying for?",
+        "result": "When can I know the results of the application?",
+        "reApplycation": "Can I apply again even if I have a history of failing?",
+        "movePart": " Is it possible to move to another field after joining the company?",
+        "feedback": "Can I get feedback on the screening after being rejected?"
+      },
+    "answer":
+      {
+        "work": "We specialize in making webtoons. We recruit people who can produce Korean webtoons.\nThere are different fields in producing a webtoon: draft story, line drawings, color and editing, and background art. We encourage anyone who are confident in their drawings and understand the field to apply.\n\nDocument Submission> 1st Document Screening> 2nd In-person Practical Test> 3rd In-person Interview> Contract Offer> Final Acceptance and Enter Company. \n(In cases where additional phone interview is needed, we will inform you the details by contacting you individually.)",
+        "applicationDocuments": "Documents to submit are CV, cover letter, and most importantly portfolio.\nPlease include your photo, date of birth, and school details in your CV. You may use a normal CV template.\n\nWith regard to the cover letter, please write your motivation of making webtoons, how you studied and explain parts that you excel. In addition, identify the specific job you want to do in the future.\n\nThe most important document, your portfolio. Currently our company employs people who does draft story, line drawings, color and editing, and background art.\n\nYou can make a photo of what you can do well and submit it.\nPlease submit at least 10 images in PDF or PPT so that the images can be seen well. You can submit it with just an image. You have to submit only the ones you drew yourself.",
+        "process": "Document reception > 1st document screening > 2nd in-house visit practical test > 3rd face-to-face interview > salary condition consultation > Final acceptance and joining the company.\n (There may be additional screenings such as phone calls or video interviews, so we will inform you of the details by contacting you individually when applying.)",
+        "to": "Most of the positions do not have a TO and are always hiring. If you are suitable for our company, we are actively inviting you, so please apply a lot.",
+        "result": "It usually takes two to three weeks, and we don't contact you separately if you fail.\nWe would like to inform you that the time required may be delayed depending on internal circumstances as we carefully examine whether the team is suitable for the team.",
+        "reApplycation": "Other positions are possible, but please understand that in the same position, you have to reapply after 6 months at the time of application to review the documents.",
+        "movePart": "We can work together and move to a part that suits your aptitude and skills.",
+        "feedback": "Please understand that feedback on the application results is unfortunately not possible.",
+        "link": "Please check the link below for details."
+      }
+      
   },
   "modal": {
     "title": "Cancel Application",
@@ -163,7 +192,9 @@
     },
     "adminComment": {
       "title": "Recruiter's Comments",
-      "default": "Sorry, the person in charge hasn't checked your application. We will review and inform you the results as soon as possible."
+      "default": "Sorry, the person in charge hasn't checked your application. We will review and inform you the results as soon as possible.",
+      "true": "Hello, this is Idea Concert.\nThis is to inform you that you have been accepted to the Idea Concert. Congratulations on your acceptance.",
+      "false": "Thank you for attending the interview regarding our recruitment.\nDespite your impressive experience and interviews, we inform you that you did not pass the final screening due to more applicants than expected. Unfortunately, we would like to thank you again for your participation in the interview and wish you good results for your future employment."
     },
     "mainBtn": "Go to Main"
   }

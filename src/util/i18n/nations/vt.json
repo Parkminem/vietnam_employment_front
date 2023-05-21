@@ -83,7 +83,8 @@
   "apply": {
     "topTitWrap": {
       "title": "Ứng tuyển",
-      "content": "Idea Concert hiện đang tuyển dụng các tác giả webtoon! Hãy tham gia cùng chúng tôi để chúng tôi có thể tạo ra một webtoon hay."
+      "content": "Idea Concert hiện đang tuyển dụng các tác giả webtoon! Hãy tham gia cùng chúng tôi để chúng tôi có thể tạo ra một webtoon hay.",
+      "notice": "Trước khi đăng ký, nhất định phải kiểm tra lĩnh vực đăng ký."
     },
     "inputGroupTitle": "Điền vào mẫu đơn (Phần có dấu * là phần bắt buộc)",
     "inputGroup": {
@@ -93,6 +94,10 @@
       "name": {
         "title": "Tên",
         "placeHolder": "Vui lòng nhập tên."
+      },
+      "engName": {
+        "title": "tên tiếng Anh",
+        "placeHolder": "Vui lòng điền tên tiếng Anh của bạn vào"
       },
       "nickname": {
         "title": "Bút danh",
@@ -148,7 +153,30 @@
     "topTitWrap": {
       "title": "QnA",
       "content": "Đây là những câu hỏi thường gặp liên quan đến tuyển dụng. Vui lòng tham khảo khi áp dụng."
-    }
+    },
+    "question":
+      {
+        "work": "Bạn sẽ làm việc gì ở công ty?",
+        "applicationDocuments": "Hồ sơ xin việc như thế nào?",
+        "process": "Quá trình tuyển dụng tổng thể như thế nào?",
+        "to": "Tôi có thể biết vị trí dự kiến sẽ hỗ trợ là gì không?",
+        "result": "Khi nào tôi có thể biết kết quả đăng ký?",
+        "reApplycation": "Dù có tiền sử không đỗ thì có thể hỗ trợ lại được không?",
+        "movePart": "Sau khi vào công ty có thể di chuyển sang phần khác được không?",
+        "feedback": "Tôi có thể nhận được phản hồi liên quan đến tuyển sinh sau khi bị loại không?"
+      },
+    "answer":
+      {
+        "work": "Tôi chuyên sản xuất webtoon ạ. Chúng tôi đang có mặt ở đây một người có thể chế tác webtoon theo phong cách Hàn Quốc.\nLĩnh vực là lĩnh vực nghệ thuật nền, tô màu và chỉnh sửa, vẽ tranh tường, vẽ tranh tường. Mong là những bạn nào tự tin với bức tranh hoặc hiểu rõ màu sắc sẽ ủng hộ.\n\nTiếp nhận hồ sơ > Kiểm tra hồ sơ lần 1 > Kiểm tra thực hành chuyến thăm nội bộ lần 2 > Phỏng vấn trực tiếp lần 3 > Hội ý xử lý > Thi đỗ và vào công ty cuối cùng.\n(Vì có thể có thêm các cuộc phỏng vấn qua điện thoại nên chúng tôi sẽ thông báo chi tiết bằng cách liên lạc riêng khi đăng ký.)",
+        "applicationDocuments": "Có sơ yếu lý lịch, giới thiệu bản thân và quan trọng nhất là photopolis.Bạn có thể điền vào ảnh của bạn, năm sinh và trường học, vân vân. Chỉ cần mẫu sơ yếu lý lịch thông thường là được.\n\n Giới thiệu bản thân chỉ cần viết ra động cơ bạn làm webtoon, bạn đã học như thế nào và bạn có thể làm tốt phần nào. Ngoài ra, xin vui lòng điền vào những gì bạn muốn làm trong tương lai.\n\n và quan trọng nhất là photopolis. Hiện tại công ty chúng tôi đang tuyển dụng bộ phận nghệ thuật nền, màu sắc, họa tiết, họa tiết.\n\n Các bạn chỉ cần tạo ra một bức tranh mà các bạn có thể làm tốt và nộp lên PhotoPolio.\n Vui lòng tạo và nộp ít nhất 10 hình ảnh bằng PDF hoặc PPT để có thể nhìn rõ hình ảnh. Có thể nộp chỉ bằng hình ảnh. Các bạn chỉ được gửi những bức tranh mà các bạn tự vẽ thôi.",
+        "process": "Tiếp nhận hồ sơ > Kiểm tra hồ sơ lần 1 > Kiểm tra thực hành chuyến thăm nội bộ lần 2 > Phỏng vấn trực tiếp lần 3 > Thảo luận điều kiện tiền lương > Thi đỗ và vào công ty cuối cùng.\n (Có thể có hình thức phỏng vấn bổ sung như phỏng vấn qua điện thoại hoặc video, vì vậy chúng tôi sẽ thông báo thông tin chi tiết bằng liên lạc cá nhân khi đăng ký).",
+        "to": "Most vị trí không có một thời điểm nhất định để tuyển dụng và luôn đang tìm kiếm. Chúng tôi đang tích cực tìm kiếm những người phù hợp với công ty của chúng tôi, vì vậy xin hãy nộp đơn.",
+        "result": "Thông thường mất khoảng 2~3 tuần, nếu không đậu thì không liên lạc riêng.Chúng tôi xin thông báo rằng thời gian cần thiết có thể bị trì hoãn tùy theo tình hình nội bộ sau khi kiểm tra kỹ lưỡng xem có phải là nhân tài phù hợp với đội \n hay không.",
+        "reApplycation": "Đối với các vị trí khác thì có thể, nhưng trong trường hợp cùng một vị trí thì phải tái hỗ trợ sau 6 tháng tại thời điểm hỗ trợ thì mong các bạn thông cảm rằng việc kiểm tra tài liệu sẽ được thực hiện.",
+        "movePart": "Cùng nhau tiến hành công việc và đương nhiên có thể di chuyển đến phần phù hợp với năng lực và năng lực của ứng viên.",
+        "feedback": "Mong các bạn thông cảm vì không thể phản hồi về kết quả hỗ trợ.",
+        "link": "Vui lòng kiểm tra liên kết dưới đây trong lĩnh vực chi tiết."
+      }
   },
   "modal": {
     "title": "Hủy nộp đơn",
@@ -163,7 +191,9 @@
     },
     "adminComment": {
       "title": "Ý kiến của ​​nhà tuyển dụng",
-      "default": "Xin lỗi. Người phụ trách vẫn chưa xác nhận. Chúng tôi sẽ sớm xem xét và cho bạn biết kết quả."
+      "default": "Xin lỗi. Người phụ trách vẫn chưa xác nhận. Chúng tôi sẽ sớm xem xét và cho bạn biết kết quả.",
+      "true": "Xin chào các bạn. Chúng mình là Idea Concert.\n Chúng tôi xin thông báo rằng bạn đã trúng tuyển vào buổi hòa nhạc ý tưởng quý giá. Chân thành chúc mừng bạn đã đậu.",
+      "false": "Cảm ơn quý khách đã tham dự buổi phỏng vấn liên quan đến việc tuyển dụng nhân viên của công ty chúng tôi.\n Bất chấp kinh nghiệm và phỏng vấn ấn tượng của bạn, chúng tôi xin thông báo rằng bạn đã không vượt qua được kết quả tuyển chọn cuối cùng do nhiều ứng viên hơn dự kiến. Thật đáng tiếc nhưng một lần nữa xin cảm ơn quý vị đã tham dự cuộc phỏng vấn và mong rằng sau này quý vị sẽ có kết quả tốt trong việc tìm việc."
     },
     "mainBtn": "Về trang chủ"
   }

@@ -1,6 +1,15 @@
 <script setup>
 import PageNav from "./PageNav.vue";
 import sanitize from "../util/sanitize";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
+
+const languages = ["Korean", "English", "Vietnam"]
+
+const changeLanguage = (lang) => {
+  locale.value = lang;
+}
+
 </script>
 <template>
   <div class="header_wrap">
@@ -42,6 +51,30 @@ import sanitize from "../util/sanitize";
         :content="$t('header.nav.3')"
       />
       <PageNav color="bg_darkgrey" route="/qna" :content="$t('header.nav.4')" />
+      <ul class="dropdown bg_darkgrey" @click="() => toggleDropdown">
+        <li class="dropbtn">language</li>
+        <div class="dropdown-content">
+          <li v-for="item in languages" :key="item" @click="() => changeLanguage(item)">{{ item }}</li>
+        </div>
+      </ul>
     </ul>
   </div>
 </template>
+<style lang="scss" scoped>
+  .dropdown {
+    border-radius: 25px;
+    margin-top: 30px;
+    cursor: pointer;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .dropdown-content {
+      display: none;
+    }
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>

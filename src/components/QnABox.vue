@@ -1,10 +1,14 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import sanitize from "../util/sanitize";
 
 defineProps({
   question: String,
   answer: String,
+  link: String,
 });
+const router = useRouter();
 const boxRef = ref(null);
 const changeDisplay = () => {
   boxRef.value.classList.contains("show")
@@ -29,11 +33,19 @@ const changeDisplay = () => {
       <span>A.</span>
       <p>
         {{ answer }}
+        <p v-if="link" v-html="sanitize($t('qna.answer.link'))"></p>
+        <p style="cursor: pointer;" v-if="link" @click="router.push('/applyField')">
+          <br>
+          {{ link }}
+        </p>
       </p>
     </div>
   </div>
 </template>
 <style scoped>
+* {
+  white-space: pre-wrap;
+}
 .icon {
   font-size: 15px;
 }

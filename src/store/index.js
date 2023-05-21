@@ -15,6 +15,7 @@ const store = createStore({
       modalShow: "none",
       applyForm: {
         full_name: "",
+        eng_name:"",
         pen_name: "",
         phone_number: "",
         email: "",
@@ -24,6 +25,7 @@ const store = createStore({
         about: "",
         portfolio: "",
         files: undefined,
+        status: null,
       },
     };
   },
@@ -41,6 +43,7 @@ const store = createStore({
     [RESETAPPLY](state) {
       state.applyForm = {
         full_name: "",
+        eng_name:"",
         pen_name: "",
         phone_number: "",
         email: "",
@@ -50,6 +53,7 @@ const store = createStore({
         about: "",
         portfolio: "",
         files: null,
+        status: null,
       };
     },
     [ISMODAL](state, data) {

@@ -34,6 +34,14 @@ const applyForm = store.state.applyForm;
       :required="need"
     />
     <input
+      v-else-if="category === 'eng_name'"
+      type="text"
+      id="add_eng_name"
+      :placeholder="$t('apply.inputGroup.engName.placeHolder')"
+      v-model="store.state.applyForm.eng_name"
+      :required="need"
+    />
+    <input
       v-else-if="category === 'nickname'"
       type="text"
       :required="need"
@@ -116,6 +124,9 @@ const applyForm = store.state.applyForm;
 
     <div v-if="category === 'name'" class="input_cont_box_wrap">
       {{ applyForm.full_name }}
+    </div>
+    <div v-if="category === 'eng_name'" class="input_cont_box_wrap">
+      {{ applyForm.eng_name }}
     </div>
     <div v-else-if="category === 'nickname'" class="input_cont_box_wrap">
       {{ applyForm.pen_name }}

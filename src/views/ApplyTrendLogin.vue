@@ -14,15 +14,16 @@ const router = useRouter();
 
 const userAuthenticate = () => {
   axios
-    .post(`${baseUrl}/find/`, { email: email.value, full_name: name.value })
+    .post(`${baseUrl}/api/find/`, { email: email.value, full_name: name.value })
     .then((res) => {
-      for (let i in res.data) {
-        const arr = [i, res.data[i]];
+      for (let i in res.data.resume) {
+        const arr = [i, res.data.resume[i]];
         if (i !== "id") {
           store.commit(CHANGEAPPLYFORM, arr);
         }
       }
-      console.log(res);
+      const arr2 = ['status', String(res.data.status.status)]
+      store.commit(CHANGEAPPLYFORM, arr2)
       router.push("/applytrend");
     })
     .catch((err) => console.log(err));

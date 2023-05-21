@@ -1,12 +1,13 @@
 import { createI18n } from "vue-i18n";
-import ko from "./nations/ko.json";
-import vt from "./nations/vt.json";
-import en from "./nations/en.json";
+import Korean from "./nations/ko.json";
+import Vietnam from "./nations/vt.json";
+import English from "./nations/en.json";
 
 const i18n = createI18n({
-  locale: "ko",
-  fallbackLocale: "ko",
-  messages: { ko, vt, en },
+  legacy: false,
+  locale: "Vietnam",
+  fallbackLocale: "English",
+  messages: { Korean, Vietnam, English },
 });
 
 export default i18n;

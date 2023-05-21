@@ -20,7 +20,7 @@ const onClickCancel = () => {
 
 const onSubmit = () => {
   store.commit(ONSPINNER);
-  const url = `${baseUrl}/apply/`;
+  const url = `${baseUrl}/api/apply/`;
   const formData = new FormData();
   for (let i in store.state.applyForm) {
     formData.append(i, store.state.applyForm[i]);
@@ -57,6 +57,7 @@ onUnmounted(() => {
       <TopTitWrap
         :title="$t('apply.topTitWrap.title')"
         :content="$t('apply.topTitWrap.content')"
+        :notice = "$t('apply.topTitWrap.notice')"
       />
       <div class="sub_cont_area">
         <form @submit.prevent="onSubmit">
@@ -70,6 +71,11 @@ onUnmounted(() => {
             <InputGroup
               category="name"
               :title="$t('apply.inputGroup.name.title')"
+              need
+            />
+            <InputGroup
+              category="eng_name"
+              :title="$t('apply.inputGroup.engName.title')"
               need
             />
             <InputGroup

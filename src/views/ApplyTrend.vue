@@ -16,6 +16,8 @@ onBeforeMount(() => {
 onUnmounted(() => {
   store.commit(RESETAPPLY);
 });
+console.log(store.state);
+
 </script>
 
 <template>
@@ -37,6 +39,12 @@ onUnmounted(() => {
           <InputGroup
             category="name"
             :title="$t('apply.inputGroup.name.title')"
+            need
+            color="input_categry_black"
+          />
+          <InputGroup
+            category="eng_name"
+            :title="$t('apply.inputGroup.engName.title')"
             need
             color="input_categry_black"
           />
@@ -88,7 +96,9 @@ onUnmounted(() => {
         <div class="txt_box_wrap mgt30">
           <div class="comment">{{ $t("applyTrend.adminComment.title") }}</div>
           <div class="txt_box">
-            <p>{{ $t("applyTrend.adminComment.default") }}</p>
+            <p v-if="store.state.applyForm.status[0] === null">{{ $t("applyTrend.adminComment.default") }}</p>
+            <p v-if="store.state.applyForm.status[0] === 'true'">{{ $t("applyTrend.adminComment.true") }}</p>
+            <p v-if="store.state.applyForm.status[0] === 'false'">{{ $t("applyTrend.adminComment.false") }}</p>
           </div>
         </div>
         <div class="btn_wrap">
