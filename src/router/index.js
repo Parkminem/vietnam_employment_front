@@ -38,10 +38,10 @@ const router = createRouter({
       path: "/applycomplete",
       component: ApplyComplete,
     },
-    // {
-    //   path: "/:pathMatch(.*)*",
-    //   component: Main,
-    // },
+    {
+      path: "/:pathMatch(.*)*",
+      component: Main,
+    },
   ],
   scrollBehavior() {
     return { top: 0 };
